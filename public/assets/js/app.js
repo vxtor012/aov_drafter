@@ -8138,7 +8138,7 @@ function renderHeroGrid() {
     for (const hero of heroes) {
         const card = document.createElement('button'); card.type = 'button'; card.className = 'hero-card'; card.dataset.id = hero.id;
         card.disabled = unavailable.has(hero.id) || state.currentTurnIndex >= 20;
-        const roleLabels = getHeroRoleLabels(hero).map(translateRole).join(' / ');
+        const roleLabels = getHeroRoleLabels(hero);
         card.title = `${hero.name} — ${roleLabels}, tier ${hero.tier}`;
         card.setAttribute('aria-label', `${hero.name}, ${roleLabels}, tier ${hero.tier}${unavailable.has(hero.id) ? ', đã cấm hoặc chọn' : ''}`);
         const portrait = document.createElement('div'); portrait.className = 'hero-card-img'; portrait.appendChild(createHeroImage(hero, true));
