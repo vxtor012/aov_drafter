@@ -37,11 +37,11 @@ Chỉ giao diện (`theme`) và tùy chọn bỏ qua cấm (`skipBanPhase`) đư
 
 ## Dữ liệu hiện tại
 
-Snapshot thu thập ngày **21/10/2026** có **130 tướng**, bao gồm Evita; **129/130** tướng khớp meta, **93** trang khắc chế chi tiết và **931** liên kết khắc chế. Nguồn RovMeta công bố patch **1.64**. Thời điểm UTC chính xác, tình trạng từng tướng và các chỉ số dùng dự phòng nằm trong [`data/data_update_report.json`](data/data_update_report.json).
+Snapshot thu thập ngày **21/10/2026** có **130 tướng**, trong đó lane và meta ranked lấy từ RoVGuide với dữ liệu chốt **19/10/2026**; **30 tướng có nhiều lane**. Có **93** trang khắc chế chi tiết và **931** liên kết khắc chế. Báo cáo nguồn cho từng tướng nằm trong [`data/data_update_report.json`](data/data_update_report.json).
 
-Nguồn danh sách/ảnh/khắc chế là [AOV Builds](https://aov-builds.com/tuong/); nguồn tier và chỉ số là [RovMeta](https://rovmeta.com/). Đây là các nguồn cộng đồng. Meta RovMeta hướng đến máy chủ Thái; nhiều chỉ số trong payload có `source: pro` (thi đấu chuyên nghiệp), vì vậy không nên diễn giải thành thống kê rank máy chủ Việt Nam. Tier, chỉ số và khắc chế có thể đến từ các tập dữ liệu khác nhau.
+Nguồn ranked chính là [RoVGuide](https://rovguide.com/meta), hiện hiển thị thống kê xếp hạng máy chủ Thái và dữ liệu thi đấu chuyên nghiệp riêng. Lane cũng lấy từ hồ sơ RoVGuide; [RovMeta](https://rovmeta.com/) là nguồn đối chiếu và khắc chế dự phòng. [AOV Builds](https://aov-builds.com/tuong/) cung cấp roster/ảnh và khắc chế cộng đồng. Các chỉ số ranked này không đại diện cho máy chủ Việt Nam; ứng dụng hiển thị vùng và ngày chụp ngay trong chế độ Meta. Garena Việt Nam được giữ làm nguồn đối chiếu patch, không ghi đè dữ liệu meta Thái.
 
-Các thuộc tính 1–5 là **ước lượng theo vai trò**, điểm gợi ý là quy tắc tính điểm, không phải xác suất thắng. Flowborn Phép chưa khớp bản ghi meta riêng; dữ liệu cũ được giữ và đánh dấu. Các chỉ số thiếu từ nguồn dùng dữ liệu trước đó hoặc giá trị mặc định, không được xem là thống kê mới đã xác minh. Xem [nguồn dữ liệu và quy trình cập nhật](docs/DATA.md).
+Các thuộc tính 1–5 vẫn là **ước lượng theo lane** và không được dùng trong engine gợi ý pick. Điểm là thứ tự tham khảo từ meta ranked, độ phủ lane và quan hệ khắc chế; đây không phải xác suất thắng. Xem [nguồn dữ liệu và quy trình cập nhật](docs/DATA.md) cùng [mô hình tính điểm](docs/ARCHITECTURE.md).
 
 ## Cập nhật dữ liệu
 

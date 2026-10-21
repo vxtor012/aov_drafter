@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-AoV / Liên Quân Mobile - Consolidated Meta, Avatar & Detailed Counter-Pick Crawler
-This script crawls the current roster exposed by the configured community sources:
-1. Queries aov-builds.com/tuong/ for Vietnamese names and webp avatars.
-2. Queries rovmeta.com to parse the Next.js stream payload for S+/S/A/B/C tiers, win/pick/ban rates, roles, and counter-pick references.
-3. Concurrently queries aov-builds.com/khac-che/<slug>/ using 10 threads to extract lane-specific counters and their detailed reasons in Vietnamese.
-4. Falls back to RovMeta counters with default messages for any missing/404 counter pages.
-5. Auto-patches app.js with the updated HERO_DATABASE.
+AoV / Liên Quân Mobile - roster, ranked meta, lane, and counter data crawler.
+1. Queries AOV Builds for the Vietnamese hero roster, names, and avatars.
+2. Reads Thailand ranked stats and lane profiles from RoVGuide, and refuses to save incomplete snapshots.
+3. Reads RovMeta as a counter fallback/reference, never as a lane classifier.
+4. Crawls AOV Builds counter guides and embeds the synchronized data in app.js.
 """
 
 import os
@@ -30,6 +28,8 @@ ROOT = Path(__file__).resolve().parents[1]
 # --- CONFIGURATION & ENDPOINTS ---
 AOV_BUILDS_URL = "https://aov-builds.com/tuong/"
 ROVMETA_URL = "https://rovmeta.com"
+ROVGUIDE_META_URL = "https://rovguide.com/meta"
+ROVGUIDE_HEROES_URL = "https://rovguide.com/heroes"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
@@ -64,24 +64,38 @@ UNMATCHED_REPLACEMENTS = {
     "thejoker": "stuart"
 }
 
-# Map RovMeta roles to drafting lane roles
-ROVMETA_ROLE_TO_LANE = {
-    "marksman": "AD",
-    "mage": "Mid",
-    "warrior": "Top",
-    "assassin": "Jungle",
-    "tank": "SP",
-    "support": "SP"
+# RoVGuide uses Global/Thai English hero slugs; local Vietnamese IDs do not always match.
+ROVGUIDE_SLUG_OVERRIDES = {
+    "boltbaron": "bolt-baron",
+    "celica": "brunhilda",
+    "dieuthuyen": "diao-chan",
+    "flowborn": "flowborn-archer",
+    "flowbornphep": "flowborn-mage",
+    "jinna": "jinna",
+    "lubo": "lu-bu",
+    "ngokhong": "wukong",
+    "richter": "richter",
+    "theflash": "the-flash",
+    "trieuvan": "zanis",
+    "wonderwoman": "wonder-woman",
 }
 
-# Overrides for meta roles where competitive lane differs from basic archetype
-ROLE_OVERRIED = {
-    "flowborn-phep": "Mid",
-    "zuka": "Jungle",
-    "yan": "Jungle",
-    "zephys": "Jungle",
-    "rourke": "Jungle",
-    "errol": "Jungle"
+LANE_TO_APP_ROLE = {
+    "slayer lane": "Top",
+    "middle lane": "Mid",
+    "mid": "Mid",
+    "jungle": "Jungle",
+    "dragon lane": "AD",
+    "support lane": "SP",
+    "support": "SP",
+}
+
+TIER_TO_APP_TIER = {"T0": "S+", "T1": "S", "T2": "A", "T3": "B", "T4": "C"}
+
+# Official Vietnamese patch references are recorded for cross-checks only. The
+# active lane data remains sourced from the Thai profiles, as requested.
+OFFICIAL_VN_ROLE_CROSSCHECKS = {
+    "astrid": "https://lienquan.garena.vn/chi-tiet-ban-cap-nhat-le-hoi-5v5-08-04-2026/"
 }
 
 def remove_accents(input_str):
@@ -95,6 +109,77 @@ def clean_id(name):
     cleaned = cleaned.replace('đ', 'd').replace('’', '').replace("'", "")
     cleaned = "".join([c for c in cleaned if c.isalnum()])
     return cleaned
+
+
+def fetch_rovguide_reference_data(hero_ids):
+    """Fetch current Thailand ranked metrics and lane profiles as separate signals."""
+    response = requests.get(ROVGUIDE_META_URL, headers=HEADERS, timeout=20)
+    response.raise_for_status()
+    meta_soup = BeautifulSoup(response.content, "html.parser")
+    ranked_table = meta_soup.find("table", attrs={"aria-labelledby": "ranked-heading"})
+    if not ranked_table:
+        raise RuntimeError("RoVGuide ranked table was not found; refusing to reuse stale meta data.")
+
+    ranked = {}
+    for row in ranked_table.select("tbody tr"):
+        link = row.select_one("a[href^='/heroes/']")
+        cells = row.find_all("td", recursive=False)
+        if not link or len(cells) < 4:
+            continue
+        slug = link.get("href", "").rstrip("/").split("/")[-1]
+        values = [re.search(r"\d+(?:\.\d+)?", cell.get_text(" ", strip=True)) for cell in cells[-3:]]
+        tier_label = row.select_one(".meta-table-hero-copy small")
+        tier_match = re.search(r"\bT[0-4]\b", tier_label.get_text(" ", strip=True) if tier_label else "")
+        if slug and all(values) and tier_match:
+            ranked[slug] = {
+                "win_rate": float(values[0].group()),
+                "pick_rate": float(values[1].group()),
+                "ban_rate": float(values[2].group()),
+                "tier": TIER_TO_APP_TIER[tier_match.group()],
+            }
+
+    if len(ranked) < max(20, int(len(hero_ids) * 0.9)):
+        raise RuntimeError(f"RoVGuide ranked data incomplete ({len(ranked)}/{len(hero_ids)}).")
+
+    page_text = meta_soup.get_text(" ", strip=True)
+    date_match = re.search(r"Ranked data\s+(\d{1,2})\s+([A-Za-z]{3,})\s+(\d{4})", page_text)
+    if not date_match:
+        raise RuntimeError("RoVGuide ranked snapshot date was not found.")
+    date_value = " ".join(date_match.groups())
+    try:
+        snapshot = datetime.strptime(date_value, "%d %b %Y").date().isoformat()
+    except ValueError:
+        snapshot = datetime.strptime(date_value, "%d %B %Y").date().isoformat()
+
+    def read_roles(hero_id):
+        slug = ROVGUIDE_SLUG_OVERRIDES.get(hero_id, hero_id)
+        page = requests.get(f"{ROVGUIDE_HEROES_URL}/{slug}", headers=HEADERS, timeout=15)
+        page.raise_for_status()
+        soup = BeautifulSoup(page.content, "html.parser")
+        for block in soup.select("dl.hero-detail-profile div"):
+            label = block.find("dt")
+            value = block.find("dd")
+            if label and label.get_text(" ", strip=True).casefold() == "lane" and value:
+                lanes = [part.strip().casefold() for part in value.get_text(" ", strip=True).split("/")]
+                roles = list(dict.fromkeys(LANE_TO_APP_ROLE[lane] for lane in lanes if lane in LANE_TO_APP_ROLE))
+                return roles
+        return []
+
+    roles_by_hero = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        future_to_hero = {executor.submit(read_roles, hero_id): hero_id for hero_id in hero_ids}
+        for future in concurrent.futures.as_completed(future_to_hero):
+            hero_id = future_to_hero[future]
+            try:
+                roles_by_hero[hero_id] = future.result()
+            except Exception as exc:
+                raise RuntimeError(f"Could not read RoVGuide lane profile for {hero_id}.") from exc
+
+    if len(roles_by_hero) != len(hero_ids) or any(not roles for roles in roles_by_hero.values()):
+        missing = sorted(hero_id for hero_id in hero_ids if not roles_by_hero.get(hero_id))
+        raise RuntimeError(f"RoVGuide lane data incomplete: {', '.join(missing)}")
+
+    return ranked, roles_by_hero, snapshot
 
 def resolve_nextjs_pointer(ptr, data_root):
     """Resolves Next.js stream pointers like $6:props:data:tiers:S+:5:counters:0:hero"""
@@ -187,7 +272,7 @@ def crawl_hero_counters_from_aovbuilds(slug, meta_id_to_local_id):
 def main():
     previous = json.loads((ROOT / "data" / "crawled_heroes.json").read_text(encoding="utf-8"))
     previous_by_id = {hero["id"]: hero for hero in previous}
-    print("[+] KHỞI ĐỘNG TIẾN TRÌNH CÀO DỮ LIỆU ĐỒNG BỘ ĐỘC QUYỀN (AOV-BUILDS & ROVMETA)...")
+    print("[+] Bắt đầu cập nhật dữ liệu Liên Quân / AoV từ AOV Builds, RoVGuide và RovMeta...")
     
     # ====================================================
     # --- PHASE 1: CRAWL AOV-BUILDS.COM FOR HERO LIST ---
@@ -339,11 +424,25 @@ def main():
     print(f"[🎉] Hoàn tất thu thập khắc chế từ AOV-Builds trong {end_time - start_time:.2f} giây. Tìm thấy {len(aov_counters_db)}/{len(aov_heroes)} trang chi tiết.")
 
     # ====================================================
+    # --- PHASE 4: REFRESH RANKED DATA AND LANE PROFILES ---
+    # ====================================================
+    print(f"[+] 4. Cập nhật lane đa vị trí và meta ranked từ RoVGuide...")
+    local_ids = [clean_id(hero["slug"]) for hero in aov_heroes]
+    ranked_by_slug, roles_by_hero, ranked_snapshot = fetch_rovguide_reference_data(local_ids)
+    ranked_by_hero = {}
+    for hero_id in local_ids:
+        guide_slug = ROVGUIDE_SLUG_OVERRIDES.get(hero_id, hero_id)
+        if guide_slug not in ranked_by_slug:
+            raise RuntimeError(f"RoVGuide ranked row missing for {hero_id} ({guide_slug}).")
+        ranked_by_hero[hero_id] = ranked_by_slug[guide_slug]
+    print(f"[+] Đã xác minh ranked cho {len(ranked_by_hero)} tướng; snapshot {ranked_snapshot}; lane hồ sơ {len(roles_by_hero)}/{len(local_ids)}.")
+
+    # ====================================================
     # --- PHASE 4: MERGE DATA & UPDATE TARGET FILES ---
     # ====================================================
     print("[+] 4. Trộn và đồng bộ hóa cơ sở dữ liệu...")
     crawled_database = []
-    meta_matches = 0
+    rovmeta_matches = 0
     ad_count = 0
     total_counters_linked = 0
     unmatched = []
@@ -363,29 +462,30 @@ def main():
             mapped_meta_id = clean_id(slug)
         meta_match = meta_heroes.get(mapped_meta_id)
         old = previous_by_id.get(hero_id, {})
+        guide_data = ranked_by_hero[hero_id]
+        roles = roles_by_hero[hero_id]
+        official_reference = OFFICIAL_VN_ROLE_CROSSCHECKS.get(hero_id)
+        role_source = f"{ROVGUIDE_HEROES_URL}/{ROVGUIDE_SLUG_OVERRIDES.get(hero_id, hero_id)}"
+        role_source_region = "TH"
+        role_cross_check = official_reference
         provenance[hero_id] = {
-            "meta": "rovmeta" if meta_match else "previous_or_default",
-            "stats_source": meta_match["stats_source"] if meta_match else "unverified_previous_or_default",
-            "counters": "aov-builds" if aov_counters_db.get(slug) else "rovmeta",
-            "fallback_rate_fields": [key for key in ("win_rate", "pick_rate", "ban_rate") if not meta_match or meta_match[key] is None],
+            "rovmeta_reference": "matched" if meta_match else "not_matched",
+            "stats_source": "rovguide_ranked_thailand",
+            "stats_snapshot": ranked_snapshot,
+            "roles_source": role_source,
+            "roles_source_region": role_source_region,
+            "roles_cross_check": role_cross_check,
+            "counters": "aov-builds" if aov_counters_db.get(slug) else "rovmeta" if meta_match else "previous",
+            "fallback_rate_fields": [],
         }
         if not meta_match:
             unmatched.append(hero_id)
-        
-        # Default stats if missing
-        win_rate = old.get("win_rate", 50.0)
-        pick_rate = old.get("pick_rate", 5.0)
-        ban_rate = old.get("ban_rate", 1.0)
-        tier = old.get("tier", "A")
-        raw_role = "warrior"
-        
+        win_rate = guide_data["win_rate"]
+        pick_rate = guide_data["pick_rate"]
+        ban_rate = guide_data["ban_rate"]
+        tier = guide_data["tier"]
         if meta_match:
-            win_rate = meta_match["win_rate"] if meta_match["win_rate"] is not None else win_rate
-            pick_rate = meta_match["pick_rate"] if meta_match["pick_rate"] is not None else pick_rate
-            ban_rate = meta_match["ban_rate"] if meta_match["ban_rate"] is not None else ban_rate
-            tier = meta_match["tier"]
-            raw_role = meta_match["role"]
-            meta_matches += 1
+            rovmeta_matches += 1
 
         # Mapped counters container
         merged_counters = []
@@ -431,14 +531,7 @@ def main():
         merged_counters = list({c["id"]: c for c in merged_counters}.values())
         total_counters_linked += len(merged_counters)
             
-        # Map RovMeta archetype roles to lane roles
-        main_role = ROVMETA_ROLE_TO_LANE.get(raw_role, "Top")
-        if not meta_match:
-            main_role = old.get("main_role", main_role)
-        
-        # Apply lane overrides
-        if slug in ROLE_OVERRIED:
-            main_role = ROLE_OVERRIED[slug]
+        main_role = roles[0]
             
         if main_role == "AD":
             ad_count += 1
@@ -449,17 +542,23 @@ def main():
             "id": hero_id,
             "name": name_vn,
             "main_role": main_role,
+            "roles": roles,
             "tier": tier,
             "avatar": avatar,
             "win_rate": win_rate,
             "pick_rate": pick_rate,
             "ban_rate": ban_rate,
+            "meta_source": "RoVGuide ranked Thailand",
+            "meta_snapshot": ranked_snapshot,
+            "roles_source": role_source,
+            "roles_region": role_source_region,
+            "roles_cross_check": role_cross_check,
             "attributes": attributes,
             "counters": merged_counters,
-            "tags": [main_role.lower(), "crawled"]
+            "tags": list(dict.fromkeys([role.lower() for role in roles] + ["crawled"]))
         })
         
-    print(f"[+] Trộn xong! Tổng cộng: {len(crawled_database)} tướng. Khớp chỉ số RovMeta: {meta_matches}/{len(aov_heroes)}.")
+    print(f"[+] Trộn xong! Tổng cộng: {len(crawled_database)} tướng. Đối chiếu được RovMeta: {rovmeta_matches}/{len(aov_heroes)}.")
     print(f"[+] Tổng số mối liên kết khắc chế chi tiết đã nhập: {total_counters_linked}")
     print(f"[+] Số lượng tướng AD (Xạ Thủ): {ad_count}")
     
@@ -493,13 +592,15 @@ def main():
     patch_match = re.search(r'"patch_number":"([^"]+)"', full_stream)
     report = {
         "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "sources": {"roster": AOV_BUILDS_URL, "meta": ROVMETA_URL, "counters": "https://aov-builds.com/khac-che/"},
-        "source_patch": patch_match.group(1) if patch_match else None,
+        "sources": {"roster": AOV_BUILDS_URL, "roles": ROVGUIDE_HEROES_URL, "official_vietnam_cross_check": "https://lienquan.garena.vn/chi-tiet-ban-cap-nhat-le-hoi-5v5-08-04-2026/", "meta": ROVGUIDE_META_URL, "counters": "https://aov-builds.com/khac-che/", "counter_fallback": ROVMETA_URL},
+        "rovmeta_reference_patch": patch_match.group(1) if patch_match else None,
+        "ranked_snapshot": ranked_snapshot,
+        "ranked_region": "Thailand",
         "hero_count": len(crawled_database),
-        "meta_matches": meta_matches,
+        "rovmeta_reference_matches": rovmeta_matches,
         "detailed_counter_pages": len(aov_counters_db),
         "counter_links": total_counters_linked,
-        "unmatched_meta_ids": unmatched,
+        "unmatched_rovmeta_reference_ids": unmatched,
         "removed_ids": sorted(set(previous_by_id) - {h["id"] for h in crawled_database}),
         "attributes_source": "estimated_by_lane_not_measured",
         "heroes": provenance,

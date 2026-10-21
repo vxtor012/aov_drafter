@@ -3,12 +3,12 @@
 ## Thành phần và luồng dữ liệu
 
 ```text
-AOV Builds ── danh sách, ảnh, khắc chế ──┐
-                                        ├── scripts/crawler_system.py
-RovMeta ──── tier, chỉ số, khắc chế ─────┘          │
-                                                  ├── data/crawled_heroes.json
-                                                  ├── public/assets/js/app.js
-                                                  └── data/data_update_report.json
+ AOV Builds ── roster, ảnh, khắc chế ────────────┐
+ RoVGuide ──── lane, ranked Thái Lan ────────────┼── scripts/crawler_system.py
+ RovMeta ───── counter dự phòng/đối chiếu ───────┤        │
+ Garena VN ─── đối chiếu patch ──────────────────┘        ├── data/crawled_heroes.json
+                                                          ├── public/assets/js/app.js
+                                                          └── data/data_update_report.json
 
 public/ ── máy chủ tĩnh ── trình duyệt ── thao tác draft và gợi ý
 ```
@@ -25,32 +25,30 @@ Khi khởi động, `DOMContentLoaded` gắn sự kiện, nạp theme/tùy chọ
 
 ## Tính điểm gợi ý
 
-`calculateSuggestions(teamType)` lấy đội nhà/đối phương, vai trò còn thiếu và các chỉ số tổng hợp; lọc tướng chưa dùng theo bộ lọc gợi ý, chấm điểm rồi trả về tối đa 6 tướng có điểm cao nhất.
+`calculateSuggestions(teamType)` loại tướng đã cấm/chọn, gán mỗi lượt chọn hiện tại vào tối đa một lane để lane phụ không lấp nhiều vị trí cùng lúc, rồi chấm từng ứng viên theo các tín hiệu có nguồn. Bộ lọc lane xét cả lane chính và phụ. Trả tối đa 6 lựa chọn.
 
-| Thành phần | Chế độ Meta | Chế độ Khắc chế |
+Mọi chế độ bắt đầu từ 45 điểm. Các điểm thành phần đều hiện trong lý do và tổng bị giới hạn trong 0–100. Điểm dùng để xếp hạng lựa chọn; không phải xác suất thắng.
+
+| Thành phần | Meta | Khắc chế |
 | --- | --- | --- |
-| Điểm tier S+/S/A/B/C | 55 / 50 / 40 / 30 / 20 | 22 / 21 / 20 / 19 / 18 |
-| Điều chỉnh chỉ số | `round((WR−50)×0.1 + (PR−10)×0.6 + (BR−5)×0.3)` | `round((WR−50)×0.02 + (PR−10)×0.1 + (BR−5)×0.05)` |
+| Tier ranked `S+ / S / A / B / C` | `+8 / +5 / +2 / −2 / −5` | 25% điểm tier, làm tròn |
+| WR (so với 50%) | `(WR−50)×1.2`, giới hạn ±8 | Không dùng |
+| Tần suất pick + ban | `(PR+BR−10)×0.15`, giới hạn −2 đến +4 | Không dùng |
+| Lane chính còn thiếu | +10 | +10 |
+| Chỉ phù hợp lane phụ còn thiếu | +6 | +6 |
+| Khắc chế biên tập thủ công | +6 mỗi đối thủ, tổng khắc chế tối đa +16 | +8 mỗi đối thủ, tối đa +20 |
+| Khắc chế trong nguồn | +3 mỗi đối thủ, tổng khắc chế tối đa +16 | +5 mỗi đối thủ, tối đa +20 |
+| Ứng viên bị khắc chế theo dữ liệu | −4 mỗi đối thủ, tối đa −12 | −5 mỗi đối thủ, tối đa −12 |
 
-WR/PR/BR là tỷ lệ theo phần trăm, ví dụ `52.5`, không phải `0.525`.
+WR/PR/BR là phần trăm, ví dụ `52.5`, lấy từ ranked máy chủ Thái Lan. Tier và tỷ lệ giảm nửa trọng số sau 30 ngày, rồi ngừng cộng sau 90 ngày. Chế độ Khắc chế giữ tier ở trọng số nhỏ để gợi ý lane/matchup chi phối; không cộng tỷ lệ meta lần nữa. Counter link là tín hiệu đối đầu được nguồn ghi nhận, không phải chênh lệch win rate đo được.
 
-Các quy tắc bổ sung áp dụng trong cả hai chế độ:
-
-- Khắc chế một tướng địch: +20; ưu tiên `COUNTERS_MANUAL`, sau đó tra `enemy.counters`.
-- Bị tướng địch khắc chế trong dữ liệu crawler: −15.
-- Cướp tướng khắc chế đồng đội khi địch chưa có vai trò tương ứng: +15.
-- Hiệp lực giao tranh khi cả đồng đội và ứng viên có `teamfight >= 4`: +10.
-- Bù chống chịu, giao tranh, sát thương hoặc cơ động còn thiếu: mỗi điều kiện +15.
-- Một số tình huống khắc chế loại đội hình/cơ động/sốc sát thương: +15.
-- Bổ sung vai trò, tuyến trước, Mid hoặc AD: một số điều kiện +1, không hiện trong phần lý do.
-
-Các điều kiện có thể cộng dồn; điểm không bị giới hạn trong thang 0–100. Một số điểm nhỏ không có lý do hiển thị, nên cộng các lý do chưa chắc bằng tổng điểm. Đánh giá sức mạnh đội hình dựa trên trung bình thuộc tính 1–5, không phải mô hình dự báo kết quả trận đấu.
+Engine bỏ các điểm bù chống chịu/sát thương/cơ động/giao tranh vì thuộc tính hiện có chỉ là ước lượng theo lane, bỏ danh sách "tank shredder" cố định và các điểm +1 không được giải thích. Không còn cộng điểm cướp bài theo vai trò địch hoặc nhiều lần cộng cùng một kiểu synergy. Vì chưa có dữ liệu trận đấu theo rank Việt Nam, các điểm số không được hiệu chuẩn như mô hình dự đoán.
 
 ## Quy ước khắc chế và vai trò
 
 `hero.counters` là danh sách **những tướng khắc chế hero**, không phải danh sách tướng mà hero khắc chế. Đảo chiều quan hệ này sẽ làm sai cả gợi ý và cảnh báo đối đầu.
 
-Mỗi tướng chỉ có một `main_role`. Crawler chuyển nhóm tướng từ RovMeta thành vai trò đường, rồi áp dụng `ROLE_OVERRIED` cho một số ngoại lệ. Đây là phép gần đúng; chưa có mô hình đa vai trò hoặc kiểm tra bắt buộc đủ 5 đường khi người dùng chọn.
+`main_role` là lane ưu tiên; `roles` chứa mọi lane trong hồ sơ. Crawler lấy lane từ RoVGuide, không chuyển Fighter/Assassin/Mage thành lane. Patch Garena Việt Nam được lưu làm đối chiếu; ranked và lane chính của snapshot hiện tại theo máy chủ Thái. Người dùng có thể lọc và gợi ý tướng theo bất kỳ lane đã ghi nhận.
 
 Các thuộc tính `damage`, `tankiness`, `mobility`, `teamfight`, `split_push` được `estimate_attributes` gán theo vai trò. Chúng không mô tả khác biệt kỹ năng của từng tướng trong cùng vai trò.
 

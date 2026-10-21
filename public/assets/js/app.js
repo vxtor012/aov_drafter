@@ -7,17 +7,25 @@ const HERO_DATABASE = [
     {
         "id": "airi",
         "name": "Airi",
-        "main_role": "Jungle",
+        "main_role": "Top",
+        "roles": [
+            "Top"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Airi-100x100.webp",
-        "win_rate": 53.6,
-        "pick_rate": 14.3,
-        "ban_rate": 5.1,
+        "win_rate": 49.92,
+        "pick_rate": 3.85,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/airi",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 5,
-            "tankiness": 2,
-            "mobility": 5,
-            "teamfight": 3,
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
             "split_push": 4
         },
         "counters": [
@@ -67,7 +75,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "jungle",
+            "top",
             "crawled"
         ]
     },
@@ -75,11 +83,20 @@ const HERO_DATABASE = [
         "id": "aleister",
         "name": "Aleister",
         "main_role": "Mid",
-        "tier": "B",
+        "roles": [
+            "Mid",
+            "SP"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Aleister-100x100.webp",
-        "win_rate": 0,
-        "pick_rate": 0.2,
-        "ban_rate": 0,
+        "win_rate": 48.32,
+        "pick_rate": 7.42,
+        "ban_rate": 9.7,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/aleister",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -127,6 +144,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "mid",
+            "sp",
             "crawled"
         ]
     },
@@ -134,11 +152,19 @@ const HERO_DATABASE = [
         "id": "alice",
         "name": "Alice",
         "main_role": "SP",
-        "tier": "B",
+        "roles": [
+            "SP"
+        ],
+        "tier": "S",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Alice.webp",
-        "win_rate": 56.3,
-        "pick_rate": 10.9,
-        "ban_rate": 13.8,
+        "win_rate": 51.75,
+        "pick_rate": 18.14,
+        "ban_rate": 7.15,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/alice",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -209,11 +235,19 @@ const HERO_DATABASE = [
         "id": "allain",
         "name": "Allain",
         "main_role": "Top",
-        "tier": "B",
+        "roles": [
+            "Top"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Allain-100x100.webp",
-        "win_rate": 48.3,
-        "pick_rate": 3.7,
-        "ban_rate": 3.5,
+        "win_rate": 49.34,
+        "pick_rate": 11.73,
+        "ban_rate": 2.35,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/allain",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -276,11 +310,19 @@ const HERO_DATABASE = [
         "id": "amily",
         "name": "Amily",
         "main_role": "Top",
+        "roles": [
+            "Top"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Amily-100x100.webp",
-        "win_rate": 49.8,
-        "pick_rate": 8.6,
-        "ban_rate": 4,
+        "win_rate": 47.02,
+        "pick_rate": 3.5,
+        "ban_rate": 0.16,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/amily",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -343,11 +385,19 @@ const HERO_DATABASE = [
         "id": "annette",
         "name": "Annette",
         "main_role": "SP",
-        "tier": "B",
+        "roles": [
+            "SP"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Annette-100x100.webp",
-        "win_rate": 52,
-        "pick_rate": 12.8,
-        "ban_rate": 6.1,
+        "win_rate": 49.89,
+        "pick_rate": 8.61,
+        "ban_rate": 15.54,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/annette",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -398,11 +448,19 @@ const HERO_DATABASE = [
         "id": "aoi",
         "name": "Aoi",
         "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Aoi-100x100.webp",
-        "win_rate": 40,
-        "pick_rate": 4.3,
-        "ban_rate": 2.6,
+        "win_rate": 47.4,
+        "pick_rate": 2.22,
+        "ban_rate": 0.22,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/aoi",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -460,18 +518,26 @@ const HERO_DATABASE = [
     {
         "id": "arduin",
         "name": "Arduin",
-        "main_role": "Top",
-        "tier": "C",
+        "main_role": "SP",
+        "roles": [
+            "SP"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Arduin.webp",
-        "win_rate": 20,
-        "pick_rate": 0.9,
-        "ban_rate": 0.2,
+        "win_rate": 47.08,
+        "pick_rate": 3.76,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/arduin",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
+            "damage": 1,
+            "tankiness": 5,
             "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "teamfight": 5,
+            "split_push": 1
         },
         "counters": [
             {
@@ -492,7 +558,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "top",
+            "sp",
             "crawled"
         ]
     },
@@ -500,11 +566,20 @@ const HERO_DATABASE = [
         "id": "arthur",
         "name": "Arthur",
         "main_role": "Top",
+        "roles": [
+            "Top",
+            "SP"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Arthur-100x100.webp",
-        "win_rate": 20,
-        "pick_rate": 0.9,
-        "ban_rate": 0.2,
+        "win_rate": 51.18,
+        "pick_rate": 13.74,
+        "ban_rate": 1.12,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/arthur",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -544,6 +619,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "top",
+            "sp",
             "crawled"
         ]
     },
@@ -551,11 +627,19 @@ const HERO_DATABASE = [
         "id": "arum",
         "name": "Arum",
         "main_role": "SP",
-        "tier": "C",
+        "roles": [
+            "SP"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Arum.webp",
-        "win_rate": 0,
-        "pick_rate": 0.3,
-        "ban_rate": 0,
+        "win_rate": 48.17,
+        "pick_rate": 6.86,
+        "ban_rate": 5.95,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/arum",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -585,17 +669,26 @@ const HERO_DATABASE = [
     {
         "id": "astrid",
         "name": "Astrid",
-        "main_role": "Top",
-        "tier": "C",
+        "main_role": "Jungle",
+        "roles": [
+            "Jungle",
+            "Top"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Astrid.webp",
-        "win_rate": 57.9,
-        "pick_rate": 6.5,
-        "ban_rate": 3.1,
+        "win_rate": 54.78,
+        "pick_rate": 11.07,
+        "ban_rate": 5.72,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/astrid",
+        "roles_region": "TH",
+        "roles_cross_check": "https://lienquan.garena.vn/chi-tiet-ban-cap-nhat-le-hoi-5v5-08-04-2026/",
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "counters": [
@@ -617,6 +710,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
+            "jungle",
             "top",
             "crawled"
         ]
@@ -624,18 +718,27 @@ const HERO_DATABASE = [
     {
         "id": "ata",
         "name": "Ata",
-        "main_role": "SP",
-        "tier": "B",
+        "main_role": "Top",
+        "roles": [
+            "Top",
+            "SP"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ata-100x100.webp",
-        "win_rate": 0,
-        "pick_rate": 0.2,
-        "ban_rate": 0,
+        "win_rate": 49.98,
+        "pick_rate": 2.52,
+        "ban_rate": 0.23,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/ata",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 1,
-            "tankiness": 5,
+            "damage": 3,
+            "tankiness": 4,
             "mobility": 2,
-            "teamfight": 5,
-            "split_push": 1
+            "teamfight": 4,
+            "split_push": 4
         },
         "counters": [
             {
@@ -656,6 +759,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
+            "top",
             "sp",
             "crawled"
         ]
@@ -664,11 +768,19 @@ const HERO_DATABASE = [
         "id": "aya",
         "name": "Aya",
         "main_role": "SP",
-        "tier": "S+",
+        "roles": [
+            "SP"
+        ],
+        "tier": "S",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Aya-100x100.webp",
-        "win_rate": 51.4,
-        "pick_rate": 6.3,
-        "ban_rate": 8,
+        "win_rate": 48.47,
+        "pick_rate": 9.26,
+        "ban_rate": 52.21,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/aya",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -707,11 +819,19 @@ const HERO_DATABASE = [
         "id": "azzenka",
         "name": "Azzen'Ka",
         "main_role": "Mid",
-        "tier": "A",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/AzzenKa-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 1,
-        "ban_rate": 0,
+        "win_rate": 52.8,
+        "pick_rate": 5.55,
+        "ban_rate": 0.21,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/azzenka",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -746,11 +866,19 @@ const HERO_DATABASE = [
         "id": "baldum",
         "name": "Baldum",
         "main_role": "SP",
-        "tier": "A",
+        "roles": [
+            "SP"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Baldum-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 5.5,
-        "ban_rate": 3.6,
+        "win_rate": 48.13,
+        "pick_rate": 4.25,
+        "ban_rate": 1.27,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/baldum",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -785,11 +913,19 @@ const HERO_DATABASE = [
         "id": "bijan",
         "name": "Bijan",
         "main_role": "Top",
-        "tier": "S",
+        "roles": [
+            "Top"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Bijan.webp",
-        "win_rate": 50,
-        "pick_rate": 0.3,
-        "ban_rate": 0,
+        "win_rate": 51.31,
+        "pick_rate": 8.67,
+        "ban_rate": 1.98,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/bijan",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -839,17 +975,25 @@ const HERO_DATABASE = [
     {
         "id": "billow",
         "name": "Billow",
-        "main_role": "Top",
-        "tier": "S",
+        "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
+        "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2025/02/Billow-100x100.webp",
-        "win_rate": 52.6,
-        "pick_rate": 29.2,
-        "ban_rate": 24.7,
+        "win_rate": 49.73,
+        "pick_rate": 16.45,
+        "ban_rate": 47.8,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/billow",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "counters": [
@@ -903,7 +1047,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "top",
+            "jungle",
             "crawled"
         ]
     },
@@ -911,11 +1055,19 @@ const HERO_DATABASE = [
         "id": "biron",
         "name": "Biron",
         "main_role": "Top",
+        "roles": [
+            "Top"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2025/02/Biron-100x100.webp",
-        "win_rate": 42.4,
-        "pick_rate": 11.3,
-        "ban_rate": 2.7,
+        "win_rate": 49.89,
+        "pick_rate": 6.0,
+        "ban_rate": 0.46,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/biron",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -966,11 +1118,19 @@ const HERO_DATABASE = [
         "id": "boltbaron",
         "name": "Bolt Baron",
         "main_role": "Top",
-        "tier": "B",
+        "roles": [
+            "Top"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2025/02/Bolt-Baron-100x100.webp",
-        "win_rate": 51.6,
-        "pick_rate": 5.3,
-        "ban_rate": 4.8,
+        "win_rate": 48.85,
+        "pick_rate": 2.19,
+        "ban_rate": 0.12,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/bolt-baron",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1033,11 +1193,19 @@ const HERO_DATABASE = [
         "id": "bonnie",
         "name": "Bonnie",
         "main_role": "Mid",
-        "tier": "A",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Bonnie-100x100.webp",
-        "win_rate": 54.7,
-        "pick_rate": 15.6,
-        "ban_rate": 24.2,
+        "win_rate": 48.88,
+        "pick_rate": 3.23,
+        "ban_rate": 0.17,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/bonnie",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -1072,11 +1240,19 @@ const HERO_DATABASE = [
         "id": "bright",
         "name": "Bright",
         "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Bright-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 0.3,
-        "ban_rate": 0.2,
+        "win_rate": 49.6,
+        "pick_rate": 3.53,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/bright",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -1135,11 +1311,19 @@ const HERO_DATABASE = [
         "id": "butterfly",
         "name": "Butterfly",
         "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Butterfly-100x100.webp",
-        "win_rate": 75.8,
-        "pick_rate": 5.6,
-        "ban_rate": 2.6,
+        "win_rate": 50.75,
+        "pick_rate": 12.62,
+        "ban_rate": 11.02,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/butterfly",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -1206,11 +1390,19 @@ const HERO_DATABASE = [
         "id": "capheny",
         "name": "Capheny",
         "main_role": "AD",
+        "roles": [
+            "AD"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Capheny-100x100.webp",
-        "win_rate": 48.7,
-        "pick_rate": 25.9,
-        "ban_rate": 7.2,
+        "win_rate": 49.02,
+        "pick_rate": 8.76,
+        "ban_rate": 0.16,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/capheny",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -1273,11 +1465,19 @@ const HERO_DATABASE = [
         "id": "celica",
         "name": "Celica",
         "main_role": "AD",
+        "roles": [
+            "AD"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Celica-100x100.webp",
-        "win_rate": 51.2,
-        "pick_rate": 8.6,
-        "ban_rate": 6.8,
+        "win_rate": 49.58,
+        "pick_rate": 1.76,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/brunhilda",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -1312,11 +1512,19 @@ const HERO_DATABASE = [
         "id": "charlotte",
         "name": "Charlotte",
         "main_role": "Top",
-        "tier": "B",
+        "roles": [
+            "Top"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Charlotte-100x100.webp",
-        "win_rate": 0,
-        "pick_rate": 0.2,
-        "ban_rate": 0,
+        "win_rate": 46.62,
+        "pick_rate": 1.02,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/charlotte",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1355,11 +1563,19 @@ const HERO_DATABASE = [
         "id": "chaugnar",
         "name": "Chaugnar",
         "main_role": "SP",
+        "roles": [
+            "SP"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Chaugnar-100x100.webp",
-        "win_rate": 61.5,
-        "pick_rate": 2.2,
-        "ban_rate": 1.7,
+        "win_rate": 49.5,
+        "pick_rate": 2.46,
+        "ban_rate": 0.34,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/chaugnar",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -1394,11 +1610,19 @@ const HERO_DATABASE = [
         "id": "cresht",
         "name": "Cresht",
         "main_role": "SP",
-        "tier": "C",
+        "roles": [
+            "SP"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Cresht-100x100.webp",
-        "win_rate": 58.1,
-        "pick_rate": 10.6,
-        "ban_rate": 3.9,
+        "win_rate": 51.59,
+        "pick_rate": 13.19,
+        "ban_rate": 2.74,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/cresht",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -1433,11 +1657,20 @@ const HERO_DATABASE = [
         "id": "darcy",
         "name": "D'arcy",
         "main_role": "Mid",
-        "tier": "C",
+        "roles": [
+            "Mid",
+            "Jungle"
+        ],
+        "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Darcy-100x100.webp",
-        "win_rate": 48.7,
-        "pick_rate": 2.2,
-        "ban_rate": 2,
+        "win_rate": 48.6,
+        "pick_rate": 16.5,
+        "ban_rate": 24.4,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/darcy",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -1497,6 +1730,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "mid",
+            "jungle",
             "crawled"
         ]
     },
@@ -1504,11 +1738,19 @@ const HERO_DATABASE = [
         "id": "dextra",
         "name": "Dextra",
         "main_role": "Top",
-        "tier": "B",
+        "roles": [
+            "Top"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Dextra-100x100.webp",
-        "win_rate": 52.6,
-        "pick_rate": 10.5,
-        "ban_rate": 7.5,
+        "win_rate": 53.49,
+        "pick_rate": 1.42,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/dextra",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1543,11 +1785,19 @@ const HERO_DATABASE = [
         "id": "dieuthuyen",
         "name": "Điêu Thuyền",
         "main_role": "Mid",
+        "roles": [
+            "Mid"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Dieu-Thuyen-100x100.webp",
-        "win_rate": 50.9,
-        "pick_rate": 5.6,
-        "ban_rate": 3.8,
+        "win_rate": 51.86,
+        "pick_rate": 6.01,
+        "ban_rate": 0.22,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/diao-chan",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -1614,11 +1864,19 @@ const HERO_DATABASE = [
         "id": "dirak",
         "name": "Dirak",
         "main_role": "Mid",
-        "tier": "B",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Dirak-100x100.webp",
-        "win_rate": 51,
-        "pick_rate": 9.7,
-        "ban_rate": 9.4,
+        "win_rate": 48.58,
+        "pick_rate": 1.83,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/dirak",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -1685,11 +1943,19 @@ const HERO_DATABASE = [
         "id": "dolia",
         "name": "Dolia",
         "main_role": "SP",
-        "tier": "S",
+        "roles": [
+            "SP"
+        ],
+        "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Dolia-100x100.webp",
-        "win_rate": 47,
-        "pick_rate": 22.9,
-        "ban_rate": 37.9,
+        "win_rate": 51.41,
+        "pick_rate": 10.93,
+        "ban_rate": 59.12,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/dolia",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -1723,18 +1989,26 @@ const HERO_DATABASE = [
     {
         "id": "dyadia",
         "name": "Dyadia",
-        "main_role": "Mid",
-        "tier": "B",
+        "main_role": "SP",
+        "roles": [
+            "SP"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2026/02/Dyadia-100x100.webp",
-        "win_rate": 30,
-        "pick_rate": 3.4,
-        "ban_rate": 1.7,
+        "win_rate": 53.02,
+        "pick_rate": 6.93,
+        "ban_rate": 15.95,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/dyadia",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 4,
-            "tankiness": 1,
-            "mobility": 3,
+            "damage": 1,
+            "tankiness": 5,
+            "mobility": 2,
             "teamfight": 5,
-            "split_push": 2
+            "split_push": 1
         },
         "counters": [
             {
@@ -1755,7 +2029,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "mid",
+            "sp",
             "crawled"
         ]
     },
@@ -1763,11 +2037,19 @@ const HERO_DATABASE = [
         "id": "edras",
         "name": "Edras",
         "main_role": "Top",
-        "tier": "B",
+        "roles": [
+            "Top"
+        ],
+        "tier": "S",
         "avatar": "https://aov-builds.com/wp-content/uploads/2025/11/edrashead-2-100x100.jpg",
-        "win_rate": 47.5,
-        "pick_rate": 13.7,
-        "ban_rate": 10.9,
+        "win_rate": 50.27,
+        "pick_rate": 16.87,
+        "ban_rate": 13.39,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/edras",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1825,18 +2107,26 @@ const HERO_DATABASE = [
     {
         "id": "elandorr",
         "name": "Eland'orr",
-        "main_role": "AD",
+        "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Elandorr-100x100.webp",
-        "win_rate": 52.9,
-        "pick_rate": 29.7,
-        "ban_rate": 45.6,
+        "win_rate": 50.25,
+        "pick_rate": 12.75,
+        "ban_rate": 11.47,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/elandorr",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
-            "tankiness": 1,
-            "mobility": 3,
-            "teamfight": 4,
-            "split_push": 3
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
         },
         "counters": [
             {
@@ -1877,7 +2167,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "ad",
+            "jungle",
             "crawled"
         ]
     },
@@ -1885,11 +2175,19 @@ const HERO_DATABASE = [
         "id": "elsu",
         "name": "Elsu",
         "main_role": "AD",
-        "tier": "A",
+        "roles": [
+            "AD"
+        ],
+        "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Elsu-100x100.webp",
-        "win_rate": 37.5,
-        "pick_rate": 6.8,
-        "ban_rate": 3.4,
+        "win_rate": 49.13,
+        "pick_rate": 24.43,
+        "ban_rate": 19.07,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/elsu",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -1952,11 +2250,20 @@ const HERO_DATABASE = [
         "id": "enzo",
         "name": "Enzo",
         "main_role": "Jungle",
-        "tier": "B",
+        "roles": [
+            "Jungle",
+            "SP"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Enzo-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 18.4,
-        "ban_rate": 13.8,
+        "win_rate": 50.47,
+        "pick_rate": 8.48,
+        "ban_rate": 11.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/enzo",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -1992,6 +2299,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "jungle",
+            "sp",
             "crawled"
         ]
     },
@@ -1999,11 +2307,19 @@ const HERO_DATABASE = [
         "id": "erin",
         "name": "Erin",
         "main_role": "AD",
-        "tier": "A",
+        "roles": [
+            "AD"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Erin-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 0.7,
-        "ban_rate": 0,
+        "win_rate": 49.92,
+        "pick_rate": 4.82,
+        "ban_rate": 0.18,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/erin",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -2069,17 +2385,25 @@ const HERO_DATABASE = [
     {
         "id": "errol",
         "name": "Errol",
-        "main_role": "Jungle",
-        "tier": "C",
+        "main_role": "Top",
+        "roles": [
+            "Top"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Errol-100x100.webp",
-        "win_rate": 33.3,
-        "pick_rate": 1,
-        "ban_rate": 0.2,
+        "win_rate": 49.8,
+        "pick_rate": 5.21,
+        "ban_rate": 0.4,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/errol",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 5,
-            "tankiness": 2,
-            "mobility": 5,
-            "teamfight": 3,
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
             "split_push": 4
         },
         "counters": [
@@ -2117,7 +2441,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "jungle",
+            "top",
             "crawled"
         ]
     },
@@ -2125,11 +2449,19 @@ const HERO_DATABASE = [
         "id": "evita",
         "name": "Evita",
         "main_role": "Mid",
-        "tier": "B",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "S",
         "avatar": "https://aov-builds.com/wp-content/uploads/2026/10/evita-100x100.webp",
-        "win_rate": 50.0,
-        "pick_rate": 5.0,
-        "ban_rate": 1.0,
+        "win_rate": 55.55,
+        "pick_rate": 11.42,
+        "ban_rate": 41.59,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/evita",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -2171,18 +2503,27 @@ const HERO_DATABASE = [
     {
         "id": "fennik",
         "name": "Fennik",
-        "main_role": "AD",
+        "main_role": "Jungle",
+        "roles": [
+            "Jungle",
+            "AD"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Fennik-100x100.webp",
-        "win_rate": 46.9,
-        "pick_rate": 16.7,
-        "ban_rate": 3.6,
+        "win_rate": 49.62,
+        "pick_rate": 5.51,
+        "ban_rate": 0.35,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/fennik",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
-            "tankiness": 1,
-            "mobility": 3,
-            "teamfight": 4,
-            "split_push": 3
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
         },
         "counters": [
             {
@@ -2215,6 +2556,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
+            "jungle",
             "ad",
             "crawled"
         ]
@@ -2223,11 +2565,19 @@ const HERO_DATABASE = [
         "id": "florentino",
         "name": "Florentino",
         "main_role": "Top",
+        "roles": [
+            "Top"
+        ],
         "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Florentino-100x100.webp",
-        "win_rate": 43.1,
-        "pick_rate": 9.9,
-        "ban_rate": 33.3,
+        "win_rate": 48.37,
+        "pick_rate": 17.62,
+        "ban_rate": 33.57,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/florentino",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -2270,11 +2620,19 @@ const HERO_DATABASE = [
         "id": "flowborn",
         "name": "Flowborn",
         "main_role": "AD",
-        "tier": "S",
+        "roles": [
+            "AD"
+        ],
+        "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2026/04/Flowborn-100x100.webp",
-        "win_rate": 45.5,
-        "pick_rate": 16.9,
-        "ban_rate": 10.6,
+        "win_rate": 51.76,
+        "pick_rate": 19.38,
+        "ban_rate": 43.08,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/flowborn-archer",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -2321,11 +2679,19 @@ const HERO_DATABASE = [
         "id": "flowbornphep",
         "name": "Flowborn Phép",
         "main_role": "Mid",
+        "roles": [
+            "Mid"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2026/05/flowborn-phep-100x100.webp",
-        "win_rate": 47.9,
-        "pick_rate": 2.1,
-        "ban_rate": 4.9,
+        "win_rate": 51.41,
+        "pick_rate": 3.2,
+        "ban_rate": 1.48,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/flowborn-mage",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -2371,18 +2737,27 @@ const HERO_DATABASE = [
     {
         "id": "gildur",
         "name": "Gildur",
-        "main_role": "Mid",
-        "tier": "B",
+        "main_role": "SP",
+        "roles": [
+            "SP",
+            "Mid"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Gildur-100x100.webp",
-        "win_rate": 36.8,
-        "pick_rate": 3.2,
-        "ban_rate": 1.4,
+        "win_rate": 47.97,
+        "pick_rate": 8.23,
+        "ban_rate": 8.06,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/gildur",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 4,
-            "tankiness": 1,
-            "mobility": 3,
+            "damage": 1,
+            "tankiness": 5,
+            "mobility": 2,
             "teamfight": 5,
-            "split_push": 2
+            "split_push": 1
         },
         "counters": [
             {
@@ -2423,6 +2798,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
+            "sp",
             "mid",
             "crawled"
         ]
@@ -2431,11 +2807,19 @@ const HERO_DATABASE = [
         "id": "goverra",
         "name": "Goverra",
         "main_role": "Mid",
+        "roles": [
+            "Mid"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2025/07/goverra-11-100x100.webp",
-        "win_rate": 66.7,
-        "pick_rate": 1,
-        "ban_rate": 0.7,
+        "win_rate": 50.17,
+        "pick_rate": 10.22,
+        "ban_rate": 20.02,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/goverra",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -2494,11 +2878,19 @@ const HERO_DATABASE = [
         "id": "grakk",
         "name": "Grakk",
         "main_role": "SP",
-        "tier": "A",
+        "roles": [
+            "SP"
+        ],
+        "tier": "S",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Grakk.webp",
-        "win_rate": 66.7,
-        "pick_rate": 0.5,
-        "ban_rate": 0.3,
+        "win_rate": 48.53,
+        "pick_rate": 12.6,
+        "ban_rate": 26.34,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/grakk",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -2549,11 +2941,19 @@ const HERO_DATABASE = [
         "id": "hayate",
         "name": "Hayate",
         "main_role": "AD",
+        "roles": [
+            "AD"
+        ],
         "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Hayate-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 29.7,
-        "ban_rate": 14.3,
+        "win_rate": 49.02,
+        "pick_rate": 29.91,
+        "ban_rate": 11.26,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/hayate",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -2608,11 +3008,20 @@ const HERO_DATABASE = [
         "id": "heino",
         "name": "Heino",
         "main_role": "Mid",
+        "roles": [
+            "Mid",
+            "Top"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2025/05/heino-1-100x100.webp",
-        "win_rate": 35.3,
-        "pick_rate": 2.9,
-        "ban_rate": 0.9,
+        "win_rate": 48.75,
+        "pick_rate": 6.01,
+        "ban_rate": 3.38,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/heino",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -2656,6 +3065,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "mid",
+            "top",
             "crawled"
         ]
     },
@@ -2663,11 +3073,19 @@ const HERO_DATABASE = [
         "id": "helen",
         "name": "Helen",
         "main_role": "SP",
-        "tier": "B",
+        "roles": [
+            "SP"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Helen-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 0.7,
-        "ban_rate": 0.5,
+        "win_rate": 51.73,
+        "pick_rate": 2.85,
+        "ban_rate": 0.38,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/helen",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -2702,11 +3120,19 @@ const HERO_DATABASE = [
         "id": "iggy",
         "name": "Iggy",
         "main_role": "Mid",
-        "tier": "S",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Iggy-e1724323882340-100x100.webp",
-        "win_rate": 53.8,
-        "pick_rate": 20,
-        "ban_rate": 8,
+        "win_rate": 48.69,
+        "pick_rate": 4.82,
+        "ban_rate": 0.2,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/iggy",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -2761,11 +3187,19 @@ const HERO_DATABASE = [
         "id": "ignis",
         "name": "Ignis",
         "main_role": "Mid",
-        "tier": "B",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ignis.webp",
-        "win_rate": 47.2,
-        "pick_rate": 12.3,
-        "ban_rate": 2,
+        "win_rate": 47.43,
+        "pick_rate": 2.85,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/ignis",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -2808,11 +3242,19 @@ const HERO_DATABASE = [
         "id": "ilumia",
         "name": "Ilumia",
         "main_role": "Mid",
+        "roles": [
+            "Mid"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ilumia-100x100.webp",
-        "win_rate": 100,
-        "pick_rate": 0.3,
-        "ban_rate": 0,
+        "win_rate": 52.81,
+        "pick_rate": 6.07,
+        "ban_rate": 0.44,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/ilumia",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -2859,11 +3301,20 @@ const HERO_DATABASE = [
         "id": "ishar",
         "name": "Ishar",
         "main_role": "Mid",
-        "tier": "C",
+        "roles": [
+            "Mid",
+            "SP"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ishar-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 6.5,
-        "ban_rate": 4.6,
+        "win_rate": 46.95,
+        "pick_rate": 3.61,
+        "ban_rate": 0.31,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/ishar",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -2907,6 +3358,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "mid",
+            "sp",
             "crawled"
         ]
     },
@@ -2914,11 +3366,19 @@ const HERO_DATABASE = [
         "id": "jinna",
         "name": "Jinna",
         "main_role": "Mid",
+        "roles": [
+            "Mid"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Jinna-100x100.webp",
-        "win_rate": 33.3,
-        "pick_rate": 1.5,
-        "ban_rate": 0,
+        "win_rate": 47.25,
+        "pick_rate": 0.77,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/jinna",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -2961,11 +3421,19 @@ const HERO_DATABASE = [
         "id": "kahlii",
         "name": "Kahlii",
         "main_role": "Mid",
-        "tier": "C",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Kahlii.webp",
-        "win_rate": 42.9,
-        "pick_rate": 1.2,
-        "ban_rate": 0.5,
+        "win_rate": 50.54,
+        "pick_rate": 4.5,
+        "ban_rate": 0.17,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/kahlii",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -3032,11 +3500,20 @@ const HERO_DATABASE = [
         "id": "kaine",
         "name": "Kaine",
         "main_role": "Jungle",
-        "tier": "B",
+        "roles": [
+            "Jungle",
+            "SP"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Kaine-100x100.webp",
-        "win_rate": 47.4,
-        "pick_rate": 6.3,
-        "ban_rate": 2,
+        "win_rate": 48.9,
+        "pick_rate": 9.44,
+        "ban_rate": 9.95,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/kaine",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -3084,6 +3561,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "jungle",
+            "sp",
             "crawled"
         ]
     },
@@ -3091,11 +3569,19 @@ const HERO_DATABASE = [
         "id": "keera",
         "name": "Keera",
         "main_role": "Jungle",
-        "tier": "A",
+        "roles": [
+            "Jungle"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Keera-100x100.webp",
-        "win_rate": 40.9,
-        "pick_rate": 15.9,
-        "ban_rate": 11.3,
+        "win_rate": 46.79,
+        "pick_rate": 5.64,
+        "ban_rate": 0.71,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/keera",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -3142,11 +3628,20 @@ const HERO_DATABASE = [
         "id": "kilgroth",
         "name": "Kil’Groth",
         "main_role": "Top",
-        "tier": "B",
+        "roles": [
+            "Top",
+            "Jungle"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/KilGroth.webp",
-        "win_rate": 51.3,
-        "pick_rate": 9.3,
-        "ban_rate": 7,
+        "win_rate": 49.02,
+        "pick_rate": 6.62,
+        "ban_rate": 1.04,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/kilgroth",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -3190,6 +3685,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "top",
+            "jungle",
             "crawled"
         ]
     },
@@ -3197,11 +3693,19 @@ const HERO_DATABASE = [
         "id": "kriknak",
         "name": "Kriknak",
         "main_role": "Jungle",
-        "tier": "A",
+        "roles": [
+            "Jungle"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Kriknak.webp",
-        "win_rate": 75,
-        "pick_rate": 0.7,
-        "ban_rate": 0.2,
+        "win_rate": 46.9,
+        "pick_rate": 3.49,
+        "ban_rate": 0.28,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/kriknak",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -3256,11 +3760,19 @@ const HERO_DATABASE = [
         "id": "krixi",
         "name": "Krixi",
         "main_role": "Mid",
+        "roles": [
+            "Mid"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Krixi.webp",
-        "win_rate": 0,
-        "pick_rate": 0.3,
-        "ban_rate": 0,
+        "win_rate": 47.72,
+        "pick_rate": 14.93,
+        "ban_rate": 0.68,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/krixi",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -3307,11 +3819,19 @@ const HERO_DATABASE = [
         "id": "krizzix",
         "name": "Krizzix",
         "main_role": "SP",
-        "tier": "B",
+        "roles": [
+            "SP"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Krizzix.webp",
-        "win_rate": 59.5,
-        "pick_rate": 6.3,
-        "ban_rate": 7.8,
+        "win_rate": 50.26,
+        "pick_rate": 7.74,
+        "ban_rate": 45.89,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/krizzix",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -3346,11 +3866,19 @@ const HERO_DATABASE = [
         "id": "lauriel",
         "name": "Lauriel",
         "main_role": "Mid",
+        "roles": [
+            "Mid"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Lauriel-100x100.webp",
-        "win_rate": 51.2,
-        "pick_rate": 6.1,
-        "ban_rate": 3.3,
+        "win_rate": 47.69,
+        "pick_rate": 5.99,
+        "ban_rate": 1.59,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/lauriel",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -3409,11 +3937,19 @@ const HERO_DATABASE = [
         "id": "laville",
         "name": "Laville",
         "main_role": "AD",
-        "tier": "B",
+        "roles": [
+            "AD"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Laville-100x100.webp",
-        "win_rate": 0,
-        "pick_rate": 0.2,
-        "ban_rate": 0,
+        "win_rate": 51.37,
+        "pick_rate": 8.41,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/laville",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -3460,11 +3996,19 @@ const HERO_DATABASE = [
         "id": "liliana",
         "name": "Liliana",
         "main_role": "Mid",
-        "tier": "S",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Liliana.webp",
-        "win_rate": 46,
-        "pick_rate": 21.5,
-        "ban_rate": 6.8,
+        "win_rate": 49.12,
+        "pick_rate": 13.57,
+        "ban_rate": 0.74,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/liliana",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -3506,18 +4050,27 @@ const HERO_DATABASE = [
     {
         "id": "lindis",
         "name": "Lindis",
-        "main_role": "AD",
+        "main_role": "Jungle",
+        "roles": [
+            "Jungle",
+            "AD"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Lindis.webp",
-        "win_rate": 49.1,
-        "pick_rate": 2.9,
-        "ban_rate": 4,
+        "win_rate": 48.08,
+        "pick_rate": 1.67,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/lindis",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
-            "tankiness": 1,
-            "mobility": 3,
-            "teamfight": 4,
-            "split_push": 3
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
         },
         "counters": [
             {
@@ -3538,6 +4091,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
+            "jungle",
             "ad",
             "crawled"
         ]
@@ -3546,11 +4100,19 @@ const HERO_DATABASE = [
         "id": "lorion",
         "name": "Lorion",
         "main_role": "Mid",
-        "tier": "S+",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Lorion-100x100.webp",
-        "win_rate": 53,
-        "pick_rate": 28.3,
-        "ban_rate": 17.7,
+        "win_rate": 49.68,
+        "pick_rate": 3.49,
+        "ban_rate": 0.38,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/lorion",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -3589,11 +4151,20 @@ const HERO_DATABASE = [
         "id": "lubo",
         "name": "Lữ Bố",
         "main_role": "Top",
-        "tier": "B",
+        "roles": [
+            "Top",
+            "Jungle"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Lu-Bo-100x100.webp",
-        "win_rate": 33.3,
-        "pick_rate": 0.5,
-        "ban_rate": 0,
+        "win_rate": 49.34,
+        "pick_rate": 1.62,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/lu-bu",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -3637,6 +4208,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "top",
+            "jungle",
             "crawled"
         ]
     },
@@ -3644,11 +4216,19 @@ const HERO_DATABASE = [
         "id": "lumburr",
         "name": "Lumburr",
         "main_role": "SP",
-        "tier": "B",
+        "roles": [
+            "SP"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Lumburr-100x100.webp",
-        "win_rate": 52.8,
-        "pick_rate": 10.6,
-        "ban_rate": 8.2,
+        "win_rate": 52.04,
+        "pick_rate": 1.51,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/lumburr",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -3683,11 +4263,20 @@ const HERO_DATABASE = [
         "id": "maloch",
         "name": "Maloch",
         "main_role": "Top",
+        "roles": [
+            "Top",
+            "SP"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Maloch-100x100.webp",
-        "win_rate": 55.4,
-        "pick_rate": 12.6,
-        "ban_rate": 7.5,
+        "win_rate": 49.36,
+        "pick_rate": 13.52,
+        "ban_rate": 1.85,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/maloch",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -3743,24 +4332,33 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "top",
+            "sp",
             "crawled"
         ]
     },
     {
         "id": "marja",
         "name": "Marja",
-        "main_role": "Mid",
-        "tier": "B",
+        "main_role": "Top",
+        "roles": [
+            "Top"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Marja-100x100.webp",
-        "win_rate": 49.5,
-        "pick_rate": 34.1,
-        "ban_rate": 39.4,
+        "win_rate": 52.18,
+        "pick_rate": 11.18,
+        "ban_rate": 16.98,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/marja",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 4,
-            "tankiness": 1,
-            "mobility": 3,
-            "teamfight": 5,
-            "split_push": 2
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
         },
         "counters": [
             {
@@ -3793,7 +4391,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "mid",
+            "top",
             "crawled"
         ]
     },
@@ -3801,11 +4399,20 @@ const HERO_DATABASE = [
         "id": "max",
         "name": "Max",
         "main_role": "Top",
+        "roles": [
+            "Top",
+            "SP"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Max.webp",
-        "win_rate": 0,
-        "pick_rate": 0.2,
-        "ban_rate": 0,
+        "win_rate": 53.02,
+        "pick_rate": 2.35,
+        "ban_rate": 0.16,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/max",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -3833,6 +4440,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "top",
+            "sp",
             "crawled"
         ]
     },
@@ -3840,11 +4448,19 @@ const HERO_DATABASE = [
         "id": "mganga",
         "name": "Mganga",
         "main_role": "Mid",
-        "tier": "B",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Mganga-100x100.webp",
-        "win_rate": 51.5,
-        "pick_rate": 16.6,
-        "ban_rate": 13.5,
+        "win_rate": 46.47,
+        "pick_rate": 2.08,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/mganga",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -3899,11 +4515,19 @@ const HERO_DATABASE = [
         "id": "mina",
         "name": "Mina",
         "main_role": "SP",
+        "roles": [
+            "SP"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Mina.webp",
-        "win_rate": 55.1,
-        "pick_rate": 8.4,
-        "ban_rate": 13.3,
+        "win_rate": 48.68,
+        "pick_rate": 6.13,
+        "ban_rate": 0.29,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/mina",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -3938,11 +4562,19 @@ const HERO_DATABASE = [
         "id": "ming",
         "name": "Ming",
         "main_role": "SP",
-        "tier": "A",
+        "roles": [
+            "SP"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ming-100x100.webp",
-        "win_rate": 33.3,
-        "pick_rate": 0.5,
-        "ban_rate": 0.3,
+        "win_rate": 48.35,
+        "pick_rate": 1.28,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/ming",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -3977,11 +4609,19 @@ const HERO_DATABASE = [
         "id": "moren",
         "name": "Moren",
         "main_role": "AD",
+        "roles": [
+            "AD"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2026/01/moren-100x100.webp",
-        "win_rate": 44.7,
-        "pick_rate": 6.5,
-        "ban_rate": 2.6,
+        "win_rate": 51.54,
+        "pick_rate": 3.3,
+        "ban_rate": 0.18,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/moren",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -4032,11 +4672,20 @@ const HERO_DATABASE = [
         "id": "murad",
         "name": "Murad",
         "main_role": "Jungle",
-        "tier": "B",
+        "roles": [
+            "Jungle",
+            "Top"
+        ],
+        "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Murad.webp",
-        "win_rate": 51.4,
-        "pick_rate": 12.3,
-        "ban_rate": 25.3,
+        "win_rate": 49.54,
+        "pick_rate": 12.0,
+        "ban_rate": 50.62,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/murad",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -4076,6 +4725,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "jungle",
+            "top",
             "crawled"
         ]
     },
@@ -4083,11 +4733,19 @@ const HERO_DATABASE = [
         "id": "nakroth",
         "name": "Nakroth",
         "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
         "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Nakroth-100x100.webp",
-        "win_rate": 47.7,
-        "pick_rate": 14.7,
-        "ban_rate": 7.7,
+        "win_rate": 50.19,
+        "pick_rate": 21.99,
+        "ban_rate": 15.94,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/nakroth",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -4142,11 +4800,19 @@ const HERO_DATABASE = [
         "id": "natalya",
         "name": "Natalya",
         "main_role": "Mid",
-        "tier": "C",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Natalya-100x100.webp",
-        "win_rate": 40,
-        "pick_rate": 3.4,
-        "ban_rate": 0.7,
+        "win_rate": 46.73,
+        "pick_rate": 12.8,
+        "ban_rate": 2.55,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/natalya",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -4201,11 +4867,19 @@ const HERO_DATABASE = [
         "id": "ngokhong",
         "name": "Ngộ Không",
         "main_role": "Jungle",
-        "tier": "B",
+        "roles": [
+            "Jungle"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ngo-Khong-100x100.webp",
-        "win_rate": 100,
-        "pick_rate": 0.3,
-        "ban_rate": 0,
+        "win_rate": 47.07,
+        "pick_rate": 8.92,
+        "ban_rate": 0.84,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/wukong",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -4256,11 +4930,19 @@ const HERO_DATABASE = [
         "id": "omega",
         "name": "Omega",
         "main_role": "SP",
+        "roles": [
+            "SP"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Omega-100x100.webp",
-        "win_rate": 45.5,
-        "pick_rate": 1.9,
-        "ban_rate": 0,
+        "win_rate": 53.19,
+        "pick_rate": 2.38,
+        "ban_rate": 0.13,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/omega",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -4295,11 +4977,19 @@ const HERO_DATABASE = [
         "id": "omen",
         "name": "Omen",
         "main_role": "Top",
-        "tier": "A",
+        "roles": [
+            "Top"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Omen.webp",
-        "win_rate": 53.2,
-        "pick_rate": 8,
-        "ban_rate": 18.4,
+        "win_rate": 49.3,
+        "pick_rate": 4.12,
+        "ban_rate": 0.29,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/omen",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -4358,11 +5048,19 @@ const HERO_DATABASE = [
         "id": "ormarr",
         "name": "Ormarr",
         "main_role": "SP",
-        "tier": "B",
+        "roles": [
+            "SP"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ormarr-100x100.webp",
-        "win_rate": 0,
-        "pick_rate": 0.2,
-        "ban_rate": 0,
+        "win_rate": 50.49,
+        "pick_rate": 1.98,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/ormarr",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -4397,11 +5095,19 @@ const HERO_DATABASE = [
         "id": "paine",
         "name": "Paine",
         "main_role": "Jungle",
-        "tier": "A",
+        "roles": [
+            "Jungle"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Paine-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 0.3,
-        "ban_rate": 0,
+        "win_rate": 47.0,
+        "pick_rate": 4.51,
+        "ban_rate": 1.24,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/paine",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -4456,11 +5162,19 @@ const HERO_DATABASE = [
         "id": "preyta",
         "name": "Preyta",
         "main_role": "Mid",
-        "tier": "C",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Preyta.webp",
-        "win_rate": 47.7,
-        "pick_rate": 3.6,
-        "ban_rate": 1.9,
+        "win_rate": 53.17,
+        "pick_rate": 11.08,
+        "ban_rate": 6.15,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/preyta",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -4503,11 +5217,19 @@ const HERO_DATABASE = [
         "id": "qi",
         "name": "Qi",
         "main_role": "Top",
+        "roles": [
+            "Top"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Qi-100x100.webp",
-        "win_rate": 47.2,
-        "pick_rate": 27.5,
-        "ban_rate": 16.2,
+        "win_rate": 50.99,
+        "pick_rate": 7.8,
+        "ban_rate": 0.33,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/qi",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -4558,11 +5280,19 @@ const HERO_DATABASE = [
         "id": "quillen",
         "name": "Quillen",
         "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2026/01/Quillen.webp",
-        "win_rate": 49.6,
-        "pick_rate": 6.9,
-        "ban_rate": 9.9,
+        "win_rate": 51.15,
+        "pick_rate": 9.58,
+        "ban_rate": 3.93,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/quillen",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -4621,11 +5351,19 @@ const HERO_DATABASE = [
         "id": "raz",
         "name": "Raz",
         "main_role": "Mid",
+        "roles": [
+            "Mid"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Raz.webp",
-        "win_rate": 54.5,
-        "pick_rate": 1.9,
-        "ban_rate": 0,
+        "win_rate": 46.81,
+        "pick_rate": 7.86,
+        "ban_rate": 1.2,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/raz",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -4668,11 +5406,20 @@ const HERO_DATABASE = [
         "id": "richter",
         "name": "Richter",
         "main_role": "Top",
-        "tier": "A",
+        "roles": [
+            "Top",
+            "SP"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Richter-100x100.webp",
-        "win_rate": 69.6,
-        "pick_rate": 8.1,
-        "ban_rate": 2.2,
+        "win_rate": 47.86,
+        "pick_rate": 4.51,
+        "ban_rate": 0.15,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/richter",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -4700,6 +5447,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "top",
+            "sp",
             "crawled"
         ]
     },
@@ -4707,11 +5455,19 @@ const HERO_DATABASE = [
         "id": "rouie",
         "name": "Rouie",
         "main_role": "SP",
-        "tier": "A",
+        "roles": [
+            "SP"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Rouie-100x100.webp",
-        "win_rate": 51.7,
-        "pick_rate": 20.5,
-        "ban_rate": 69.3,
+        "win_rate": 46.87,
+        "pick_rate": 4.68,
+        "ban_rate": 18.29,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/rouie",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -4746,11 +5502,19 @@ const HERO_DATABASE = [
         "id": "rourke",
         "name": "Rourke",
         "main_role": "Jungle",
-        "tier": "B",
+        "roles": [
+            "Jungle"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Rourke.webp",
-        "win_rate": 48.5,
-        "pick_rate": 7.4,
-        "ban_rate": 2.1,
+        "win_rate": 51.58,
+        "pick_rate": 1.53,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/rourke",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -4784,18 +5548,27 @@ const HERO_DATABASE = [
     {
         "id": "roxie",
         "name": "Roxie",
-        "main_role": "SP",
+        "main_role": "Top",
+        "roles": [
+            "Top",
+            "SP"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Roxie-100x100.webp",
-        "win_rate": 62.5,
-        "pick_rate": 1.4,
-        "ban_rate": 0.2,
+        "win_rate": 51.75,
+        "pick_rate": 2.53,
+        "ban_rate": 0.38,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/roxie",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 1,
-            "tankiness": 5,
+            "damage": 3,
+            "tankiness": 4,
             "mobility": 2,
-            "teamfight": 5,
-            "split_push": 1
+            "teamfight": 4,
+            "split_push": 4
         },
         "counters": [
             {
@@ -4816,6 +5589,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
+            "top",
             "sp",
             "crawled"
         ]
@@ -4824,11 +5598,20 @@ const HERO_DATABASE = [
         "id": "ryoma",
         "name": "Ryoma",
         "main_role": "Top",
+        "roles": [
+            "Top",
+            "Jungle"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ryoma.webp",
-        "win_rate": 51.7,
-        "pick_rate": 20.1,
-        "ban_rate": 8,
+        "win_rate": 49.65,
+        "pick_rate": 13.06,
+        "ban_rate": 1.18,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/ryoma",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -4880,24 +5663,34 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "top",
+            "jungle",
             "crawled"
         ]
     },
     {
         "id": "sephera",
         "name": "Sephera",
-        "main_role": "Mid",
+        "main_role": "SP",
+        "roles": [
+            "SP",
+            "Mid"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Sephera-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 0.7,
-        "ban_rate": 0,
+        "win_rate": 48.64,
+        "pick_rate": 0.99,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/sephera",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 4,
-            "tankiness": 1,
-            "mobility": 3,
+            "damage": 1,
+            "tankiness": 5,
+            "mobility": 2,
             "teamfight": 5,
-            "split_push": 2
+            "split_push": 1
         },
         "counters": [
             {
@@ -4918,6 +5711,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
+            "sp",
             "mid",
             "crawled"
         ]
@@ -4926,11 +5720,19 @@ const HERO_DATABASE = [
         "id": "sinestrea",
         "name": "Sinestrea",
         "main_role": "Jungle",
-        "tier": "S",
+        "roles": [
+            "Jungle"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Sinestrea-100x100.webp",
-        "win_rate": 55.1,
-        "pick_rate": 18.3,
-        "ban_rate": 58.5,
+        "win_rate": 52.35,
+        "pick_rate": 9.82,
+        "ban_rate": 18.8,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/sinestrea",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -4977,11 +5779,19 @@ const HERO_DATABASE = [
         "id": "skud",
         "name": "Skud",
         "main_role": "Top",
-        "tier": "B",
+        "roles": [
+            "Top"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Skud-100x100.webp",
-        "win_rate": 55.7,
-        "pick_rate": 18.1,
-        "ban_rate": 8.4,
+        "win_rate": 48.62,
+        "pick_rate": 2.89,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/skud",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -5020,11 +5830,19 @@ const HERO_DATABASE = [
         "id": "slimz",
         "name": "Slimz",
         "main_role": "AD",
-        "tier": "A",
+        "roles": [
+            "AD"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Slimz.webp",
-        "win_rate": 71.4,
-        "pick_rate": 1.2,
-        "ban_rate": 0,
+        "win_rate": 49.78,
+        "pick_rate": 4.52,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/slimz",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -5059,11 +5877,19 @@ const HERO_DATABASE = [
         "id": "stuart",
         "name": "Stuart",
         "main_role": "AD",
+        "roles": [
+            "AD"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Stuart-100x100.webp",
-        "win_rate": 47.5,
-        "pick_rate": 20.5,
-        "ban_rate": 9.9,
+        "win_rate": 48.74,
+        "pick_rate": 10.3,
+        "ban_rate": 3.84,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/stuart",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -5126,11 +5952,20 @@ const HERO_DATABASE = [
         "id": "superman",
         "name": "Superman",
         "main_role": "Top",
-        "tier": "B",
+        "roles": [
+            "Top",
+            "SP"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Superman.webp",
-        "win_rate": 49,
-        "pick_rate": 2,
-        "ban_rate": 3.4,
+        "win_rate": 45.98,
+        "pick_rate": 0.5,
+        "ban_rate": 0.39,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/superman",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -5158,24 +5993,33 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "top",
+            "sp",
             "crawled"
         ]
     },
     {
         "id": "taara",
         "name": "Taara",
-        "main_role": "SP",
-        "tier": "B",
+        "main_role": "Top",
+        "roles": [
+            "Top"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Taara-100x100.webp",
-        "win_rate": 50.4,
-        "pick_rate": 21,
-        "ban_rate": 9.4,
+        "win_rate": 51.21,
+        "pick_rate": 11.32,
+        "ban_rate": 4.11,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/taara",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 1,
-            "tankiness": 5,
+            "damage": 3,
+            "tankiness": 4,
             "mobility": 2,
-            "teamfight": 5,
-            "split_push": 1
+            "teamfight": 4,
+            "split_push": 4
         },
         "counters": [
             {
@@ -5208,24 +6052,32 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "sp",
+            "top",
             "crawled"
         ]
     },
     {
         "id": "tachi",
         "name": "Tachi",
-        "main_role": "Top",
-        "tier": "A",
+        "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Tachi-100x100.webp",
-        "win_rate": 46.7,
-        "pick_rate": 23,
-        "ban_rate": 18.1,
+        "win_rate": 51.25,
+        "pick_rate": 3.72,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/tachi",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "counters": [
@@ -5267,7 +6119,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "top",
+            "jungle",
             "crawled"
         ]
     },
@@ -5275,11 +6127,20 @@ const HERO_DATABASE = [
         "id": "tamyn",
         "name": "Tamyn",
         "main_role": "Top",
-        "tier": "C",
+        "roles": [
+            "Top",
+            "Jungle"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2026/07/Tamyn-100x100.webp",
-        "win_rate": 71.4,
-        "pick_rate": 1.2,
-        "ban_rate": 0.2,
+        "win_rate": 52.8,
+        "pick_rate": 7.23,
+        "ban_rate": 46.38,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/tamyn",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -5311,6 +6172,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "top",
+            "jungle",
             "crawled"
         ]
     },
@@ -5318,11 +6180,19 @@ const HERO_DATABASE = [
         "id": "teemee",
         "name": "TeeMee",
         "main_role": "SP",
-        "tier": "A",
+        "roles": [
+            "SP"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/TeeMee.webp",
-        "win_rate": 48.3,
-        "pick_rate": 19.8,
-        "ban_rate": 8.7,
+        "win_rate": 51.52,
+        "pick_rate": 2.53,
+        "ban_rate": 4.87,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/teemee",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -5357,11 +6227,19 @@ const HERO_DATABASE = [
         "id": "teeri",
         "name": "Teeri",
         "main_role": "AD",
-        "tier": "B",
+        "roles": [
+            "AD"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Teeri-100x100.webp",
-        "win_rate": 51.7,
-        "pick_rate": 7.7,
-        "ban_rate": 3.7,
+        "win_rate": 47.32,
+        "pick_rate": 2.79,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/teeri",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -5396,11 +6274,19 @@ const HERO_DATABASE = [
         "id": "telannas",
         "name": "Tel'Annas",
         "main_role": "AD",
-        "tier": "B",
+        "roles": [
+            "AD"
+        ],
+        "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/TelAnnas.webp",
-        "win_rate": 44.4,
-        "pick_rate": 3.1,
-        "ban_rate": 0,
+        "win_rate": 51.37,
+        "pick_rate": 21.44,
+        "ban_rate": 1.34,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/telannas",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -5435,11 +6321,19 @@ const HERO_DATABASE = [
         "id": "thane",
         "name": "Thane",
         "main_role": "SP",
-        "tier": "A",
+        "roles": [
+            "SP"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Thane.webp",
-        "win_rate": 44.3,
-        "pick_rate": 11.9,
-        "ban_rate": 1.9,
+        "win_rate": 50.37,
+        "pick_rate": 4.52,
+        "ban_rate": 0.21,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/thane",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -5473,18 +6367,27 @@ const HERO_DATABASE = [
     {
         "id": "theflash",
         "name": "The Flash",
-        "main_role": "Mid",
-        "tier": "B",
+        "main_role": "Jungle",
+        "roles": [
+            "Jungle",
+            "Mid"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/The-Flash.webp",
-        "win_rate": 47.5,
-        "pick_rate": 5.8,
-        "ban_rate": 1.1,
+        "win_rate": 46.6,
+        "pick_rate": 0.85,
+        "ban_rate": 0.26,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/the-flash",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 4,
-            "tankiness": 1,
-            "mobility": 3,
-            "teamfight": 5,
-            "split_push": 2
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
         },
         "counters": [
             {
@@ -5505,6 +6408,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
+            "jungle",
             "mid",
             "crawled"
         ]
@@ -5513,11 +6417,19 @@ const HERO_DATABASE = [
         "id": "thorne",
         "name": "Thorne",
         "main_role": "AD",
+        "roles": [
+            "AD"
+        ],
         "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Thorne-100x100.webp",
-        "win_rate": 50,
-        "pick_rate": 0.3,
-        "ban_rate": 0,
+        "win_rate": 50.69,
+        "pick_rate": 3.66,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/thorne",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -5560,11 +6472,19 @@ const HERO_DATABASE = [
         "id": "toro",
         "name": "Toro",
         "main_role": "SP",
-        "tier": "B",
+        "roles": [
+            "SP"
+        ],
+        "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Toro-100x100.webp",
-        "win_rate": 49.3,
-        "pick_rate": 36.7,
-        "ban_rate": 23.7,
+        "win_rate": 50.58,
+        "pick_rate": 16.84,
+        "ban_rate": 23.09,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/toro",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -5606,17 +6526,25 @@ const HERO_DATABASE = [
     {
         "id": "trieuvan",
         "name": "Triệu Vân",
-        "main_role": "Top",
-        "tier": "C",
+        "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Trieu-Van-100x100.webp",
-        "win_rate": 60,
-        "pick_rate": 0.9,
-        "ban_rate": 0,
+        "win_rate": 51.16,
+        "pick_rate": 12.9,
+        "ban_rate": 1.63,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/zanis",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "counters": [
@@ -5666,7 +6594,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "top",
+            "jungle",
             "crawled"
         ]
     },
@@ -5674,11 +6602,20 @@ const HERO_DATABASE = [
         "id": "tulen",
         "name": "Tulen",
         "main_role": "Mid",
-        "tier": "A",
+        "roles": [
+            "Mid",
+            "Jungle"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Tulen.webp",
-        "win_rate": 37.5,
-        "pick_rate": 1.4,
-        "ban_rate": 0,
+        "win_rate": 47.72,
+        "pick_rate": 4.8,
+        "ban_rate": 0.12,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/tulen",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -5734,6 +6671,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "mid",
+            "jungle",
             "crawled"
         ]
     },
@@ -5741,11 +6679,19 @@ const HERO_DATABASE = [
         "id": "valhein",
         "name": "Valhein",
         "main_role": "AD",
-        "tier": "B",
+        "roles": [
+            "AD"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Valhein-100x100.webp",
-        "win_rate": 45.6,
-        "pick_rate": 13.5,
-        "ban_rate": 10.1,
+        "win_rate": 48.06,
+        "pick_rate": 11.43,
+        "ban_rate": 1.26,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/valhein",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -5804,11 +6750,19 @@ const HERO_DATABASE = [
         "id": "veera",
         "name": "Veera",
         "main_role": "Mid",
-        "tier": "C",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "S",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Veera-100x100.webp",
-        "win_rate": 48,
-        "pick_rate": 2.3,
-        "ban_rate": 2.9,
+        "win_rate": 47.8,
+        "pick_rate": 15.29,
+        "ban_rate": 4.68,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/veera",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -5855,11 +6809,19 @@ const HERO_DATABASE = [
         "id": "veres",
         "name": "Veres",
         "main_role": "Top",
+        "roles": [
+            "Top"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Veres-100x100.webp",
-        "win_rate": 0,
-        "pick_rate": 0.2,
-        "ban_rate": 0,
+        "win_rate": 51.24,
+        "pick_rate": 13.16,
+        "ban_rate": 0.68,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/veres",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -5902,11 +6864,19 @@ const HERO_DATABASE = [
         "id": "violet",
         "name": "Violet",
         "main_role": "AD",
-        "tier": "S",
+        "roles": [
+            "AD"
+        ],
+        "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Violet-100x100.webp",
-        "win_rate": 57.1,
-        "pick_rate": 16.7,
-        "ban_rate": 4.4,
+        "win_rate": 49.8,
+        "pick_rate": 25.9,
+        "ban_rate": 0.47,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/violet",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -5957,11 +6927,20 @@ const HERO_DATABASE = [
         "id": "volkath",
         "name": "Volkath",
         "main_role": "Top",
+        "roles": [
+            "Top",
+            "Jungle"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Volkath.webp",
-        "win_rate": 50.9,
-        "pick_rate": 9,
-        "ban_rate": 10.8,
+        "win_rate": 51.37,
+        "pick_rate": 9.77,
+        "ban_rate": 6.16,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/volkath",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -6005,6 +6984,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "top",
+            "jungle",
             "crawled"
         ]
     },
@@ -6012,11 +6992,20 @@ const HERO_DATABASE = [
         "id": "wiro",
         "name": "Wiro",
         "main_role": "SP",
+        "roles": [
+            "SP",
+            "Top"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Wiro.webp",
-        "win_rate": 60.9,
-        "pick_rate": 3.9,
-        "ban_rate": 0.5,
+        "win_rate": 52.45,
+        "pick_rate": 1.13,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/wiro",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -6044,6 +7033,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "sp",
+            "top",
             "crawled"
         ]
     },
@@ -6051,11 +7041,19 @@ const HERO_DATABASE = [
         "id": "wisp",
         "name": "Wisp",
         "main_role": "AD",
+        "roles": [
+            "AD"
+        ],
         "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Wisp.webp",
-        "win_rate": 53.6,
-        "pick_rate": 19.1,
-        "ban_rate": 3.1,
+        "win_rate": 50.77,
+        "pick_rate": 1.77,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/wisp",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -6089,17 +7087,26 @@ const HERO_DATABASE = [
     {
         "id": "wonderwoman",
         "name": "Wonder Woman",
-        "main_role": "Top",
-        "tier": "A",
+        "main_role": "Jungle",
+        "roles": [
+            "Jungle",
+            "Top"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Wonder-Woman.webp",
-        "win_rate": 40,
-        "pick_rate": 0.9,
-        "ban_rate": 0,
+        "win_rate": 47.67,
+        "pick_rate": 0.51,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/wonder-woman",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "counters": [
@@ -6129,6 +7136,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
+            "jungle",
             "top",
             "crawled"
         ]
@@ -6137,11 +7145,19 @@ const HERO_DATABASE = [
         "id": "xeniel",
         "name": "Xeniel",
         "main_role": "SP",
-        "tier": "A",
+        "roles": [
+            "SP"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Xeniel.webp",
-        "win_rate": 37.5,
-        "pick_rate": 1.4,
-        "ban_rate": 0.3,
+        "win_rate": 50.87,
+        "pick_rate": 1.78,
+        "ban_rate": 0.1,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/xeniel",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -6176,11 +7192,19 @@ const HERO_DATABASE = [
         "id": "ybneth",
         "name": "Y’bneth",
         "main_role": "SP",
-        "tier": "S+",
+        "roles": [
+            "SP"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ybneth-100x100.webp",
-        "win_rate": 52.5,
-        "pick_rate": 30.2,
-        "ban_rate": 30.5,
+        "win_rate": 51.91,
+        "pick_rate": 7.91,
+        "ban_rate": 31.76,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/ybneth",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -6215,11 +7239,20 @@ const HERO_DATABASE = [
         "id": "yan",
         "name": "Yan",
         "main_role": "Jungle",
-        "tier": "A",
+        "roles": [
+            "Jungle",
+            "Top"
+        ],
+        "tier": "C",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Yan-100x100.webp",
-        "win_rate": 33.3,
-        "pick_rate": 1.5,
-        "ban_rate": 0,
+        "win_rate": 48.43,
+        "pick_rate": 2.77,
+        "ban_rate": 0.15,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/yan",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -6255,6 +7288,7 @@ const HERO_DATABASE = [
         ],
         "tags": [
             "jungle",
+            "top",
             "crawled"
         ]
     },
@@ -6262,11 +7296,19 @@ const HERO_DATABASE = [
         "id": "yena",
         "name": "Yena",
         "main_role": "Top",
-        "tier": "S",
+        "roles": [
+            "Top"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Yena-100x100.webp",
-        "win_rate": 51,
-        "pick_rate": 17.4,
-        "ban_rate": 2.9,
+        "win_rate": 48.81,
+        "pick_rate": 6.87,
+        "ban_rate": 0.18,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/yena",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -6317,11 +7359,19 @@ const HERO_DATABASE = [
         "id": "yorn",
         "name": "Yorn",
         "main_role": "AD",
-        "tier": "B",
+        "roles": [
+            "AD"
+        ],
+        "tier": "S",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Yorn-100x100.webp",
-        "win_rate": 49.2,
-        "pick_rate": 10.8,
-        "ban_rate": 8.7,
+        "win_rate": 52.05,
+        "pick_rate": 15.93,
+        "ban_rate": 1.28,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/yorn",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -6368,11 +7418,19 @@ const HERO_DATABASE = [
         "id": "yue",
         "name": "Yue",
         "main_role": "Mid",
-        "tier": "S",
+        "roles": [
+            "Mid"
+        ],
+        "tier": "S+",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Yue-100x100.webp",
-        "win_rate": 45.8,
-        "pick_rate": 10.1,
-        "ban_rate": 4.9,
+        "win_rate": 49.33,
+        "pick_rate": 14.01,
+        "ban_rate": 61.12,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/yue",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -6419,11 +7477,19 @@ const HERO_DATABASE = [
         "id": "zata",
         "name": "Zata",
         "main_role": "Mid",
+        "roles": [
+            "Mid"
+        ],
         "tier": "S",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Zata-100x100.webp",
-        "win_rate": 51.3,
-        "pick_rate": 26.6,
-        "ban_rate": 36.5,
+        "win_rate": 51.92,
+        "pick_rate": 8.92,
+        "ban_rate": 45.22,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/zata",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -6490,11 +7556,19 @@ const HERO_DATABASE = [
         "id": "zephys",
         "name": "Zephys",
         "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Zephys.webp",
-        "win_rate": 46.8,
-        "pick_rate": 24.1,
-        "ban_rate": 12.1,
+        "win_rate": 48.64,
+        "pick_rate": 6.85,
+        "ban_rate": 0.21,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/zephys",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -6544,18 +7618,26 @@ const HERO_DATABASE = [
     {
         "id": "zill",
         "name": "Zill",
-        "main_role": "Mid",
-        "tier": "B",
+        "main_role": "Jungle",
+        "roles": [
+            "Jungle"
+        ],
+        "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Zill.webp",
-        "win_rate": 100,
-        "pick_rate": 0.2,
-        "ban_rate": 0,
+        "win_rate": 51.41,
+        "pick_rate": 7.99,
+        "ban_rate": 0.5,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/zill",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 4,
-            "tankiness": 1,
-            "mobility": 3,
-            "teamfight": 5,
-            "split_push": 2
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
         },
         "counters": [
             {
@@ -6596,7 +7678,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
-            "mid",
+            "jungle",
             "crawled"
         ]
     },
@@ -6604,11 +7686,19 @@ const HERO_DATABASE = [
         "id": "zip",
         "name": "Zip",
         "main_role": "SP",
-        "tier": "A",
+        "roles": [
+            "SP"
+        ],
+        "tier": "B",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Zip-100x100.webp",
-        "win_rate": 60,
-        "pick_rate": 0.9,
-        "ban_rate": 0.2,
+        "win_rate": 50.66,
+        "pick_rate": 3.72,
+        "ban_rate": 4.62,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/zip",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -6650,17 +7740,26 @@ const HERO_DATABASE = [
     {
         "id": "zuka",
         "name": "Zuka",
-        "main_role": "Jungle",
+        "main_role": "Top",
+        "roles": [
+            "Top",
+            "Jungle"
+        ],
         "tier": "A",
         "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Zuka-100x100.webp",
-        "win_rate": 54.3,
-        "pick_rate": 6,
-        "ban_rate": 0.5,
+        "win_rate": 48.15,
+        "pick_rate": 10.12,
+        "ban_rate": 0.16,
+        "meta_source": "RoVGuide ranked Thailand",
+        "meta_snapshot": "2026-10-19",
+        "roles_source": "https://rovguide.com/heroes/zuka",
+        "roles_region": "TH",
+        "roles_cross_check": null,
         "attributes": {
-            "damage": 5,
-            "tankiness": 2,
-            "mobility": 5,
-            "teamfight": 3,
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
             "split_push": 4
         },
         "counters": [
@@ -6714,6 +7813,7 @@ const HERO_DATABASE = [
             }
         ],
         "tags": [
+            "top",
             "jungle",
             "crawled"
         ]
@@ -6796,14 +7896,35 @@ function createHeroImage(hero, lazy = false) {
 }
 
 function calculateSuggestions(teamType = "blue") {
-    // 1. Identify which roles our team already picked
+    const allRoles = ["Top", "Mid", "Jungle", "AD", "SP"];
+    const getHeroRoles = hero => [...new Set([...(Array.isArray(hero.roles) ? hero.roles : []), hero.main_role].filter(role => allRoles.includes(role)))];
+    const roleCoverage = heroes => {
+        let best = { filled: -1, primary: -1, roles: new Set() };
+        const visit = (index, used, primaryCount) => {
+            if (index === heroes.length) {
+                if (used.size > best.filled || (used.size === best.filled && primaryCount > best.primary)) {
+                    best = { filled: used.size, primary: primaryCount, roles: new Set(used) };
+                }
+                return;
+            }
+            visit(index + 1, used, primaryCount);
+            const hero = heroes[index];
+            for (const role of getHeroRoles(hero)) {
+                if (used.has(role)) continue;
+                const next = new Set(used); next.add(role);
+                visit(index + 1, next, primaryCount + (role === hero.main_role ? 1 : 0));
+            }
+        };
+        visit(0, new Set(), 0);
+        return { filled: Math.max(0, best.filled), assigned: best.roles, missing: allRoles.filter(role => !best.roles.has(role)) };
+    };
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+    // 1. Assign each current pick to one lane so flexible heroes do not count for every lane.
     const pickedIds = teamType === "blue" ? state.picksBlue.filter(id => id !== null) : state.picksRed.filter(id => id !== null);
     const pickedHeroes = pickedIds.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
-    const pickedRoles = pickedHeroes.map(h => h.main_role);
-    
-    // Determine missing roles
-    const allRoles = ["Top", "Mid", "Jungle", "AD", "SP"];
-    let missingRoles = allRoles.filter(role => !pickedRoles.includes(role));
+    const currentCoverage = roleCoverage(pickedHeroes);
+    const missingRoles = currentCoverage.missing;
     
     // Gather all banned/picked heroes to lock out candidates
     const unavailableHeroes = new Set([
@@ -6818,178 +7939,77 @@ function calculateSuggestions(teamType = "blue") {
     
     // Filter candidates by specifically selected recommendations role filter (if chosen)
     if (state.selectedRecRoleFilter !== "all") {
-        candidates = candidates.filter(h => h.main_role === state.selectedRecRoleFilter);
+        candidates = candidates.filter(h => getHeroRoles(h).includes(state.selectedRecRoleFilter));
     }
     
     // Get Enemy Team picked details
     const enemyPickedIds = teamType === "blue" ? state.picksRed.filter(id => id !== null) : state.picksBlue.filter(id => id !== null);
     const enemyPickedHeroes = enemyPickedIds.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
     
-    // Calculate parameters for team comps
-    const totalEnemyTankiness = enemyPickedHeroes.reduce((sum, h) => sum + h.attributes.tankiness, 0);
-    const friendlyTeamfightAvailable = pickedHeroes.some(h => h.attributes.teamfight >= 4);
-    
-    const enemyHighMobility = enemyPickedHeroes.some(h => h.attributes.mobility >= 5);
-    const enemyHighBurst = enemyPickedHeroes.some(h => h.attributes.damage >= 5 && h.main_role === "Mid");
-    
-    // Friendly team composition state
-    const totalFriendlyTankiness = pickedHeroes.reduce((sum, h) => sum + h.attributes.tankiness, 0);
-    const friendlyHasTF = pickedHeroes.some(h => h.attributes.teamfight >= 4);
-    const friendlyHasBurst = pickedHeroes.some(h => h.attributes.damage >= 4);
-    const friendlyHasMobility = pickedHeroes.some(h => h.attributes.mobility >= 4);
-    
-    const tankShredders = ["hayate", "lauriel", "maloch"];
-    
-    // 2. Score each candidate
+    const scoringMetaMode = state.recommendationMode === "meta";
+
+    // 2. Score only sourced draft signals: current ranked meta, lane coverage and named counters.
     const scoredCandidates = candidates.map(hero => {
-        let baseScore = 30; // Default
-        let statsAdj = 0;
-        
-        if (state.recommendationMode === "meta") {
-            if (hero.tier === 'S+') baseScore = 55;
-            else if (hero.tier === 'S') baseScore = 50;
-            else if (hero.tier === 'A') baseScore = 40;
-            else if (hero.tier === 'B') baseScore = 30;
-            else if (hero.tier === 'C') baseScore = 20;
-            
-            // Meta mode: Win rate has extremely low weight; Pick and Ban rates are prioritized
-            statsAdj = Math.round(
-                (hero.win_rate - 50.0) * 0.1 +
-                (hero.pick_rate - 10.0) * 0.6 +
-                (hero.ban_rate - 5.0) * 0.3
-            );
-        } else {
-            // Counter Mode: Tier and Win/Pick/Ban rate have very minor influence (still prioritizing pick/ban)
-            if (hero.tier === 'S+') baseScore = 22;
-            else if (hero.tier === 'S') baseScore = 21;
-            else if (hero.tier === 'A') baseScore = 20;
-            else if (hero.tier === 'B') baseScore = 19;
-            else if (hero.tier === 'C') baseScore = 18;
-            
-            statsAdj = Math.round(
-                (hero.win_rate - 50.0) * 0.02 +
-                (hero.pick_rate - 10.0) * 0.1 +
-                (hero.ban_rate - 5.0) * 0.05
-            );
-        }
-        
+        const baseScore = 45;
         let score = baseScore;
         const reasons = [];
-        
-        if (statsAdj !== 0) {
-            score += statsAdj;
-            reasons.push({ 
-                points: statsAdj, 
-                text: `Hiệu suất thực tế (${hero.win_rate.toFixed(1)}% WR / ${hero.pick_rate.toFixed(1)}% PR / ${hero.ban_rate.toFixed(1)}% BR)` 
-            });
+        const metaAgeDays = hero.meta_snapshot ? Math.max(0, (Date.now() - Date.parse(`${hero.meta_snapshot}T00:00:00Z`)) / 86400000) : Infinity;
+        const metaFreshness = metaAgeDays <= 30 ? 1 : metaAgeDays <= 90 ? 0.5 : 0;
+        const tierPoints = ({ "S+": 8, "S": 5, "A": 2, "B": -2, "C": -5 }[hero.tier] || 0) * metaFreshness;
+        if (tierPoints) {
+            const points = scoringMetaMode ? Math.round(tierPoints) : Math.round(tierPoints * 0.25);
+            if (points) {
+                score += points;
+                reasons.push({ points, text: `Tier ${hero.tier} theo ranked Thái Lan${metaFreshness < 1 ? " (đã giảm trọng số vì dữ liệu cũ)" : ""}` });
+            }
         }
-        
-        // --- Flexible Lane Swapping (Bonus for correct lane) ---
-        if (state.selectedRecRoleFilter === "all" && missingRoles.includes(hero.main_role)) {
-            score += 1; // Minor bonus point, not listed in reasons to clean up UI notes
+        if (scoringMetaMode && metaFreshness > 0 && Number.isFinite(hero.win_rate) && Number.isFinite(hero.pick_rate) && Number.isFinite(hero.ban_rate)) {
+            const winPoints = Math.round(clamp((hero.win_rate - 50) * 1.2, -8, 8) * metaFreshness);
+            const demandPoints = Math.round(clamp((hero.pick_rate + hero.ban_rate - 10) * 0.15, -2, 4) * metaFreshness);
+            const points = winPoints + demandPoints;
+            if (points) {
+                score += points;
+                reasons.push({ points, text: `Tỷ lệ ranked: WR ${hero.win_rate.toFixed(1)}%, pick ${hero.pick_rate.toFixed(1)}%, ban ${hero.ban_rate.toFixed(1)}% · ${hero.meta_snapshot} · máy chủ Thái Lan` });
+            }
         }
-        
-        // --- Class Counter (Khắc chế Hệ) ---
-        if (enemyPickedHeroes.length > 0) {
-            if (totalEnemyTankiness >= 7) {
-                if (tankShredders.includes(hero.id)) {
-                    score += 15;
-                    reasons.push({ points: 15, text: "Khắc chế Đội hình chống chịu cao (Sát thương chuẩn/Bào Tank)" });
+
+        const candidateRoles = getHeroRoles(hero);
+        const primaryRoleMissing = missingRoles.includes(hero.main_role);
+        const hasOpenRole = candidateRoles.some(role => missingRoles.includes(role));
+        const rolePoints = hasOpenRole ? (primaryRoleMissing ? 10 : 6) : 0;
+        if (rolePoints) {
+            score += rolePoints;
+            reasons.push({ points: rolePoints, text: primaryRoleMissing ? `Bổ sung vị trí còn thiếu: ${translateRole(hero.main_role)} (vai trò chính)` : `Có thể đảm nhiệm vị trí còn thiếu: ${candidateRoles.filter(role => missingRoles.includes(role)).map(translateRole).join(" / ")}` });
+        }
+
+        // Counter links are evidence of a matchup, not measured win probability.
+        let counterPoints = 0;
+        let counterRiskPoints = 0;
+        for (const enemy of enemyPickedHeroes) {
+            const manualRule = COUNTERS_MANUAL.find(rule => rule.counter === hero.id && rule.countered === enemy.id);
+            const listedByEnemy = enemy.counters?.find(counter => counter.id === hero.id);
+            const listedAgainstCandidate = hero.counters?.find(counter => counter.id === enemy.id);
+            if (manualRule || listedByEnemy) {
+                const limit = scoringMetaMode ? 16 : 20;
+                const points = Math.min(manualRule ? (scoringMetaMode ? 6 : 8) : (scoringMetaMode ? 3 : 5), limit - counterPoints);
+                if (points > 0) {
+                    counterPoints += points;
+                    reasons.push({ points, text: manualRule ? `Khắc chế được ${enemy.name}: ${manualRule.reason} (quan hệ biên tập)` : `Dữ liệu khắc chế ghi ${hero.name} có lợi thế trước ${enemy.name}` });
                 }
             }
-            if (totalEnemyTankiness < 3) {
-                if (hero.main_role === "Jungle" || hero.attributes.damage >= 4) {
-                    score += 15;
-                    reasons.push({ points: 15, text: "Săn mục tiêu Đội hình yếu máu đối phương (Sát thương lớn)" });
+            if (listedAgainstCandidate) {
+                const points = Math.max(scoringMetaMode ? -4 : -5, -12 - counterRiskPoints);
+                if (points < 0) {
+                    counterRiskPoints += points;
+                    reasons.push({ points, text: `Dữ liệu khắc chế ghi ${hero.name} bất lợi trước ${enemy.name}` });
                 }
             }
         }
-        
-        // --- Hard Counter & Counter Database Check ---
-        enemyPickedHeroes.forEach(enemy => {
-            const counterRule = COUNTERS_MANUAL.find(c => c.counter === hero.id && c.countered === enemy.id);
-            if (counterRule) {
-                score += 20;
-                reasons.push({ points: 20, text: `Khắc chế cứng ${enemy.name} (${counterRule.reason})` });
-            } else {
-                const crawledCounter = enemy.counters && enemy.counters.find(c => c.id === hero.id);
-                if (crawledCounter) {
-                    score += 20;
-                    reasons.push({ points: 20, text: `Khắc chế đối phương: ${hero.name} khắc chế ${enemy.name} (${crawledCounter.reason})` });
-                }
-            }
-            
-            const selfCountered = hero.counters && hero.counters.find(c => c.id === enemy.id);
-            if (selfCountered) {
-                score -= 15;
-                reasons.push({ points: -15, text: `Bị khắc chế: ${hero.name} ngại gặp ${enemy.name} (${selfCountered.reason})` });
-            }
-        });
-        
-        // --- Block Pick / Anti-Counter (Cướp bài cản địch khắc chế đồng đội) ---
-        pickedHeroes.forEach(friendly => {
-            const blockCounter = friendly.counters && friendly.counters.find(c => c.id === hero.id);
-            if (blockCounter) {
-                // If the enemy team has already picked a hero for this candidate's main role, the block pick is nullified!
-                const enemyHasFilledRole = enemyPickedHeroes.some(e => e.main_role === hero.main_role);
-                if (!enemyHasFilledRole) {
-                    score += 15;
-                    reasons.push({ points: 15, text: `Cướp bài/Bảo vệ đồng đội: Chọn ${hero.name} chặn đối phương lấy để khắc chế ${friendly.name}` });
-                }
-            }
-        });
-        
-        // --- Synergy (Hiệp lực) ---
-        if (friendlyTeamfightAvailable && hero.attributes.teamfight >= 4) {
-            score += 10;
-            reasons.push({ points: 10, text: "Đồng đội giao tranh tổng mạnh (Hiệp lực TF ≥ 4)" });
-        }
-        
-        // --- Team Composition Balancing (Cân đối đội hình) ---
-        if (pickedHeroes.length > 0) {
-            if (totalFriendlyTankiness <= 3 && hero.attributes.tankiness >= 4) {
-                score += 15;
-                reasons.push({ points: 15, text: "Cân đối đội hình: Bổ sung khả năng chống chịu/tiên phong (Tankiness ≥ 4)" });
-            }
-            if (!friendlyHasTF && hero.attributes.teamfight >= 4) {
-                score += 15;
-                reasons.push({ points: 15, text: "Cân đối đội hình: Bổ sung khống chế/hiệu ứng giao tranh (TF ≥ 4)" });
-            }
-            if (!friendlyHasBurst && hero.attributes.damage >= 4) {
-                score += 15;
-                reasons.push({ points: 15, text: "Cân đối đội hình: Bổ sung nguồn sát thương dứt điểm (Damage ≥ 4)" });
-            }
-            if (!friendlyHasMobility && hero.attributes.mobility >= 4) {
-                score += 15;
-                reasons.push({ points: 15, text: "Cân đối đội hình: Bổ sung tính cơ động/áp sát (Cơ động ≥ 4)" });
-            }
-        }
-        
-        // --- Composition Structural Balance (Bù đắp cơ cấu) ---
-        const hasFrontline = pickedHeroes.some(h => (h.main_role === "SP" || h.main_role === "Top") && h.attributes.tankiness >= 4);
-        const hasMid = pickedHeroes.some(h => h.main_role === "Mid");
-        const hasAD = pickedHeroes.some(h => h.main_role === "AD");
-        
-        if (!hasFrontline && hero.attributes.tankiness >= 4 && (hero.main_role === "SP" || hero.main_role === "Top")) {
-            score += 1; // Minor bonus point, not listed in reasons to clean up UI notes
-        }
-        if (!hasMid && hero.main_role === "Mid") {
-            score += 1; // Minor bonus point, not listed in reasons to clean up UI notes
-        }
-        if (!hasAD && hero.main_role === "AD") {
-            score += 1; // Minor bonus point, not listed in reasons to clean up UI notes
-        }
-        
-        // --- Dynamic Counter-Drafting (Khắc chế động) ---
-        if (enemyHighMobility && hero.attributes.teamfight >= 4 && (hero.main_role === "SP" || hero.main_role === "Mid")) {
-            score += 15;
-            reasons.push({ points: 15, text: "Khống chế/Giao tranh mạnh chống càn quét vs Tướng cơ động địch" });
-        }
-        if (enemyHighBurst && hero.main_role === "SP" && hero.attributes.tankiness >= 4) {
-            score += 15;
-            reasons.push({ points: 15, text: "Đỡ đòn bảo kê giảm sát thương từ nguồn sốc dame phép của địch" });
-        }
-        
+        score += counterPoints + counterRiskPoints;
+
+        const unclampedScore = score;
+        score = clamp(Math.round(score), 0, 100);
+        if (score !== unclampedScore) reasons.push({ points: score - unclampedScore, text: "Giới hạn thang điểm 0–100" });
         return {
             hero,
             totalScore: score,
@@ -6998,8 +8018,8 @@ function calculateSuggestions(teamType = "blue") {
         };
     });
     
-    // 3. Sort by totalScore desc
-    scoredCandidates.sort((a, b) => b.totalScore - a.totalScore);
+    // 3. Stable ties use the display name; no hidden popularity bonus.
+    scoredCandidates.sort((a, b) => b.totalScore - a.totalScore || a.hero.name.localeCompare(b.hero.name, "vi"));
     
     return {
         topSuggestions: scoredCandidates.slice(0, 6),
@@ -7090,6 +8110,11 @@ function translateRole(role) {
     }
 }
 
+function getHeroRoleLabels(hero) {
+    const roles = [...new Set([...(Array.isArray(hero.roles) ? hero.roles : []), hero.main_role].filter(Boolean))];
+    return roles.map(translateRole).join(' / ');
+}
+
 // Render Hero Grid
 function renderHeroGrid() {
     const grid = document.getElementById('hero-grid'); grid.replaceChildren();
@@ -7097,7 +8122,7 @@ function renderHeroGrid() {
     const weights = { 'S+': 5, S: 4, A: 3, B: 2, C: 1 };
     const normalize = text => text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
     const query = normalize(state.searchQuery);
-    const heroes = HERO_DATABASE.filter(h => normalize(h.name).includes(query) && (state.selectedRoleFilter === 'all' || h.main_role === state.selectedRoleFilter));
+    const heroes = HERO_DATABASE.filter(h => normalize(h.name).includes(query) && (state.selectedRoleFilter === 'all' || (Array.isArray(h.roles) ? h.roles : [h.main_role]).includes(state.selectedRoleFilter)));
     heroes.sort((a,b) => {
         const used = Number(unavailable.has(a.id)) - Number(unavailable.has(b.id));
         if (used) return used;
@@ -7113,8 +8138,9 @@ function renderHeroGrid() {
     for (const hero of heroes) {
         const card = document.createElement('button'); card.type = 'button'; card.className = 'hero-card'; card.dataset.id = hero.id;
         card.disabled = unavailable.has(hero.id) || state.currentTurnIndex >= 20;
-        card.title = `${hero.name} — ${translateRole(hero.main_role)}, tier ${hero.tier}`;
-        card.setAttribute('aria-label', `${hero.name}, ${translateRole(hero.main_role)}, tier ${hero.tier}${unavailable.has(hero.id) ? ', đã cấm hoặc chọn' : ''}`);
+        const roleLabels = getHeroRoleLabels(hero).map(translateRole).join(' / ');
+        card.title = `${hero.name} — ${roleLabels}, tier ${hero.tier}`;
+        card.setAttribute('aria-label', `${hero.name}, ${roleLabels}, tier ${hero.tier}${unavailable.has(hero.id) ? ', đã cấm hoặc chọn' : ''}`);
         const portrait = document.createElement('div'); portrait.className = 'hero-card-img'; portrait.appendChild(createHeroImage(hero, true));
         const name = document.createElement('span'); name.className = 'hero-card-name'; name.textContent = hero.name;
         const tier = document.createElement('span'); tier.className = 'hero-card-badge'; tier.textContent = hero.tier;
@@ -7143,6 +8169,15 @@ function renderRecommendationsAndStats() {
     });
     const select = document.getElementById('rec-role-select'); select.value = state.selectedRecRoleFilter; select.disabled = !picking;
     const { topSuggestions, missingRoles } = calculateSuggestions(team);
+    const dataNote = document.getElementById('rec-data-note');
+    if (dataNote) {
+        const snapshot = HERO_DATABASE[0]?.meta_snapshot;
+        dataNote.hidden = !picking;
+        const sourceDate = snapshot ? ` · dữ liệu ${snapshot}` : '';
+        dataNote.textContent = state.recommendationMode === 'meta'
+            ? `Meta ranked máy chủ Thái Lan${sourceDate}; không đại diện rank Việt Nam.`
+            : `Tier nền ranked Thái Lan${sourceDate}; khắc chế lấy từ dữ liệu cộng đồng.`;
+    }
     document.getElementById('missing-roles-text').textContent = !turn ? 'Draft hoàn tất' : picking ? (missingRoles.length ? `Còn thiếu: ${missingRoles.map(translateRole).join(', ')}` : 'Đủ các vị trí') : 'Chưa đến lượt chọn';
     document.querySelector('.rec-header .quiet-label').textContent = picking ? `${topSuggestions.length} lựa chọn` : '';
     if (!picking || !topSuggestions.length) {
@@ -7157,7 +8192,7 @@ function renderRecommendationsAndStats() {
         const portrait = document.createElement('div'); portrait.className = 'rec-card-avatar'; portrait.appendChild(createHeroImage(hero));
         const info = document.createElement('div'); info.className = 'rec-hero-details';
         const name = document.createElement('h3'); name.textContent = hero.name;
-        const meta = document.createElement('p'); meta.textContent = `${translateRole(hero.main_role)} · Tier ${hero.tier}`; info.append(name,meta);
+        const meta = document.createElement('p'); meta.textContent = `${getHeroRoleLabels(hero)} · Tier ${hero.tier}`; info.append(name,meta);
         const action = document.createElement('div'); action.className = 'rec-select';
         const score = document.createElement('span'); score.className = 'rec-card-score'; score.textContent = `${totalScore}đ`;
         const pick = document.createElement('button'); pick.className = 'btn-rec-select'; pick.textContent = 'Chọn'; pick.setAttribute('aria-label', `Chọn ${hero.name}`);
@@ -7168,7 +8203,7 @@ function renderRecommendationsAndStats() {
         const details = document.createElement('details'); details.className = 'rec-reason-details';
         const summary = document.createElement('summary'); summary.textContent = 'Xem lý do';
         const breakdown = document.createElement('ul');
-        const base = document.createElement('li'); base.textContent = `Điểm tier: ${baseScore}đ. Tổng điểm có thể gồm điểm bổ sung vị trí.`; breakdown.appendChild(base);
+        const base = document.createElement('li'); base.textContent = `Điểm nền: ${baseScore}đ.`; breakdown.appendChild(base);
         for (const reason of reasons) {
             const item = document.createElement('li'); item.textContent = `${reason.points > 0 ? '+' : ''}${reason.points}đ: ${reason.text}`;
             if (reason.points < 0) item.className = 'negative-reason'; breakdown.appendChild(item);

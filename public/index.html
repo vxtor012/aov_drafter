@@ -82,14 +82,15 @@
                         <div class="search-box"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><label class="sr-only" for="search-input">Tìm tướng</label><input type="search" id="search-input" placeholder="Tìm tướng…" autocomplete="off"><button id="clear-search-btn" aria-label="Xóa tìm kiếm">×</button><kbd aria-hidden="true">/</kbd></div>
                     </div>
                     <div class="hero-grid-container"><div class="hero-grid" id="hero-grid"></div></div>
-                    <div class="pool-footer"><span id="pool-hint">Chọn một tướng để thêm vào đội hình.</span><span>Tier theo RovMeta</span></div>
+                    <div class="pool-footer"><span id="pool-hint">Chọn một tướng để thêm vào đội hình.</span><span>Meta ranked · RoVGuide</span></div>
                 </section>
                 <aside class="recommendation-panel" aria-labelledby="recommendation-title">
                     <div class="rec-header"><h2 id="recommendation-title">Gợi ý cho Đội Xanh</h2><span class="quiet-label">6 lựa chọn</span></div>
                     <div class="rec-modes" id="rec-modes" aria-label="Chế độ gợi ý"><button class="mode-btn active" data-mode="counter" aria-pressed="true">Khắc chế</button><button class="mode-btn" data-mode="meta" aria-pressed="false">Meta</button></div>
                     <div class="rec-context"><span id="missing-roles-text">Chưa có tướng</span><label><span class="sr-only">Vị trí gợi ý</span><select id="rec-role-select"><option value="all">Mọi vị trí</option><option value="Top">Top</option><option value="Jungle">Rừng</option><option value="Mid">Mid</option><option value="AD">AD</option><option value="SP">SP</option></select></label></div>
+                    <p class="rec-data-note" id="rec-data-note" hidden></p>
                     <div class="recommendations-container"><div class="rec-list" id="recommendation-list"></div></div>
-                    <p class="rec-footnote">Điểm gợi ý dựa trên meta và đội hình, không phải xác suất thắng.</p>
+                    <p class="rec-footnote">Điểm xếp hạng dựa trên ranked, lane và khắc chế; không phải xác suất thắng.</p>
                 </aside>
             </div>
         </main>

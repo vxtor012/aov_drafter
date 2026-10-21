@@ -1,904 +1,1325 @@
 {
-  "fetched_at": "2026-10-21T07:22:37.689103+00:00",
+  "fetched_at": "2026-10-21T08:30:54.086528+00:00",
   "sources": {
     "roster": "https://aov-builds.com/tuong/",
-    "meta": "https://rovmeta.com",
-    "counters": "https://aov-builds.com/khac-che/"
+    "roles": "https://rovguide.com/heroes",
+    "official_vietnam_cross_check": "https://lienquan.garena.vn/chi-tiet-ban-cap-nhat-le-hoi-5v5-08-04-2026/",
+    "meta": "https://rovguide.com/meta",
+    "counters": "https://aov-builds.com/khac-che/",
+    "counter_fallback": "https://rovmeta.com"
   },
-  "source_patch": "1.64",
+  "ranked_snapshot": "2026-10-19",
+  "ranked_region": "Thailand",
   "hero_count": 130,
-  "meta_matches": 129,
   "detailed_counter_pages": 93,
   "counter_links": 931,
-  "unmatched_meta_ids": [
-    "flowbornphep"
-  ],
   "removed_ids": [],
   "attributes_source": "estimated_by_lane_not_measured",
   "heroes": {
     "airi": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/airi",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "aleister": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/aleister",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "alice": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/alice",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "allain": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/allain",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "amily": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/amily",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "annette": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/annette",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "aoi": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/aoi",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "arduin": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/arduin",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "arthur": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/arthur",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "arum": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/arum",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "astrid": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/astrid",
+      "roles_source_region": "TH",
+      "roles_cross_check": "https://lienquan.garena.vn/chi-tiet-ban-cap-nhat-le-hoi-5v5-08-04-2026/",
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "ata": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/ata",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "aya": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/aya",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "azzenka": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/azzenka",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "baldum": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/baldum",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "bijan": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/bijan",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "billow": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/billow",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "biron": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/biron",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "boltbaron": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/bolt-baron",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "bonnie": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/bonnie",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "bright": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/bright",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "butterfly": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/butterfly",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "capheny": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/capheny",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "celica": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/brunhilda",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "charlotte": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/charlotte",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "chaugnar": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/chaugnar",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "cresht": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/cresht",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "darcy": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/darcy",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "dextra": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/dextra",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "dieuthuyen": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/diao-chan",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "dirak": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/dirak",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "dolia": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/dolia",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "dyadia": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/dyadia",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "edras": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/edras",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "elandorr": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/elandorr",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "elsu": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/elsu",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "enzo": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/enzo",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "erin": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/erin",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "errol": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/errol",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "evita": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/evita",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "fennik": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/fennik",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "florentino": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/florentino",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "flowborn": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/flowborn-archer",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "flowbornphep": {
-      "meta": "previous_or_default",
-      "stats_source": "unverified_previous_or_default",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/flowborn-mage",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "not_matched"
     },
     "gildur": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/gildur",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "goverra": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/goverra",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "grakk": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/grakk",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "hayate": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/hayate",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "heino": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/heino",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "helen": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/helen",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "iggy": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/iggy",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "ignis": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/ignis",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "ilumia": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/ilumia",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "ishar": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/ishar",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "jinna": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/jinna",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "kahlii": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/kahlii",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "kaine": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/kaine",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "keera": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/keera",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "kilgroth": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/kilgroth",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "kriknak": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/kriknak",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "krixi": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/krixi",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "krizzix": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/krizzix",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "lauriel": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/lauriel",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "laville": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/laville",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "liliana": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/liliana",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "lindis": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/lindis",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "lorion": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/lorion",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "lubo": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/lu-bu",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "lumburr": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/lumburr",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "maloch": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/maloch",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "marja": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/marja",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "max": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/max",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "mganga": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/mganga",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "mina": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/mina",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "ming": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/ming",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "moren": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/moren",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "murad": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/murad",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "nakroth": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/nakroth",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "natalya": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/natalya",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "ngokhong": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/wukong",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "omega": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/omega",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "omen": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/omen",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "ormarr": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/ormarr",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "paine": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/paine",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "preyta": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/preyta",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "qi": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/qi",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "quillen": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/quillen",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "raz": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/raz",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "richter": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/richter",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "rouie": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/rouie",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "rourke": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/rourke",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "roxie": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/roxie",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "ryoma": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/ryoma",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "sephera": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/sephera",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "sinestrea": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/sinestrea",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "skud": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/skud",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "slimz": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/slimz",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "stuart": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/stuart",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "superman": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/superman",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "taara": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/taara",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "tachi": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/tachi",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "tamyn": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/tamyn",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "teemee": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/teemee",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "teeri": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/teeri",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "telannas": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/telannas",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "thane": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/thane",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "theflash": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/the-flash",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "thorne": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/thorne",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "toro": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/toro",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "trieuvan": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/zanis",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "tulen": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/tulen",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "valhein": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/valhein",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "veera": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/veera",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "veres": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/veres",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "violet": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/violet",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "volkath": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/volkath",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "wiro": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/wiro",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "wisp": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/wisp",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "wonderwoman": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/wonder-woman",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "xeniel": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/xeniel",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "ybneth": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/ybneth",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "rovmeta",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "yan": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/yan",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "yena": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/yena",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "yorn": {
-      "meta": "rovmeta",
-      "stats_source": "unspecified",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/yorn",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": [
-        "win_rate",
-        "pick_rate",
-        "ban_rate"
-      ]
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "yue": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/yue",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "zata": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/zata",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "zephys": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/zephys",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "zill": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/zill",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "zip": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/zip",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     },
     "zuka": {
-      "meta": "rovmeta",
-      "stats_source": "pro",
+      "stats_source": "rovguide_ranked_thailand",
+      "stats_snapshot": "2026-10-19",
+      "roles_source": "https://rovguide.com/heroes/zuka",
+      "roles_source_region": "TH",
+      "roles_cross_check": null,
       "counters": "aov-builds",
-      "fallback_rate_fields": []
+      "fallback_rate_fields": [],
+      "rovmeta_reference": "matched"
     }
-  }
+  },
+  "rovmeta_reference_patch": "1.64",
+  "rovmeta_reference_matches": 129,
+  "unmatched_rovmeta_reference_ids": [
+    "flowbornphep"
+  ]
 }

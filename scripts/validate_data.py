@@ -24,6 +24,11 @@ def validate_database(heroes):
             raise ValueError(f"Missing display data: {hid}")
         if hero["main_role"] not in ROLES or hero["tier"] not in TIERS:
             raise ValueError(f"Invalid role/tier: {hid}")
+        roles = hero.get("roles")
+        if not isinstance(roles, list) or not roles or roles[0] != hero["main_role"] or len(roles) != len(set(roles)) or any(role not in ROLES for role in roles):
+            raise ValueError(f"Invalid supported roles: {hid}")
+        if not isinstance(hero.get("meta_snapshot"), str) or not isinstance(hero.get("meta_source"), str):
+            raise ValueError(f"Missing meta provenance: {hid}")
         for key in ("win_rate", "pick_rate", "ban_rate"):
             value = hero[key]
             if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or not 0 <= value <= 100:

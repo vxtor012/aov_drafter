@@ -166,6 +166,7 @@ select { font-size: 13px; min-height: 32px; background: var(--surface); padding:
 .rec-context { justify-content: space-between; gap: 8px; padding: 12px 20px; }
 #missing-roles-text { color: var(--faint); font-size: 13px; min-width: 0; }
 .rec-context select { font-size: 13px; padding-right: 18px; border-color: transparent; max-width: 112px; }
+.rec-data-note { margin: -5px 20px 10px; color: var(--faint); font-size: 11px; line-height: 1.4; }
 .recommendations-container { padding: 0 20px; max-height: max(350px, calc(100dvh - 526px)); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--control) transparent; }
 .rec-card { padding: 13px 0; border-top: 1px solid var(--rule); }
 .rec-card:first-child { border-top: 0; padding-top: 2px; }
