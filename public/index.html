@@ -1,241 +1,103 @@
 <!DOCTYPE html>
-<html lang="vi">
-
+<html lang="vi" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Gợi Ý Cấm Chọn Liên Quân Mobile - AoV Day</title>
-    <!-- Google Fonts: Be Vietnam Pro (Vietnamese Compatible) -->
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Công cụ cấm chọn Liên Quân Mobile. Xây dựng đội hình và tìm lựa chọn khắc chế cho từng lượt draft.">
+    <title>AoV Drafter — Cấm chọn Liên Quân Mobile</title>
+    <link rel="icon" type="image/png" href="assets/img/aov_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <!-- Web Favicon: AoV Logo -->
-    <link rel="icon" type="image/png" href="assets/img/aov_logo.png">
-    <!-- FontAwesome for Premium Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main Style Sheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Theme setup script to prevent flash of wrong theme -->
     <script>
         (function () {
-            const theme = localStorage.getItem('theme') || 'system';
-            const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme-setting', theme);
+            const theme = localStorage.getItem('theme') || 'dark';
+            const dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+            document.documentElement.dataset.themeSetting = theme;
         })();
     </script>
 </head>
-
 <body>
-    <div class="app-background"></div>
-
-    <div class="container">
-        <!-- HEADER ZONE -->
+    <a class="skip-link" href="#search-input">Đến danh sách tướng</a>
+    <div class="app-shell">
         <header class="app-header">
-            <div class="header-logo">
-                <i class="fa-solid fa-shield-halved logo-icon"></i>
-                <div class="logo-text">
-                    <h1>AOV DRAFTER</h1>
-                    <span>Hệ thống hỗ trợ ban/pick</span>
-                </div>
+            <div class="brand">
+                <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3H3v18h6M15 3h6v18h-6M8 8l8 8M16 8l-8 8" stroke="currentColor" stroke-width="1.7"/></svg>
+                <h1>AoV Drafter</h1>
+                <span class="brand-game">Liên Quân Mobile</span>
             </div>
-
-            <!-- CENTRAL CONTROL BAR -->
-            <div id="central-status-bar" class="status-bar">
-                <div class="phase-badge" id="current-phase">ĐANG KHỞI TẠO</div>
-                <div class="status-main">
-                    <span id="status-text">Đang tải cơ sở dữ liệu...</span>
-                </div>
-            </div>
-
             <div class="header-actions">
-                <div class="settings-actions">
-                    <div class="theme-toggle-group" id="theme-toggle-group">
-                        <button class="theme-btn" data-theme-val="light" title="Giao diện Sáng">
-                            <i class="fa-solid fa-sun"></i>
-                        </button>
-                        <button class="theme-btn" data-theme-val="dark" title="Giao diện Tối">
-                            <i class="fa-solid fa-moon"></i>
-                        </button>
-                        <button class="theme-btn" data-theme-val="system" title="Giao diện Hệ thống">
-                            <i class="fa-solid fa-desktop"></i>
-                        </button>
+                <button id="btn-undo" class="control-btn" disabled><span aria-hidden="true">↶</span> Hoàn tác</button>
+                <button id="btn-reset" class="control-btn">Draft mới</button>
+                <details class="settings-menu" id="settings-menu">
+                    <summary class="control-btn">Tùy chọn <svg class="settings-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" /></svg></summary>
+                    <div class="settings-popover">
+                        <span class="settings-label">Giao diện</span>
+                        <div class="theme-toggle-group" id="theme-toggle-group" aria-label="Giao diện">
+                            <button class="theme-btn" data-theme-val="light" aria-pressed="false">Sáng</button>
+                            <button class="theme-btn" data-theme-val="dark" aria-pressed="true">Tối</button>
+                            <button class="theme-btn" data-theme-val="system" aria-pressed="false">Hệ thống</button>
+                        </div>
+                        <label class="checkbox-label"><input type="checkbox" id="skip-ban-checkbox" checked> Bỏ qua lượt cấm</label>
+                        <p>Áp dụng trước khi bắt đầu chọn tướng.</p>
                     </div>
-                    <div class="settings-group">
-                        <label class="toggle-switch">
-                            <input type="checkbox" id="skip-ban-checkbox" checked>
-                            <span class="slider"></span>
-                        </label>
-                        <span class="settings-label">Bỏ qua cấm</span>
-                    </div>
-                </div>
-                <div class="button-actions">
-                    <button id="btn-undo" class="control-btn warning" title="Quay lại lượt trước" disabled>
-                        <i class="fa-solid fa-rotate-left"></i> <span>Hoàn Tác</span>
-                    </button>
-                    <button id="btn-reset" class="control-btn danger" title="Thiết lập lại từ đầu">
-                        <i class="fa-solid fa-arrows-rotate"></i> <span>Reset</span>
-                    </button>
-                </div>
+                </details>
             </div>
         </header>
-
-        <!-- MAIN LAYOUT -->
-        <main class="draft-hud">
-            <!-- LEFT COLUMN: BLUE TEAM (BLUE) -->
-            <section class="team-column blue-team" id="blue-column">
-                <div class="team-header">
-                    <h2>ĐỘI XANH</h2>
-                    <span class="team-badge blue">BLUE TEAM</span>
+        <main>
+            <section class="draft-status" aria-label="Lượt hiện tại">
+                <div class="status-copy" id="central-status-bar" role="status" aria-live="polite">
+                    <span id="current-phase" class="phase-badge">Chọn tướng</span>
+                    <strong id="status-text">Đội Xanh chọn tướng</strong>
                 </div>
-
-                <!-- Horizontal Ban Slots -->
-                <div class="ban-section">
-                    <div class="ban-title">CẤM (BANS)</div>
-                    <div class="ban-slots-row" id="ban-slots-blue">
-                        <div class="ban-slot blue-ban-slot" data-slot="0"></div>
-                        <div class="ban-slot blue-ban-slot" data-slot="1"></div>
-                        <div class="ban-slot blue-ban-slot" data-slot="2"></div>
-                        <div class="ban-slot blue-ban-slot" data-slot="3"></div>
-                        <div class="ban-slot blue-ban-slot" data-slot="4"></div>
-                    </div>
-                </div>
-
-                <!-- Vertical Pick Slots -->
-                <div class="pick-section">
-                    <div class="pick-title">CHỌN (PICKS)</div>
+                <div class="draft-progress"><span id="turn-count">Lượt 1 / 10</span><div id="turn-track" class="turn-track" aria-hidden="true"></div></div>
+                <button id="btn-analysis" class="control-btn" disabled>Tổng kết</button>
+            </section>
+            <div class="draft-board">
+                <section class="team-column blue-team" id="blue-column" aria-labelledby="blue-title">
+                    <div class="team-header"><h2 id="blue-title"><span class="team-dot" aria-hidden="true"></span>Đội Xanh</h2><span class="team-turn-label" id="team-status-blue">Chọn trước</span><span class="team-count" id="team-count-blue">0 / 5</span></div>
                     <div class="pick-slots-col" id="pick-slots-blue">
-                        <div class="pick-slot blue-pick-slot" data-slot="0"></div>
-                        <div class="pick-slot blue-pick-slot" data-slot="1"></div>
-                        <div class="pick-slot blue-pick-slot" data-slot="2"></div>
-                        <div class="pick-slot blue-pick-slot" data-slot="3"></div>
-                        <div class="pick-slot blue-pick-slot" data-slot="4"></div>
+                        <div class="pick-slot blue-pick-slot"></div><div class="pick-slot blue-pick-slot"></div><div class="pick-slot blue-pick-slot"></div><div class="pick-slot blue-pick-slot"></div><div class="pick-slot blue-pick-slot"></div>
                     </div>
-                </div>
-            </section>
-
-            <!-- MIDDLE COLUMN: CONTROLS, GRID & RECOMMENDATIONS -->
-            <section class="center-column">
-                <!-- HERO SELECTION GRID PANEL -->
-                <div class="panel selection-panel">
-                    <div class="filter-bar">
-                        <div class="role-filters" id="role-filters">
-                            <button class="filter-tab active" data-role="all" id="btn-filter-all">Tất cả</button>
-                            <button class="filter-tab" data-role="Top" id="btn-filter-top">Top</button>
-                            <button class="filter-tab" data-role="Jungle" id="btn-filter-jungle">Rừng</button>
-                            <button class="filter-tab" data-role="Mid" id="btn-filter-mid">Mid</button>
-                            <button class="filter-tab" data-role="AD" id="btn-filter-ad">AD</button>
-                            <button class="filter-tab" data-role="SP" id="btn-filter-sp">SP</button>
-                        </div>
-                        <div class="filter-controls-right">
-                            <div class="search-box">
-                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                                <input type="text" id="search-input" placeholder="Tìm tên tướng..." autocomplete="off">
-                                <button id="clear-search-btn" class="clear-search-btn"><i class="fa-solid fa-xmark"></i></button>
-                            </div>
-                            <div class="sort-box">
-                                <select id="sort-select" class="sort-select">
-                                    <option value="name">Xếp theo: Tên chữ cái</option>
-                                    <option value="tier">Xếp theo: Tier List</option>
-                                    <option value="win_rate">Xếp theo: Tỷ lệ thắng</option>
-                                    <option value="pick_rate">Xếp theo: Tỷ lệ chọn</option>
-                                    <option value="ban_rate">Xếp theo: Tỷ lệ cấm</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Lưới tướng -->
-                    <div class="hero-grid-container">
-                        <div class="hero-grid" id="hero-grid">
-                            <!-- Hero cards injected by JavaScript -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RECOMMENDATION & TEAM STATS PANEL -->
-                <div class="panel recommendation-panel">
-                    <div class="rec-header">
-                        <h3 id="recommendation-title"><i class="fa-solid fa-wand-magic-sparkles magic-icon"></i> GỢI Ý TƯỚNG TỐI ƯU (ĐỘI XANH)</h3>
-                        <span class="role-target" id="missing-roles-text">Vị trí khuyên chọn: Đang tính toán...</span>
-                    </div>
-                    <div class="rec-filters" id="rec-role-filters">
-                        <div class="rec-filters-left">
-                            <button class="rec-filter-tab active" data-role="all">Tất cả</button>
-                            <button class="rec-filter-tab" data-role="Top">Top</button>
-                            <button class="rec-filter-tab" data-role="Jungle">Rừng</button>
-                            <button class="rec-filter-tab" data-role="Mid">Mid</button>
-                            <button class="rec-filter-tab" data-role="AD">AD</button>
-                            <button class="rec-filter-tab" data-role="SP">SP</button>
-                        </div>
-                        <div class="rec-modes-right" id="rec-modes">
-                            <button class="mode-btn" data-mode="meta"><i class="fa-solid fa-fire"></i> Gợi ý theo Meta</button>
-                            <button class="mode-btn active" data-mode="counter"><i class="fa-solid fa-shield-halved"></i> Gợi ý theo Khắc chế</button>
-                        </div>
-                    </div>
-
-                    <div class="recommendations-container" id="recommendations-container">
-                        <div class="rec-list" id="recommendation-list">
-                            <!-- Top 3 recommendations injected by JavaScript -->
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </section>
-
-            <!-- RIGHT COLUMN: RED TEAM (RED) -->
-            <section class="team-column red-team" id="red-column">
-                <div class="team-header">
-                    <h2>ĐỘI ĐỎ</h2>
-                    <span class="team-badge red">RED TEAM</span>
-                </div>
-
-                <!-- Horizontal Ban Slots -->
-                <div class="ban-section">
-                    <div class="ban-title">CẤM (BANS)</div>
-                    <div class="ban-slots-row" id="ban-slots-red">
-                        <div class="ban-slot red-ban-slot" data-slot="0"></div>
-                        <div class="ban-slot red-ban-slot" data-slot="1"></div>
-                        <div class="ban-slot red-ban-slot" data-slot="2"></div>
-                        <div class="ban-slot red-ban-slot" data-slot="3"></div>
-                        <div class="ban-slot red-ban-slot" data-slot="4"></div>
-                    </div>
-                </div>
-
-                <!-- Vertical Pick Slots -->
-                <div class="pick-section">
-                    <div class="pick-title">CHỌN (PICKS)</div>
+                    <div class="ban-section"><span class="ban-title">Cấm</span><div class="ban-slots-row" id="ban-slots-blue"><div class="ban-slot blue-ban-slot"></div><div class="ban-slot blue-ban-slot"></div><div class="ban-slot blue-ban-slot"></div><div class="ban-slot blue-ban-slot"></div><div class="ban-slot blue-ban-slot"></div></div><span class="ban-note" id="ban-note-blue"></span></div>
+                </section>
+                <section class="team-column red-team" id="red-column" aria-labelledby="red-title">
+                    <div class="team-header"><h2 id="red-title"><span class="team-dot" aria-hidden="true"></span>Đội Đỏ</h2><span class="team-turn-label" id="team-status-red">Chọn sau</span><span class="team-count" id="team-count-red">0 / 5</span></div>
                     <div class="pick-slots-col" id="pick-slots-red">
-                        <div class="pick-slot red-pick-slot" data-slot="0"></div>
-                        <div class="pick-slot red-pick-slot" data-slot="1"></div>
-                        <div class="pick-slot red-pick-slot" data-slot="2"></div>
-                        <div class="pick-slot red-pick-slot" data-slot="3"></div>
-                        <div class="pick-slot red-pick-slot" data-slot="4"></div>
+                        <div class="pick-slot red-pick-slot"></div><div class="pick-slot red-pick-slot"></div><div class="pick-slot red-pick-slot"></div><div class="pick-slot red-pick-slot"></div><div class="pick-slot red-pick-slot"></div>
                     </div>
-                </div>
-            </section>
-        </main>
-
-        <div id="completion-overlay" class="completion-overlay hidden">
-            <div class="overlay-content">
-                <i class="fa-solid fa-trophy trophy-icon"></i>
-                <h2>CẤM CHỌN HOÀN TẤT</h2>
-                <p>Cả hai đội đã hoàn thành lượt cấm chọn. Bấm Reset để bắt đầu lượt mới.</p>
-                <div class="overlay-analysis" id="overlay-analysis">
-                    <!-- Dynamic Analysis content will be generated here -->
-                </div>
-                <div class="overlay-actions">
-                    <button id="btn-overlay-close" class="control-btn">Xem lại đội hình</button>
-                    <button id="btn-overlay-reset" class="control-btn danger">Bắt đầu lượt mới</button>
-                </div>
+                    <div class="ban-section"><span class="ban-title">Cấm</span><div class="ban-slots-row" id="ban-slots-red"><div class="ban-slot red-ban-slot"></div><div class="ban-slot red-ban-slot"></div><div class="ban-slot red-ban-slot"></div><div class="ban-slot red-ban-slot"></div><div class="ban-slot red-ban-slot"></div></div><span class="ban-note" id="ban-note-red"></span></div>
+                </section>
             </div>
-        </div>
+            <div class="mobile-workspace-tabs" aria-label="Nội dung draft"><button class="workspace-tab active" data-view="heroes" aria-pressed="true">Tướng</button><button class="workspace-tab" data-view="recommendations" aria-pressed="false">Gợi ý</button></div>
+            <!-- At 1440px: 48px outer padding + 1014px pool + 16px gap + 362px rail = 1440px. -->
+            <div class="workspace" id="workspace" data-view="heroes">
+                <section class="selection-panel" aria-labelledby="pool-title">
+                    <div class="pool-header"><div class="section-title"><h2 id="pool-title">Chọn tướng</h2><span id="hero-count" class="count-text">130 tướng</span></div><label class="sort-box"><span class="sr-only">Sắp xếp tướng</span><select id="sort-select"><option value="name">Tên A–Z</option><option value="tier">Tier cao nhất</option><option value="win_rate">Tỷ lệ thắng</option><option value="pick_rate">Tỷ lệ chọn</option><option value="ban_rate">Tỷ lệ cấm</option></select></label></div>
+                    <div class="pool-toolbar">
+                        <div class="role-filters" id="role-filters" aria-label="Lọc theo vị trí"><button class="filter-tab active" data-role="all" id="btn-filter-all" aria-pressed="true">Tất cả</button><button class="filter-tab" data-role="Top" aria-pressed="false">Top</button><button class="filter-tab" data-role="Jungle" aria-pressed="false">Rừng</button><button class="filter-tab" data-role="Mid" aria-pressed="false">Mid</button><button class="filter-tab" data-role="AD" aria-pressed="false">AD</button><button class="filter-tab" data-role="SP" aria-pressed="false">SP</button></div>
+                        <div class="search-box"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><label class="sr-only" for="search-input">Tìm tướng</label><input type="search" id="search-input" placeholder="Tìm tướng…" autocomplete="off"><button id="clear-search-btn" aria-label="Xóa tìm kiếm">×</button><kbd aria-hidden="true">/</kbd></div>
+                    </div>
+                    <div class="hero-grid-container"><div class="hero-grid" id="hero-grid"></div></div>
+                    <div class="pool-footer"><span id="pool-hint">Chọn một tướng để thêm vào đội hình.</span><span>Tier theo RovMeta</span></div>
+                </section>
+                <aside class="recommendation-panel" aria-labelledby="recommendation-title">
+                    <div class="rec-header"><h2 id="recommendation-title">Gợi ý cho Đội Xanh</h2><span class="quiet-label">6 lựa chọn</span></div>
+                    <div class="rec-modes" id="rec-modes" aria-label="Chế độ gợi ý"><button class="mode-btn active" data-mode="counter" aria-pressed="true">Khắc chế</button><button class="mode-btn" data-mode="meta" aria-pressed="false">Meta</button></div>
+                    <div class="rec-context"><span id="missing-roles-text">Chưa có tướng</span><label><span class="sr-only">Vị trí gợi ý</span><select id="rec-role-select"><option value="all">Mọi vị trí</option><option value="Top">Top</option><option value="Jungle">Rừng</option><option value="Mid">Mid</option><option value="AD">AD</option><option value="SP">SP</option></select></label></div>
+                    <div class="recommendations-container"><div class="rec-list" id="recommendation-list"></div></div>
+                    <p class="rec-footnote">Điểm gợi ý dựa trên meta và đội hình, không phải xác suất thắng.</p>
+                </aside>
+            </div>
+        </main>
+        <footer class="app-footer"><span>Công cụ draft Liên Quân Mobile</span><span>Dữ liệu cộng đồng · Chỉ mang tính tham khảo</span></footer>
     </div>
-
-    <!-- Main JavaScript Logic -->
+    <div id="completion-overlay" class="completion-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="analysis-title" tabindex="-1">
+        <div class="overlay-content"><div class="overlay-heading"><div><h2 id="analysis-title">Tổng kết đội hình</h2><p>So sánh hai đội sau lượt cấm chọn.</p></div><button id="btn-overlay-close" class="control-btn" aria-label="Đóng tổng kết">Đóng <span aria-hidden="true">×</span></button></div><p class="analysis-disclaimer">Thuộc tính được ước lượng theo vai trò. Đây không phải dự đoán kết quả trận đấu.</p><div class="overlay-analysis" id="overlay-analysis"></div><div class="overlay-actions"><button id="btn-overlay-reset" class="control-btn primary-btn">Bắt đầu draft mới</button></div></div>
+    </div>
     <script src="assets/js/app.js"></script>
 </body>
-
 </html>

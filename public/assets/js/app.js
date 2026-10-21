@@ -6781,62 +6781,20 @@ let state = {
 
 // --- 5. SVG AVATAR GENERATION UTILITY ---
 function generateSvgAvatar(name, role, tier) {
-    let gradientStart = '#3b82f6';
-    let gradientEnd = '#1d4ed8';
-    let accentColor = '#60a5fa';
-    
-    if (tier === 'S+' || tier === 'S') {
-        gradientStart = '#f59e0b';
-        gradientEnd = '#b45309';
-        accentColor = '#fcd34d';
-    } else if (tier === 'A') {
-        gradientStart = '#a855f7';
-        gradientEnd = '#6b21a8';
-        accentColor = '#d8b4fe';
-    }
-    
-    let roleGlyph = '';
-    if (role === 'Top') {
-        roleGlyph = `<path d="M12 50l30-30 6 6-30 30z" fill="currentColor"/><path d="M42 20l4-4a2 2 0 0 1 3 0l3 3a2 2 0 0 1 0 3l-4 4z" fill="currentColor"/><circle cx="12" cy="50" r="4" fill="currentColor"/>`;
-    } else if (role === 'Jungle') {
-        roleGlyph = `<path d="M32 12l20 20-20 20-20-20z" stroke="currentColor" stroke-width="3" fill="none"/><circle cx="32" cy="32" r="6" fill="currentColor"/>`;
-    } else if (role === 'Mid') {
-        roleGlyph = `<circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="3" fill="none"/><path d="M32 10v10M32 44v10M10 32h10M44 32h10" stroke="currentColor" stroke-width="3"/>`;
-    } else if (role === 'AD') {
-        roleGlyph = `<path d="M16 16v32h32" stroke="currentColor" stroke-width="4" fill="none"/><path d="M16 48l24-24" stroke="currentColor" stroke-width="3"/><path d="M42 20l4 4-10 10" fill="currentColor"/>`;
-    } else if (role === 'SP') {
-        roleGlyph = `<path d="M32 12c-12 0-16 10-16 22 0 12 10 16 16 18 6-2 16-6 16-18 0-12-4-22-16-22z" stroke="currentColor" stroke-width="3" fill="none"/>`;
-    }
-    
-    const initials = name.slice(0, 2).toUpperCase();
-    
-    const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
-        <defs>
-            <linearGradient id="grad-${name.replace(/\s+/g, '')}" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="${gradientStart}" />
-                <stop offset="100%" stop-color="${gradientEnd}" />
-            </linearGradient>
-        </defs>
-        <rect width="64" height="64" rx="10" fill="url(#grad-${name.replace(/\s+/g, '')})" />
-        <rect x="2" y="2" width="60" height="60" rx="8" fill="none" stroke="${accentColor}" stroke-opacity="0.2" stroke-width="1" />
-        <text x="32" y="36" font-family="'Outfit', sans-serif" font-size="19" font-weight="800" fill="#ffffff" fill-opacity="0.9" text-anchor="middle" dominant-baseline="middle">
-            ${initials}
-        </text>
-        <g transform="scale(0.22) translate(76, 76)" color="#ffffff" stroke-linecap="round">
-            ${roleGlyph}
-        </g>
-        <rect x="4" y="4" width="14" height="9" rx="2" fill="#0f172a" fill-opacity="0.6"/>
-        <text x="11" y="10.5" font-family="'Outfit', sans-serif" font-size="7.5" font-weight="950" fill="${accentColor}" text-anchor="middle" dominant-baseline="middle">
-            ${tier}
-        </text>
-    </svg>
-    `;
-    
-    return `data:image/svg+xml;utf8,${encodeURIComponent(svg.trim())}`;
+    const initials = name.slice(0, 2).toUpperCase().replace(/[<>&"']/g, '');
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#292929"/><text x="50" y="58" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#d4d4d4">${initials}</text></svg>`;
+    return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+function createHeroImage(hero, lazy = false) {
+    const img = document.createElement('img');
+    img.alt = hero.name;
+    img.width = 100; img.height = 100; img.decoding = 'async';
+    if (lazy) img.loading = 'lazy';
+    img.src = hero.avatar || generateSvgAvatar(hero.name);
+    img.addEventListener('error', () => { img.src = generateSvgAvatar(hero.name); }, { once: true });
+    return img;
 }
 
-// --- 6. SCORING LOGIC ENGINE ---
 function calculateSuggestions(teamType = "blue") {
     // 1. Identify which roles our team already picked
     const pickedIds = teamType === "blue" ? state.picksBlue.filter(id => id !== null) : state.picksRed.filter(id => id !== null);
@@ -7051,215 +7009,80 @@ function calculateSuggestions(teamType = "blue") {
 
 // --- 7. RENDER USER INTERFACE ---
 function renderUI() {
-    const isBanPhase = state.currentTurnIndex < 10;
-    const currentTurn = state.currentTurnIndex < 20 ? TURN_SEQUENCE[state.currentTurnIndex] : null;
-    
-    // Sync sort dropdown value
-    const sortSelect = document.getElementById("sort-select");
-    if (sortSelect) {
-        sortSelect.value = state.heroSortOption;
+    const turn = TURN_SEQUENCE[state.currentTurnIndex];
+    const complete = !turn, banning = turn?.type === 'ban';
+    document.getElementById('sort-select').value = state.heroSortOption;
+    document.getElementById('btn-undo').disabled = !state.history.length;
+    document.getElementById('btn-analysis').disabled = !complete;
+    document.getElementById('current-phase').textContent = complete ? 'Hoàn tất' : banning ? 'Cấm tướng' : 'Chọn tướng';
+    document.getElementById('status-text').textContent = complete ? 'Hai đội đã sẵn sàng' : `${turn.team === 'blue' ? 'Đội Xanh' : 'Đội Đỏ'} ${banning ? 'cấm' : 'chọn'} tướng`;
+    const index = complete ? 10 : state.currentTurnIndex - (banning ? 0 : 10);
+    document.getElementById('turn-count').textContent = complete ? '10 / 10 lượt chọn' : `Lượt ${index + 1} / 10`;
+    const track = document.getElementById('turn-track'); track.replaceChildren();
+    for (let i = 0; i < 10; i++) {
+        const step = document.createElement('span');
+        step.className = `turn-step${i < index ? ' done' : i === index && !complete ? ' current' : ''}`;
+        track.appendChild(step);
     }
-
-    // --- 1. Active Status Bar ---
-    const phaseBadge = document.getElementById("current-phase");
-    const statusText = document.getElementById("status-text");
-    
-    if (state.currentTurnIndex >= 20) {
-        phaseBadge.textContent = "HOÀN TẤT";
-        phaseBadge.className = "phase-badge";
-        statusText.textContent = "Cấm chọn hoàn thành! Bấm Reset để chơi lại.";
-        document.getElementById("btn-undo").disabled = false;
-        showCompletionOverlay();
-    } else {
-        document.getElementById("btn-undo").disabled = state.history.length === 0;
-        
-        if (isBanPhase) {
-            phaseBadge.textContent = "GIAI ĐOẠN CẤM";
-            phaseBadge.className = "phase-badge ban-phase";
-        } else {
-            phaseBadge.textContent = "GIAI ĐOẠN CHỌN";
-            phaseBadge.className = "phase-badge pick-phase";
-        }
-        
-        const activeTeamName = currentTurn.team === "blue" ? "ĐỘI XANH" : "ĐỘI ĐỎ";
-        const actionType = currentTurn.type === "ban" ? "CẤM" : "CHỌN";
-        statusText.textContent = `Lượt ${state.currentTurnIndex + 1}/20: [${activeTeamName}] đang ${actionType}...`;
+    for (const team of ['blue', 'red']) {
+        const picks = team === 'blue' ? state.picksBlue : state.picksRed;
+        const bans = team === 'blue' ? state.bansBlue : state.bansRed;
+        document.getElementById(`${team}-column`).classList.toggle('active-team-turn', turn?.team === team);
+        document.getElementById(`team-count-${team}`).textContent = `${picks.filter(Boolean).length} / 5`;
+        document.getElementById(`team-status-${team}`).textContent = complete ? 'Đã hoàn tất' : turn.team === team ? banning ? 'Đang cấm' : 'Đang chọn' : 'Chờ lượt';
+        const skipped = state.skipBanPhase && bans.every(id => !id);
+        document.getElementById(`ban-slots-${team}`).parentElement.classList.toggle('skipped', skipped);
+        document.getElementById(`ban-note-${team}`).textContent = skipped ? 'Bỏ qua lượt cấm' : `${bans.filter(Boolean).length} / 5`;
+        renderBanRow(bans, `ban-slots-${team}`, `${team}-ban-slot`);
+        renderPickCol(picks, `pick-slots-${team}`, `${team}-pick-slot`, team);
     }
-    
-    // --- 2. Update Column Focus Styling ---
-    const blueCol = document.getElementById("blue-column");
-    const redCol = document.getElementById("red-column");
-    
-    blueCol.classList.remove("active-team-turn");
-    redCol.classList.remove("active-team-turn");
-    
-    if (currentTurn) {
-        if (currentTurn.team === "blue") {
-            blueCol.classList.add("active-team-turn");
-        } else {
-            redCol.classList.add("active-team-turn");
-        }
-    }
-    
-    // --- 3. Render Ban Slots (Blue Left & Red Right) ---
-    renderBanRow(state.bansBlue, "ban-slots-blue", "blue-ban-slot");
-    renderBanRow(state.bansRed, "ban-slots-red", "red-ban-slot");
-    
-    // --- 4. Render Pick Slots (Blue Left & Red Right) ---
-    renderPickCol(state.picksBlue, "pick-slots-blue", "blue-pick-slot", "blue");
-    renderPickCol(state.picksRed, "pick-slots-red", "red-pick-slot", "red");
-    
-    // --- 5. Render Hero Grid ---
-    renderHeroGrid();
-    
-    // --- 6. Render Recommendations & Stats ---
-    renderRecommendationsAndStats();
+    document.getElementById('pool-title').textContent = banning ? 'Cấm tướng' : 'Chọn tướng';
+    document.getElementById('pool-hint').textContent = complete ? 'Draft hoàn tất. Mở Tổng kết để xem phân tích.' : `Chọn một tướng để ${banning ? 'cấm' : 'thêm vào'} ${turn.team === 'blue' ? 'Đội Xanh' : 'Đội Đỏ'}.`;
+    renderHeroGrid(); renderRecommendationsAndStats();
+    if (complete && !state.completionShown) { state.completionShown = true; showCompletionOverlay(); }
+    else if (!complete) state.completionShown = false;
 }
 
-// Render Ban Row Helpers
-function renderBanRow(bansArray, containerId, slotClass) {
-    const container = document.getElementById(containerId);
-    const slots = container.querySelectorAll(`.${slotClass}`);
-    
-    slots.forEach((slot, idx) => {
-        slot.innerHTML = "";
-        slot.className = `ban-slot ${slotClass}`;
-        
-        // Highlight active ban slot
-        const isCurrentActive = state.currentTurnIndex < 10 && 
-                                TURN_SEQUENCE[state.currentTurnIndex].type === "ban" &&
-                                TURN_SEQUENCE[state.currentTurnIndex].slotIndex === idx &&
-                                ((TURN_SEQUENCE[state.currentTurnIndex].team === "blue" && slotClass.includes("blue")) ||
-                                 (TURN_SEQUENCE[state.currentTurnIndex].team === "red" && slotClass.includes("red")));
-        
-        if (isCurrentActive) {
-            slot.classList.add("active-slot-highlight");
-        }
-        
-        const heroId = bansArray[idx];
-        if (heroId) {
-            slot.classList.add("filled");
-            const hero = HERO_DATABASE.find(h => h.id === heroId);
-            if (hero) {
-                const img = document.createElement("img");
-                img.src = hero.avatar || generateSvgAvatar(hero.name, hero.main_role, hero.tier);
-                img.alt = hero.name;
-                slot.appendChild(img);
-                
-                const slash = document.createElement("div");
-                slash.className = "ban-slot-overlay-slash";
-                slot.appendChild(slash);
-            }
-        }
+function renderBanRow(bans, containerId, slotClass) {
+    const turn = TURN_SEQUENCE[state.currentTurnIndex];
+    document.getElementById(containerId).querySelectorAll(`.${slotClass}`).forEach((slot, index) => {
+        slot.replaceChildren(); slot.className = `ban-slot ${slotClass}`;
+        const active = turn?.type === 'ban' && turn.slotIndex === index && slotClass.startsWith(turn.team);
+        slot.classList.toggle('active-slot-highlight', active);
+        const hero = HERO_DATABASE.find(h => h.id === bans[index]);
+        if (hero) { slot.classList.add('filled'); slot.appendChild(createHeroImage(hero)); slot.title = `Đã cấm ${hero.name}`; }
+        else { slot.textContent = String(index + 1); slot.title = active ? 'Đang cấm' : `Lượt cấm ${index + 1}`; }
     });
 }
 
-// Render Pick Column Helpers
-function renderPickCol(picksArray, containerId, slotClass, teamType) {
-    const container = document.getElementById(containerId);
-    const slots = container.querySelectorAll(`.${slotClass}`);
-    
-    slots.forEach((slot, idx) => {
-        slot.innerHTML = "";
-        slot.className = `pick-slot ${slotClass}`;
-        
-        // Highlight active pick slot
-        const isCurrentActive = state.currentTurnIndex >= 10 && state.currentTurnIndex < 20 &&
-                                TURN_SEQUENCE[state.currentTurnIndex].type === "pick" &&
-                                TURN_SEQUENCE[state.currentTurnIndex].slotIndex === idx &&
-                                ((TURN_SEQUENCE[state.currentTurnIndex].team === "blue" && teamType === "blue") ||
-                                 (TURN_SEQUENCE[state.currentTurnIndex].team === "red" && teamType === "red"));
-        
-        if (isCurrentActive) {
-            slot.classList.add("active-slot-highlight");
-        }
-        
-        const heroId = picksArray[idx];
-        if (heroId) {
-            const hero = HERO_DATABASE.find(h => h.id === heroId);
-            if (hero) {
-                slot.classList.add("filled");
-                
-                // Avatar Card
-                const avatarDiv = document.createElement("div");
-                avatarDiv.className = "pick-card-img";
-                const img = document.createElement("img");
-                img.src = hero.avatar || generateSvgAvatar(hero.name, hero.main_role, hero.tier);
-                img.alt = hero.name;
-                avatarDiv.appendChild(img);
-                slot.appendChild(avatarDiv);
-                
-                // Info block
-                const infoDiv = document.createElement("div");
-                infoDiv.className = "pick-card-info";
-                
-                const nameHeader = document.createElement("h4");
-                nameHeader.textContent = hero.name;
-                infoDiv.appendChild(nameHeader);
-                
-                const metaDiv = document.createElement("div");
-                metaDiv.className = "pick-card-meta";
-                
-                const tierBadge = document.createElement("span");
-                const sanitizedTier = hero.tier.replace('+', 'Plus');
-                tierBadge.className = `pick-card-tier tier-${sanitizedTier}`;
-                tierBadge.textContent = `Tier ${hero.tier}`;
-                metaDiv.appendChild(tierBadge);
-                
-                const wrBadge = document.createElement("span");
-                wrBadge.className = "pick-card-wr";
-                wrBadge.textContent = `WR: ${hero.win_rate.toFixed(1)}%`;
-                metaDiv.appendChild(wrBadge);
-                
-                infoDiv.appendChild(metaDiv);
-                slot.appendChild(infoDiv);
-                
-                // Mini Stats block
-                const miniStatsDiv = document.createElement("div");
-                miniStatsDiv.className = "pick-mini-stats";
-                
-                miniStatsDiv.appendChild(createMiniStatBar("Dmg", hero.attributes.damage, teamType));
-                miniStatsDiv.appendChild(createMiniStatBar("Tank", hero.attributes.tankiness, teamType));
-                miniStatsDiv.appendChild(createMiniStatBar("TF", hero.attributes.teamfight, teamType));
-                
-                slot.appendChild(miniStatsDiv);
-            }
+function renderPickCol(picks, containerId, slotClass, team) {
+    const turn = TURN_SEQUENCE[state.currentTurnIndex];
+    document.getElementById(containerId).querySelectorAll(`.${slotClass}`).forEach((slot, index) => {
+        slot.replaceChildren(); slot.className = `pick-slot ${slotClass}`;
+        const active = turn?.type === 'pick' && turn.team === team && turn.slotIndex === index;
+        slot.classList.toggle('active-slot-highlight', active);
+        const hero = HERO_DATABASE.find(h => h.id === picks[index]);
+        if (hero) {
+            slot.classList.add('filled');
+            const portrait = document.createElement('div'); portrait.className = 'pick-card-img'; portrait.appendChild(createHeroImage(hero));
+            const info = document.createElement('div'); info.className = 'pick-card-info';
+            const name = document.createElement('h4'); name.textContent = hero.name;
+            const role = document.createElement('p'); role.textContent = translateRole(hero.main_role);
+            info.append(name, role); slot.append(portrait, info);
+            slot.title = `${hero.name} — ${translateRole(hero.main_role)}, tier ${hero.tier}`;
         } else {
-            // Placeholder slot
-            const placeholder = document.createElement("div");
-            placeholder.className = "pick-placeholder-content";
-            
-            const num = idx + 1;
-            placeholder.innerHTML = `Lượt Chọn ${num} <span>${isCurrentActive ? "Đang Chọn..." : "Trống"}</span>`;
-            slot.appendChild(placeholder);
+            const placeholder = document.createElement('div'); placeholder.className = 'pick-placeholder-content';
+            const number = document.createElement('span'); number.className = 'slot-number'; number.textContent = String(index + 1).padStart(2, '0');
+            const label = document.createElement('span'); label.textContent = active ? 'Đang chọn' : 'Chưa chọn';
+            placeholder.append(number, label); slot.appendChild(placeholder); slot.title = `Lượt chọn ${index + 1}`;
         }
     });
-}
-
-function createMiniStatBar(label, val, teamType) {
-    const container = document.createElement("div");
-    container.className = "mini-stat-bar";
-    
-    const labelSpan = document.createElement("span");
-    labelSpan.textContent = `${label}: ${val}`;
-    container.appendChild(labelSpan);
-    
-    const track = document.createElement("div");
-    track.className = "mini-stat-track";
-    
-    const fill = document.createElement("div");
-    fill.className = "mini-stat-fill";
-    fill.style.width = `${(val / 5) * 100}%`;
-    
-    track.appendChild(fill);
-    container.appendChild(track);
-    return container;
 }
 
 function translateRole(role) {
     switch (role) {
         case "Top": return "Top";
-        case "Jungle": return "Jg";
+        case "Jungle": return "Rừng";
         case "Mid": return "Mid";
         case "AD": return "AD";
         case "SP": return "SP";
@@ -7269,298 +7092,93 @@ function translateRole(role) {
 
 // Render Hero Grid
 function renderHeroGrid() {
-    const grid = document.getElementById("hero-grid");
-    grid.innerHTML = "";
-    
-    // Assemble all unavailable IDs (banned or picked)
-    const unavailableHeroes = new Set([
-        ...state.bansBlue.filter(Boolean),
-        ...state.bansRed.filter(Boolean),
-        ...state.picksBlue.filter(Boolean),
-        ...state.picksRed.filter(Boolean)
-    ]);
-    
-    // Sort database: unpicked first, then by chosen sort option
-    const sortedHeroes = [...HERO_DATABASE].sort((a, b) => {
-        const aUn = unavailableHeroes.has(a.id) ? 1 : 0;
-        const bUn = unavailableHeroes.has(b.id) ? 1 : 0;
-        if (aUn !== bUn) return aUn - bUn;
-        
-        if (state.heroSortOption === "tier") {
-            const tierWeight = { "S+": 5, "S": 4, "A": 3, "B": 2, "C": 1 };
-            const aTier = tierWeight[a.tier] || 0;
-            const bTier = tierWeight[b.tier] || 0;
-            if (bTier !== aTier) return bTier - aTier;
-            return a.name.localeCompare(b.name);
-        } else if (state.heroSortOption === "win_rate") {
-            if (b.win_rate !== a.win_rate) return b.win_rate - a.win_rate;
-            return a.name.localeCompare(b.name);
-        } else if (state.heroSortOption === "pick_rate") {
-            if (b.pick_rate !== a.pick_rate) return b.pick_rate - a.pick_rate;
-            return a.name.localeCompare(b.name);
-        } else if (state.heroSortOption === "ban_rate") {
-            if (b.ban_rate !== a.ban_rate) return b.ban_rate - a.ban_rate;
-            return a.name.localeCompare(b.name);
-        }
-        
-        return a.name.localeCompare(b.name);
+    const grid = document.getElementById('hero-grid'); grid.replaceChildren();
+    const unavailable = new Set([...state.bansBlue, ...state.bansRed, ...state.picksBlue, ...state.picksRed].filter(Boolean));
+    const weights = { 'S+': 5, S: 4, A: 3, B: 2, C: 1 };
+    const normalize = text => text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
+    const query = normalize(state.searchQuery);
+    const heroes = HERO_DATABASE.filter(h => normalize(h.name).includes(query) && (state.selectedRoleFilter === 'all' || h.main_role === state.selectedRoleFilter));
+    heroes.sort((a,b) => {
+        const used = Number(unavailable.has(a.id)) - Number(unavailable.has(b.id));
+        if (used) return used;
+        const sort = state.heroSortOption;
+        if (sort === 'tier') return weights[b.tier] - weights[a.tier] || a.name.localeCompare(b.name, 'vi');
+        return (sort === 'name' ? 0 : b[sort] - a[sort]) || a.name.localeCompare(b.name, 'vi');
     });
-    
-    sortedHeroes.forEach(hero => {
-        // Apply filters
-        const matchesQuery = hero.name.toLowerCase().includes(state.searchQuery.toLowerCase());
-        const matchesRole = state.selectedRoleFilter === "all" || hero.main_role === state.selectedRoleFilter;
-        
-        if (!matchesQuery || !matchesRole) return;
-        
-        const card = document.createElement("div");
-        card.className = "hero-card";
-        card.dataset.id = hero.id;
-        
-        const isUnavailable = unavailableHeroes.has(hero.id);
-        if (isUnavailable) {
-            card.classList.add("disabled");
-        } else {
-            card.addEventListener("click", () => handleHeroSelect(hero));
-        }
-        
-        const avatarDiv = document.createElement("div");
-        avatarDiv.className = "hero-card-img";
-        const img = document.createElement("img");
-        img.src = hero.avatar || generateSvgAvatar(hero.name, hero.main_role, hero.tier);
-        img.alt = hero.name;
-        avatarDiv.appendChild(img);
-        card.appendChild(avatarDiv);
-        
-        const nameHeader = document.createElement("h5");
-        nameHeader.textContent = hero.name;
-        card.appendChild(nameHeader);
-        
-        const statsSpan = document.createElement("span");
-        statsSpan.className = "hero-card-stats";
-        statsSpan.textContent = `WR: ${hero.win_rate.toFixed(1)}%`;
-        card.appendChild(statsSpan);
-        
-        const tierBadge = document.createElement("span");
-        const sanitizedTier = hero.tier.replace('+', 'Plus');
-        tierBadge.className = `hero-card-badge tier-${sanitizedTier}`;
-        tierBadge.textContent = hero.tier;
-        card.appendChild(tierBadge);
-        
-        grid.appendChild(card);
+    document.getElementById('hero-count').textContent = `${heroes.length} tướng`;
+    document.querySelectorAll('#role-filters .filter-tab').forEach(tab => {
+        const active = tab.dataset.role === state.selectedRoleFilter;
+        tab.classList.toggle('active', active); tab.setAttribute('aria-pressed', String(active));
     });
+    for (const hero of heroes) {
+        const card = document.createElement('button'); card.type = 'button'; card.className = 'hero-card'; card.dataset.id = hero.id;
+        card.disabled = unavailable.has(hero.id) || state.currentTurnIndex >= 20;
+        card.title = `${hero.name} — ${translateRole(hero.main_role)}, tier ${hero.tier}`;
+        card.setAttribute('aria-label', `${hero.name}, ${translateRole(hero.main_role)}, tier ${hero.tier}${unavailable.has(hero.id) ? ', đã cấm hoặc chọn' : ''}`);
+        const portrait = document.createElement('div'); portrait.className = 'hero-card-img'; portrait.appendChild(createHeroImage(hero, true));
+        const name = document.createElement('span'); name.className = 'hero-card-name'; name.textContent = hero.name;
+        const tier = document.createElement('span'); tier.className = 'hero-card-badge'; tier.textContent = hero.tier;
+        card.append(portrait, name, tier);
+        if (unavailable.has(hero.id)) {
+            const used = document.createElement('span'); used.className = 'hero-card-used';
+            used.textContent = [...state.bansBlue, ...state.bansRed].includes(hero.id) ? 'Đã cấm' : 'Đã chọn'; card.appendChild(used);
+        }
+        card.addEventListener('click', () => handleHeroSelect(hero)); grid.appendChild(card);
+    }
+    if (!heroes.length) {
+        const empty = document.createElement('div'); empty.className = 'grid-empty';
+        const title = document.createElement('p'); title.textContent = 'Không tìm thấy tướng.';
+        const hint = document.createElement('p'); hint.textContent = 'Thử tên khác hoặc chọn lại bộ lọc vị trí.';
+        empty.append(title,hint); grid.appendChild(empty);
+    }
 }
 
-// Render Recommendations & Stats Panel
 function renderRecommendationsAndStats() {
-    const recList = document.getElementById("recommendation-list");
-    recList.innerHTML = "";
-    
-    const missingRolesText = document.getElementById("missing-roles-text");
-    const recTitle = document.getElementById("recommendation-title");
-    
-    const isPickPhase = state.currentTurnIndex >= 10 && state.currentTurnIndex < 20;
-    const activeTeam = isPickPhase ? TURN_SEQUENCE[state.currentTurnIndex].team : "blue";
-    
-    // Update Title depending on active team
-    if (activeTeam === "blue") {
-        recTitle.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles magic-icon"></i> GỢI Ý TƯỚNG TỐI ƯU (ĐỘI XANH)`;
-    } else {
-        recTitle.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles magic-icon"></i> GỢI Ý TƯỚNG TỐI ƯU (ĐỘI ĐỎ)`;
-    }
-    
-    // Update active class on recommendations filter tabs
-    const recTabs = document.querySelectorAll("#rec-role-filters .rec-filter-tab");
-    recTabs.forEach(tab => {
-        if (tab.dataset.role === state.selectedRecRoleFilter) {
-            tab.classList.add("active");
-        } else {
-            tab.classList.remove("active");
-        }
+    const list = document.getElementById('recommendation-list'); list.replaceChildren();
+    const turn = TURN_SEQUENCE[state.currentTurnIndex], picking = turn?.type === 'pick', team = turn?.team || 'blue';
+    document.getElementById('recommendation-title').textContent = !turn ? 'Gợi ý tướng' : `Gợi ý cho ${team === 'blue' ? 'Đội Xanh' : 'Đội Đỏ'}`;
+    document.querySelectorAll('#rec-modes .mode-btn').forEach(button => {
+        const active = button.dataset.mode === state.recommendationMode;
+        button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); button.disabled = !picking;
     });
-
-    // Update active class on recommendation mode buttons
-    const modeBtns = document.querySelectorAll("#rec-modes .mode-btn");
-    modeBtns.forEach(btn => {
-        if (btn.dataset.mode === state.recommendationMode) {
-            btn.classList.add("active");
-        } else {
-            btn.classList.remove("active");
-        }
-    });
-
-    // Get recommendations for active team
-    const { topSuggestions, missingRoles } = calculateSuggestions(activeTeam);
-    
-    const teamFull = activeTeam === "blue" ? state.picksBlue.filter(Boolean).length === 5 : state.picksRed.filter(Boolean).length === 5;
-    
-    // Format missing roles text
-    if (state.currentTurnIndex < 10) {
-        missingRolesText.textContent = "Giai đoạn Cấm (Gợi ý chưa mở)";
-    } else if (teamFull) {
-        missingRolesText.textContent = "Đội hình hoàn tất!";
-    } else {
-        missingRolesText.textContent = "Vị trí thiếu: " + missingRoles.map(translateRole).join(", ");
+    const select = document.getElementById('rec-role-select'); select.value = state.selectedRecRoleFilter; select.disabled = !picking;
+    const { topSuggestions, missingRoles } = calculateSuggestions(team);
+    document.getElementById('missing-roles-text').textContent = !turn ? 'Draft hoàn tất' : picking ? (missingRoles.length ? `Còn thiếu: ${missingRoles.map(translateRole).join(', ')}` : 'Đủ các vị trí') : 'Chưa đến lượt chọn';
+    document.querySelector('.rec-header .quiet-label').textContent = picking ? `${topSuggestions.length} lựa chọn` : '';
+    if (!picking || !topSuggestions.length) {
+        const empty = document.createElement('div'); empty.className = 'rec-empty-state';
+        const title = document.createElement('p'); title.textContent = !turn ? 'Hai đội đã chọn đủ tướng.' : !picking ? 'Hoàn tất lượt cấm để xem gợi ý.' : 'Không còn tướng ở vị trí này.';
+        const hint = document.createElement('p'); hint.textContent = !turn ? 'Mở Tổng kết để xem đội hình và các kèo đối đầu.' : !picking ? 'Chọn tướng trong danh sách để cấm cho đội đang đến lượt.' : 'Chuyển sang Mọi vị trí để xem lựa chọn khác.';
+        empty.append(title,hint); list.appendChild(empty); return;
     }
-    
-    const isBluePickTurn = isPickPhase && TURN_SEQUENCE[state.currentTurnIndex].team === "blue";
-    const isRedPickTurn = isPickPhase && TURN_SEQUENCE[state.currentTurnIndex].team === "red";
-    
-    if (!isPickPhase || teamFull) {
-        const emptyState = document.createElement("div");
-        emptyState.className = "rec-empty-state";
-        if (teamFull) {
-            emptyState.innerHTML = `<i class="fa-solid fa-circle-check"></i> Đội hình ${activeTeam === "blue" ? "Đội Xanh" : "Đội Đỏ"} đã chọn đầy đủ 5 vị trí.`;
-        } else {
-            emptyState.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> Gợi ý sẽ tự động tính toán khi bước vào lượt Chọn (Pick) của một trong hai đội.`;
+    for (const {hero, totalScore, baseScore, reasons} of topSuggestions) {
+        const card = document.createElement('article'); card.className = 'rec-card';
+        const row = document.createElement('div'); row.className = 'rec-card-main';
+        const portrait = document.createElement('div'); portrait.className = 'rec-card-avatar'; portrait.appendChild(createHeroImage(hero));
+        const info = document.createElement('div'); info.className = 'rec-hero-details';
+        const name = document.createElement('h3'); name.textContent = hero.name;
+        const meta = document.createElement('p'); meta.textContent = `${translateRole(hero.main_role)} · Tier ${hero.tier}`; info.append(name,meta);
+        const action = document.createElement('div'); action.className = 'rec-select';
+        const score = document.createElement('span'); score.className = 'rec-card-score'; score.textContent = `${totalScore}đ`;
+        const pick = document.createElement('button'); pick.className = 'btn-rec-select'; pick.textContent = 'Chọn'; pick.setAttribute('aria-label', `Chọn ${hero.name}`);
+        pick.addEventListener('click', () => handleHeroSelect(hero)); action.append(score,pick); row.append(portrait,info,action);
+        const preview = document.createElement('p'); preview.className = 'rec-reason-preview';
+        const strongest = [...reasons].sort((a,b) => Math.abs(b.points) - Math.abs(a.points))[0];
+        preview.textContent = strongest ? strongest.text.replace(/\s*\([^)]*\)/g, '').replace(/^Cân đối đội hình: /, '').replace(/^Hiệu suất thực tế$/, 'Ưu tiên theo chỉ số meta') : 'Phù hợp với meta hiện tại';
+        const details = document.createElement('details'); details.className = 'rec-reason-details';
+        const summary = document.createElement('summary'); summary.textContent = 'Xem lý do';
+        const breakdown = document.createElement('ul');
+        const base = document.createElement('li'); base.textContent = `Điểm tier: ${baseScore}đ. Tổng điểm có thể gồm điểm bổ sung vị trí.`; breakdown.appendChild(base);
+        for (const reason of reasons) {
+            const item = document.createElement('li'); item.textContent = `${reason.points > 0 ? '+' : ''}${reason.points}đ: ${reason.text}`;
+            if (reason.points < 0) item.className = 'negative-reason'; breakdown.appendChild(item);
         }
-        recList.appendChild(emptyState);
-    } else {
-        if (topSuggestions.length === 0) {
-            const emptyState = document.createElement("div");
-            emptyState.className = "rec-empty-state";
-            emptyState.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Không tìm thấy tướng phù hợp còn trống trong bể tướng.`;
-            recList.appendChild(emptyState);
-        } else {
-            topSuggestions.forEach(({ hero, totalScore, baseScore, reasons }) => {
-                const card = document.createElement("div");
-                card.className = "rec-card";
-                
-                const scoreBadge = document.createElement("div");
-                scoreBadge.className = "rec-card-score";
-                scoreBadge.textContent = `${totalScore}đ`;
-                card.appendChild(scoreBadge);
-                
-                const heroInfo = document.createElement("div");
-                heroInfo.className = "rec-card-hero-info";
-                
-                const avatar = document.createElement("div");
-                avatar.className = "rec-card-avatar";
-                const img = document.createElement("img");
-                img.src = hero.avatar || generateSvgAvatar(hero.name, hero.main_role, hero.tier);
-                img.alt = hero.name;
-                avatar.appendChild(img);
-                heroInfo.appendChild(avatar);
-                
-                const details = document.createElement("div");
-                details.className = "rec-hero-details";
-                const title = document.createElement("h4");
-                title.textContent = hero.name;
-                details.appendChild(title);
-                
-                const subtitle = document.createElement("span");
-                subtitle.textContent = `${translateRole(hero.main_role)} • WR: ${hero.win_rate.toFixed(1)}% • Gốc: ${baseScore}đ`;
-                details.appendChild(subtitle);
-                
-                heroInfo.appendChild(details);
-                card.appendChild(heroInfo);
-                
-                // Reasons breakdown
-                const reasonDiv = document.createElement("div");
-                reasonDiv.className = "rec-card-reason";
-                
-                if (reasons.length === 0) {
-                    reasonDiv.textContent = "Không có điểm cộng thêm đặc biệt. Đề xuất dựa trên Tier gốc.";
-                } else {
-                    const ul = document.createElement("ul");
-                    reasons.forEach(r => {
-                        const li = document.createElement("li");
-                        const prefix = r.points > 0 ? `+${r.points}đ` : `${r.points}đ`;
-                        li.textContent = `${prefix}: ${r.text}`;
-                        if (r.points < 0) {
-                            li.style.color = "var(--red-primary)";
-                        }
-                        ul.appendChild(li);
-                    });
-                    reasonDiv.appendChild(ul);
-                }
-                card.appendChild(reasonDiv);
-                
-                // Select button
-                const selectBtn = document.createElement("button");
-                selectBtn.className = "btn-rec-select";
-                selectBtn.innerHTML = `<i class="fa-solid fa-plus"></i> Chọn`;
-                // Disable quick select if it is not the active pick turn
-                const canSelect = (activeTeam === "blue" && isBluePickTurn) || (activeTeam === "red" && isRedPickTurn);
-                if (!canSelect) {
-                    selectBtn.disabled = true;
-                    selectBtn.style.opacity = 0.5;
-                    selectBtn.style.cursor = "not-allowed";
-                } else {
-                    selectBtn.addEventListener("click", () => handleHeroSelect(hero));
-                }
-                card.appendChild(selectBtn);
-                
-                recList.appendChild(card);
-            });
-        }
+        details.append(summary,breakdown); card.append(row,preview,details); list.appendChild(card);
     }
-    
-    // --- 7. Calculate and Render Compositions Stats ---
-    renderCompositionStats();
 }
-
-// Composition calculations
-function renderCompositionStats() {
-    const bluePickedIds = state.picksBlue.filter(Boolean);
-    const redPickedIds = state.picksRed.filter(Boolean);
-    
-    const bluePicked = bluePickedIds.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
-    const redPicked = redPickedIds.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
-    
-    // 1. Overall Team Scores
-    let blueScore = 0;
-    let redScore = 0;
-    let bluePct = 0;
-    let redPct = 0;
-    
-    // Average ratings
-    let blueDmgAvg = 0, blueTankAvg = 0, blueTfAvg = 0;
-    let redDmgAvg = 0, redTankAvg = 0, redTfAvg = 0;
-    
-    if (bluePicked.length > 0) {
-        blueDmgAvg = bluePicked.reduce((s, h) => s + h.attributes.damage, 0) / bluePicked.length;
-        blueTankAvg = bluePicked.reduce((s, h) => s + h.attributes.tankiness, 0) / bluePicked.length;
-        blueTfAvg = bluePicked.reduce((s, h) => s + h.attributes.teamfight, 0) / bluePicked.length;
-        
-        blueScore = (blueDmgAvg + blueTankAvg + blueTfAvg) / 3;
-        bluePct = (blueScore / 5) * 100;
-    }
-    
-    if (redPicked.length > 0) {
-        redDmgAvg = redPicked.reduce((s, h) => s + h.attributes.damage, 0) / redPicked.length;
-        redTankAvg = redPicked.reduce((s, h) => s + h.attributes.tankiness, 0) / redPicked.length;
-        redTfAvg = redPicked.reduce((s, h) => s + h.attributes.teamfight, 0) / redPicked.length;
-        
-        redScore = (redDmgAvg + redTankAvg + redTfAvg) / 3;
-        redPct = (redScore / 5) * 100;
-    }
-    
-    // Update HTML texts & bars (Blue Left, Red Right)
-    const blueScoreEl = document.getElementById("blue-score-text");
-    if (!blueScoreEl) return;
-    
-    blueScoreEl.textContent = `${blueScore.toFixed(1)}/5.0 (${Math.round(bluePct)}%)`;
-    document.getElementById("blue-progress-bar").style.width = `${bluePct}%`;
-    
-    document.getElementById("red-score-text").textContent = `${redScore.toFixed(1)}/5.0 (${Math.round(redPct)}%)`;
-    document.getElementById("red-progress-bar").style.width = `${redPct}%`;
-    
-    // Update Sub stats bars (Left for blue, Right for red)
-    document.getElementById("sub-bar-dmg-blue").style.width = `${(blueDmgAvg / 5) * 100}%`;
-    document.getElementById("sub-bar-dmg-red").style.width = `${(redDmgAvg / 5) * 100}%`;
-    
-    document.getElementById("sub-bar-tank-blue").style.width = `${(blueTankAvg / 5) * 100}%`;
-    document.getElementById("sub-bar-tank-red").style.width = `${(redTankAvg / 5) * 100}%`;
-    
-    document.getElementById("sub-bar-tf-blue").style.width = `${(blueTfAvg / 5) * 100}%`;
-    document.getElementById("sub-bar-tf-red").style.width = `${(redTfAvg / 5) * 100}%`;
-}
-
-// --- 8. ACTION HANDLERS ---
 
 function handleHeroSelect(hero) {
-    if (state.currentTurnIndex >= 20) return;
+    if (state.currentTurnIndex >= 20 || [...state.bansBlue, ...state.bansRed, ...state.picksBlue, ...state.picksRed].includes(hero.id)) return;
     
     // Save to history snapshot
     state.history.push({
@@ -7660,7 +7278,7 @@ function initTheme() {
     const systemMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     try {
         systemMediaQuery.addEventListener("change", (e) => {
-            const currentSetting = localStorage.getItem("theme") || "system";
+            const currentSetting = localStorage.getItem("theme") || "dark";
             if (currentSetting === "system") {
                 applyThemeResolved("system");
             }
@@ -7668,7 +7286,7 @@ function initTheme() {
     } catch (err) {
         // Fallback for older browsers
         systemMediaQuery.addListener((e) => {
-            const currentSetting = localStorage.getItem("theme") || "system";
+            const currentSetting = localStorage.getItem("theme") || "dark";
             if (currentSetting === "system") {
                 applyThemeResolved("system");
             }
@@ -7676,7 +7294,7 @@ function initTheme() {
     }
 
     // Initial toggle UI update
-    const savedSetting = localStorage.getItem("theme") || "system";
+    const savedSetting = localStorage.getItem("theme") || "dark";
     updateThemeToggleUI(savedSetting);
 }
 
@@ -7704,6 +7322,7 @@ function applyThemeResolved(themeSetting) {
 function updateThemeToggleUI(themeSetting) {
     const themeButtons = document.querySelectorAll("#theme-toggle-group .theme-btn");
     themeButtons.forEach(btn => {
+        btn.setAttribute("aria-pressed", String(btn.dataset.themeVal === themeSetting));
         if (btn.dataset.themeVal === themeSetting) {
             btn.classList.add("active");
         } else {
@@ -7865,7 +7484,7 @@ function generateDraftAnalysis() {
     if (allWarnings.length > 0) {
         warningsHtml = `
             <div class="matchup-warnings">
-                <h5><i class="fa-solid fa-triangle-exclamation"></i> Cảnh Báo Khắc Chế Cần Lưu Ý</h5>
+                <h5>Các kèo khắc chế cần lưu ý</h5>
                 <ul>
                     ${allWarnings.map(w => `<li>${w}</li>`).join("")}
                 </ul>
@@ -7874,7 +7493,7 @@ function generateDraftAnalysis() {
     } else {
         warningsHtml = `
             <div class="matchup-warnings empty">
-                <h5><i class="fa-solid fa-circle-check"></i> Cảnh Báo Khắc Chế</h5>
+                <h5>Khắc chế trực tiếp</h5>
                 <p>Không có mối đe dọa khắc chế trực tiếp nghiêm trọng nào giữa hai đội hình.</p>
             </div>
         `;
@@ -7882,9 +7501,9 @@ function generateDraftAnalysis() {
     
     container.innerHTML = `
         <div class="analysis-grid">
-            <!-- ĐỘI XANH -->
+            <!-- Đội Xanh -->
             <div class="analysis-team blue-analysis">
-                <h4 class="blue-team-title"><i class="fa-solid fa-shield-halved"></i> ĐỘI XANH</h4>
+                <h4 class="blue-team-title">Đội Xanh</h4>
                 
                 <div class="team-stat-bars">
                     ${renderStatBar("Sát thương", statsBlue.damage)}
@@ -7895,22 +7514,22 @@ function generateDraftAnalysis() {
                 </div>
                 
                 <div class="team-tactics">
-                    <h5><i class="fa-solid fa-compass"></i> Hướng Vận Hành</h5>
+                    <h5>Hướng vận hành</h5>
                     <h6>Lối chơi chính: ${tacticsBlue.title}</h6>
                     <p>${tacticsBlue.desc}</p>
                 </div>
                 
                 <div class="team-lane-notes">
-                    <h5><i class="fa-solid fa-list-check"></i> Lưu Ý Từng Vị Trí</h5>
+                    <h5>Lưu ý từng vị trí</h5>
                     <ul>
                         ${laneNotesBlue.map(n => `<li>${n}</li>`).join("")}
                     </ul>
                 </div>
             </div>
             
-            <!-- ĐỘI ĐỎ -->
+            <!-- Đội Đỏ -->
             <div class="analysis-team red-analysis">
-                <h4 class="red-team-title"><i class="fa-solid fa-shield-halved"></i> ĐỘI ĐỎ</h4>
+                <h4 class="red-team-title">Đội Đỏ</h4>
                 
                 <div class="team-stat-bars">
                     ${renderStatBar("Sát thương", statsRed.damage)}
@@ -7921,13 +7540,13 @@ function generateDraftAnalysis() {
                 </div>
                 
                 <div class="team-tactics">
-                    <h5><i class="fa-solid fa-compass"></i> Hướng Vận Hành</h5>
+                    <h5>Hướng vận hành</h5>
                     <h6>Lối chơi chính: ${tacticsRed.title}</h6>
                     <p>${tacticsRed.desc}</p>
                 </div>
                 
                 <div class="team-lane-notes">
-                    <h5><i class="fa-solid fa-list-check"></i> Lưu Ý Từng Vị Trí</h5>
+                    <h5>Lưu ý từng vị trí</h5>
                     <ul>
                         ${laneNotesRed.map(n => `<li>${n}</li>`).join("")}
                     </ul>
@@ -7942,15 +7561,53 @@ function generateDraftAnalysis() {
 // Overlay controllers
 function showCompletionOverlay() {
     generateDraftAnalysis();
-    document.getElementById("completion-overlay").classList.remove("hidden");
+    const overlay = document.getElementById('completion-overlay');
+    overlay.returnFocus = document.activeElement;
+    overlay.classList.remove('hidden');
+    document.getElementById('btn-overlay-close').focus();
 }
 
 function hideCompletionOverlay() {
-    document.getElementById("completion-overlay").classList.add("hidden");
+    const overlay = document.getElementById('completion-overlay');
+    const wasOpen = !overlay.classList.contains('hidden'); overlay.classList.add('hidden');
+    if (wasOpen) {
+        const target = overlay.returnFocus?.isConnected && !overlay.returnFocus.disabled ? overlay.returnFocus : document.getElementById('btn-analysis');
+        if (!target.disabled) target.focus();
+    }
 }
 
 // --- 9. EVENT LISTENERS INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", () => {
+
+    document.getElementById('btn-analysis').addEventListener('click', showCompletionOverlay);
+    document.getElementById('rec-role-select').addEventListener('change', event => {
+        state.selectedRecRoleFilter = event.target.value; renderRecommendationsAndStats();
+    });
+    document.querySelectorAll('.workspace-tab').forEach(button => button.addEventListener('click', () => {
+        document.getElementById('workspace').dataset.view = button.dataset.view;
+        document.querySelectorAll('.workspace-tab').forEach(tab => {
+            const active = tab === button; tab.classList.toggle('active',active); tab.setAttribute('aria-pressed',String(active));
+        });
+    }));
+    document.addEventListener('click', event => {
+        const menu = document.getElementById('settings-menu');
+        if (!menu.contains(event.target)) menu.open = false;
+        if (event.target === document.getElementById('completion-overlay')) hideCompletionOverlay();
+    });
+    document.addEventListener('keydown', event => {
+        const overlay = document.getElementById('completion-overlay'), modalOpen = !overlay.classList.contains('hidden');
+        if (event.key === 'Escape') { document.getElementById('settings-menu').open = false; if (modalOpen) hideCompletionOverlay(); }
+        if (event.key === '/' && !modalOpen && !event.ctrlKey && !event.metaKey && !event.altKey && !event.target.closest('input,textarea,select,[contenteditable="true"]')) {
+            event.preventDefault(); document.getElementById('search-input').focus();
+        }
+        if (event.key === 'Tab' && modalOpen) {
+            const controls = [...overlay.querySelectorAll('button:not(:disabled),[href],input,select,[tabindex="0"]')];
+            const first = controls[0], last = controls[controls.length-1];
+            if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+            else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+        }
+    });
+
     // Search event
     const searchInput = document.getElementById("search-input");
     const clearBtn = document.getElementById("clear-search-btn");

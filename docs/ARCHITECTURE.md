@@ -21,7 +21,7 @@ Không có API backend hoặc database server. Frontend đọc hằng `HERO_DATA
 
 `state` chứa chỉ số lượt, bốn mảng cấm/chọn, bộ lọc, kiểu sắp xếp, chế độ gợi ý và lịch sử. Mỗi mảng đội có 5 vị trí. `handleHeroSelect` ghi snapshot lịch sử trước khi đổi trạng thái; `handleUndo` khôi phục snapshot, `handleReset` tạo lại lượt đầu theo tùy chọn bỏ qua cấm.
 
-Khi khởi động, `DOMContentLoaded` gắn sự kiện, nạp theme/tùy chọn cấm và gọi `renderUI`. Các hàm `renderHeroGrid`, `renderRecommendationsAndStats`, `renderCompositionStats` cập nhật DOM. Tướng đã cấm/chọn bị loại khỏi tập gợi ý và vô hiệu hóa trên lưới.
+Khi khởi động, `DOMContentLoaded` gắn sự kiện, nạp theme/tùy chọn cấm và gọi `renderUI`. Các hàm `renderHeroGrid`, `renderRecommendationsAndStats`, `renderPickCol` cập nhật DOM. Tướng đã cấm/chọn bị loại khỏi tập gợi ý và vô hiệu hóa trên lưới.
 
 ## Tính điểm gợi ý
 
@@ -56,4 +56,4 @@ Các thuộc tính `damage`, `tankiness`, `mobility`, `teamfight`, `split_push` 
 
 ## Lưu trữ và phụ thuộc ngoài
 
-Chỉ `theme` và `skipBanPhase` nằm trong `localStorage`. Không có lưu trận, đồng bộ đa thiết bị hoặc máy chủ nhiều người chơi. Ảnh tướng dùng URL nguồn; ảnh lỗi được thay bằng SVG sinh trong trình duyệt. Font và bộ icon được tải từ Google Fonts/CDN, nên cần tính đến kết nối mạng khi triển khai.
+Chỉ `theme` và `skipBanPhase` nằm trong `localStorage`. Không có lưu trận, đồng bộ đa thiết bị hoặc máy chủ nhiều người chơi. Ảnh tướng dùng URL nguồn; ảnh lỗi được thay bằng SVG sinh trong trình duyệt. Font được tải từ Google Fonts; biểu tượng giao diện là SVG nội tuyến, không cần thư viện icon ngoài. Giao diện gồm bảng hai đội theo chiều ngang, vùng tướng và cột gợi ý; dưới 880px, vùng tướng/gợi ý chuyển thành hai tab. Chi tiết lý do dùng phần tử `details`; bảng tổng kết hỗ trợ Escape và giữ focus bàn phím trong dialog.

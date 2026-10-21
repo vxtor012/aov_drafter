@@ -37,14 +37,26 @@ Validator chỉ dùng thư viện chuẩn Python. Nó kiểm tra ID duy nhất, 
 
 Các kiểm tra này chưa xác minh tính đúng của số liệu nguồn, bản quyền nội dung, hiển thị CSS hoặc toàn bộ luồng thao tác trình duyệt.
 
+## Kiểm tra trình duyệt tự động
+
+Cài thư viện phát triển và trình duyệt thử nghiệm, sau đó chạy khi máy chủ tại cổng 8000 đang mở:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+.\.venv\Scripts\python.exe -m playwright install chromium
+.\.venv\Scripts\python.exe tests/ui_smoke.py
+```
+
+Có thể đặt `UI_BASE_URL` để dùng URL khác. Nếu muốn dùng Edge/Chrome đã cài thay cho Chromium của Playwright, đặt `UI_BROWSER_PATH` bằng đường dẫn tuyệt đối tới executable trình duyệt. Script chạy headless, kiểm tra tìm kiếm không dấu, bộ lọc, gợi ý, theme, hoàn tác/reset, 20 lượt cấm/chọn, dialog và mobile. Ảnh kết quả nằm trong `.taste-skill/qa/` (không commit).
+
 ## Kiểm tra giao diện thủ công
 
 1. Tải mới trang, kiểm tra console không có lỗi JavaScript và lưới tướng xuất hiện.
 2. Tìm `Evita`, lọc Mid và chọn tướng; xác nhận đúng đội đến lượt, tướng không chọn lại được.
 3. Chuyển Meta/Khắc chế, lọc vai trò gợi ý và đổi các kiểu sắp xếp.
-4. Hoàn tác rồi chọn lại; reset và tắt bỏ qua cấm để đi qua 10 lượt cấm.
+4. Hoàn tác rồi chọn lại; **Draft mới**, mở **Tùy chọn** và tắt bỏ qua cấm để đi qua 10 lượt cấm.
 5. Chọn đủ 5 tướng mỗi đội; kiểm tra tổng kết, đóng overlay và bắt đầu trận mới.
-6. Đổi theme, tải lại để kiểm tra lưu tùy chọn; xác nhận đội hình không được giữ sau tải lại.
+6. Mở **Tùy chọn**, đổi theme, tải lại để kiểm tra lưu tùy chọn; xác nhận đội hình không được giữ sau tải lại.
 7. Kiểm tra cửa sổ hẹp và màn hình desktop; thử khi ảnh ngoài bị lỗi để xác nhận fallback.
 
 ## Triển khai
@@ -64,5 +76,5 @@ Không có lệnh deploy được cấu hình sẵn hoặc workflow CI trong rep
 | Không đọc được `tiers` hoặc guard dừng | Nguồn có thể đổi cấu trúc; kiểm tra HTML thật và parser trước khi cập nhật |
 | JSON/JS không đồng bộ | Chạy lại crawler thành công hoặc khôi phục cả hai tệp cùng phiên bản; chạy validator |
 | Tướng mới sai đường hoặc không có chỉ số | Kiểm tra ánh xạ tên, ngoại lệ vai trò và `fallback_rate_fields` trong báo cáo |
-| Ảnh, font hoặc icon không tải | Kiểm tra mạng/CDN; ảnh tướng có SVG dự phòng, icon/font ngoài không được đóng gói cục bộ |
+| Ảnh hoặc font không tải | Kiểm tra mạng/CDN; ảnh tướng có SVG dự phòng; font ngoài không được đóng gói cục bộ, icon giao diện dùng SVG nội tuyến |
 | Tải lại mất đội hình | Hành vi hiện tại: chỉ theme và tùy chọn bỏ qua cấm được lưu |

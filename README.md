@@ -23,17 +23,17 @@ python -m http.server 8000 --bind 127.0.0.1 --directory public
 
 Mở [http://localhost:8000](http://localhost:8000). Nhấn `Ctrl+C` để dừng. Python chỉ phục vụ tệp tĩnh, không chạy crawler khi người dùng mở trang.
 
-Có thể mở `public/index.html` trực tiếp để xem nhanh, nhưng nên dùng HTTP để hành vi lưu tùy chọn và tải tài nguyên ổn định hơn. Ảnh tướng, Google Fonts và Font Awesome cần kết nối mạng.
+Có thể mở `public/index.html` trực tiếp để xem nhanh, nhưng nên dùng HTTP để hành vi lưu tùy chọn và tải tài nguyên ổn định hơn. Ảnh tướng và Google Fonts cần kết nối mạng; biểu tượng giao diện được vẽ bằng SVG nội tuyến.
 
 ## Cách sử dụng
 
-1. Giữ **Bỏ qua cấm** để vào chọn ngay, hoặc tắt tùy chọn này trước khi chọn để mô phỏng đầy đủ.
+1. Mở **Tùy chọn** để bật/tắt **Bỏ qua lượt cấm** trước khi chọn tướng. Mặc định vào thẳng lượt chọn.
 2. Xem đội đang đến lượt trên thanh trạng thái; bấm thẻ tướng để cấm/chọn cho đội đó.
 3. Dùng bộ lọc vai trò và chuyển **Meta/Khắc chế** để xem gợi ý phù hợp.
-4. Dùng **Hoàn tác** nếu chọn nhầm, **Reset** để bắt đầu lại.
-5. Sau 10 lượt chọn, xem bảng phân tích đội hình và các cảnh báo đối đầu.
+4. Dùng **Hoàn tác** nếu chọn nhầm, **Draft mới** để bắt đầu lại. Nhấn `/` để tìm tướng nhanh.
+5. Mở **Xem lý do** trên từng gợi ý để xem điểm chi tiết. Sau 10 lượt chọn, xem **Tổng kết** để so sánh đội hình và các kèo đối đầu. Trên mobile, chuyển tab **Tướng/Gợi ý** để thao tác.
 
-Chỉ giao diện (`theme`) và tùy chọn bỏ qua cấm (`skipBanPhase`) được lưu trong `localStorage`. Đội hình đang chọn và lịch sử hoàn tác nằm trong bộ nhớ, sẽ mất khi tải lại trang. Tìm kiếm không phân biệt chữ hoa/thường nhưng vẫn phân biệt dấu tiếng Việt.
+Chỉ giao diện (`theme`) và tùy chọn bỏ qua cấm (`skipBanPhase`) được lưu trong `localStorage`. Đội hình đang chọn và lịch sử hoàn tác nằm trong bộ nhớ, sẽ mất khi tải lại trang. Tìm kiếm không phân biệt chữ hoa/thường và dấu tiếng Việt. Giao diện mặc định tối, có thể đổi sang sáng hoặc theo hệ thống trong **Tùy chọn**.
 
 ## Dữ liệu hiện tại
 
@@ -78,6 +78,7 @@ Crawler ghi ba tệp: `data/crawled_heroes.json`, khối `HERO_DATABASE` trong `
 ├── tests/                      # Kiểm thử dữ liệu, crawler và đường dẫn
 ├── docs/                       # Kiến trúc, dữ liệu và phát triển
 ├── requirements.txt            # Thư viện Python của crawler
+├── requirements-dev.txt        # Thư viện kiểm thử trình duyệt
 ├── skills-lock.json            # Khóa phiên bản skill phát triển
 └── README.md
 ```
@@ -89,6 +90,7 @@ Chỉ phục vụ hoặc triển khai nội dung `public/`. Các thư mục `dat
 - [Kiến trúc và thuật toán gợi ý](docs/ARCHITECTURE.md)
 - [Schema, nguồn và cập nhật dữ liệu](docs/DATA.md)
 - [Phát triển, kiểm thử, triển khai và xử lý lỗi](docs/DEVELOPMENT.md)
+- [Hướng thiết kế giao diện và các nguồn tham khảo](docs/UI_DESIGN.md)
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
