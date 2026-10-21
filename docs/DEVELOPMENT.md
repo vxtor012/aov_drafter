@@ -61,9 +61,9 @@ Có thể đặt `UI_BASE_URL` để dùng URL khác. Nếu muốn dùng Edge/Ch
 
 ## Triển khai
 
-Đây là website tĩnh. Cấu hình thư mục publish/document root là `public`, không cần lệnh build. Khi tải tệp lên hosting, đưa **nội dung bên trong `public/`** vào thư mục gốc của website: `index.html` và `assets/`. Giữ nguyên đường dẫn tương đối và UTF-8. Dữ liệu tướng đã được nhúng trong `assets/js/app.js`; các thư mục `data/`, `scripts/`, `tests/`, `docs/`, `.agents/`, `.venv/` và `.git/` không cần được phục vụ công khai.
+Đây là website tĩnh. Workflow `.github/workflows/pages.yml` triển khai nội dung `public/` lên GitHub Pages khi có push vào nhánh `main` hoặc chạy thủ công. Trong GitHub, mở **Settings → Pages** và đặt **Build and deployment → Source** thành **GitHub Actions**. Sau đó mỗi lần cập nhật trang, push commit lên `main`; theo dõi workflow trong tab **Actions**. Nếu deploy lỗi, xem log của job để xử lý trước khi thử lại.
 
-Không có lệnh deploy được cấu hình sẵn hoặc workflow CI trong repository. Việc cập nhật dữ liệu trên máy không tự cập nhật hosting: kiểm tra, đưa các tệp đã đồng bộ vào cùng bản phát hành rồi triển khai bằng công cụ hosting đang sử dụng. Không dùng `http.server` làm máy chủ production.
+Không cần lệnh build. Dữ liệu tướng đã được nhúng trong `public/assets/js/app.js`; các thư mục `data/`, `scripts/`, `tests/`, `docs/`, `.agents/`, `.venv/` và `.git/` không được đưa lên website. Không dùng `http.server` làm máy chủ production.
 
 ## Xử lý lỗi
 
