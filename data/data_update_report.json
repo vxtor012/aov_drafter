@@ -1,0 +1,904 @@
+{
+  "fetched_at": "2026-10-21T07:22:37.689103+00:00",
+  "sources": {
+    "roster": "https://aov-builds.com/tuong/",
+    "meta": "https://rovmeta.com",
+    "counters": "https://aov-builds.com/khac-che/"
+  },
+  "source_patch": "1.64",
+  "hero_count": 130,
+  "meta_matches": 129,
+  "detailed_counter_pages": 93,
+  "counter_links": 931,
+  "unmatched_meta_ids": [
+    "flowbornphep"
+  ],
+  "removed_ids": [],
+  "attributes_source": "estimated_by_lane_not_measured",
+  "heroes": {
+    "airi": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "aleister": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "alice": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "allain": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "amily": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "annette": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "aoi": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "arduin": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "arthur": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "arum": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "astrid": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "ata": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "aya": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "azzenka": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "baldum": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "bijan": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "billow": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "biron": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "boltbaron": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "bonnie": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "rovmeta",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "bright": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "butterfly": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "capheny": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "celica": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "rovmeta",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "charlotte": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "chaugnar": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "cresht": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "darcy": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "dextra": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "rovmeta",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "dieuthuyen": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "dirak": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "dolia": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "dyadia": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "edras": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "elandorr": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "elsu": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "enzo": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "erin": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "errol": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "evita": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "fennik": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "florentino": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "flowborn": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "flowbornphep": {
+      "meta": "previous_or_default",
+      "stats_source": "unverified_previous_or_default",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "gildur": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "goverra": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "grakk": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "hayate": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "heino": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "helen": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "iggy": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "ignis": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "ilumia": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "ishar": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "jinna": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "kahlii": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "kaine": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "keera": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "kilgroth": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "kriknak": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "krixi": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "krizzix": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "lauriel": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "laville": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "liliana": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "lindis": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "rovmeta",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "lorion": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "lubo": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "lumburr": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "rovmeta",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "maloch": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "marja": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "max": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "mganga": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "mina": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "ming": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "moren": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "murad": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "nakroth": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "natalya": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "ngokhong": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "omega": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "omen": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "ormarr": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "paine": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "preyta": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "qi": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "quillen": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "raz": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "richter": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "rovmeta",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "rouie": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "rourke": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "rovmeta",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "roxie": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "ryoma": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "sephera": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "sinestrea": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "skud": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "slimz": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "stuart": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "superman": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "rovmeta",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "taara": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "tachi": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "tamyn": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "teemee": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "teeri": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "rovmeta",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "telannas": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "thane": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "theflash": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "rovmeta",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "thorne": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "toro": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "trieuvan": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "tulen": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "valhein": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "veera": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "veres": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "violet": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "volkath": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "wiro": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "wisp": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "wonderwoman": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "xeniel": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "ybneth": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "rovmeta",
+      "fallback_rate_fields": []
+    },
+    "yan": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "yena": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "yorn": {
+      "meta": "rovmeta",
+      "stats_source": "unspecified",
+      "counters": "aov-builds",
+      "fallback_rate_fields": [
+        "win_rate",
+        "pick_rate",
+        "ban_rate"
+      ]
+    },
+    "yue": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "zata": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "zephys": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "zill": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "zip": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    },
+    "zuka": {
+      "meta": "rovmeta",
+      "stats_source": "pro",
+      "counters": "aov-builds",
+      "fallback_rate_fields": []
+    }
+  }
+}

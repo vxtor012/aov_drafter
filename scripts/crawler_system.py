@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 AoV / Liên Quân Mobile - Consolidated Meta, Avatar & Detailed Counter-Pick Crawler
-This script crawls the complete database of 129 AoV heroes:
-1. Queries aov-builds.com/tuong/ to get the official Vietnamese roster, display names, and webp avatars.
+This script crawls the current roster exposed by the configured community sources:
+1. Queries aov-builds.com/tuong/ for Vietnamese names and webp avatars.
 2. Queries rovmeta.com to parse the Next.js stream payload for S+/S/A/B/C tiers, win/pick/ban rates, roles, and counter-pick references.
 3. Concurrently queries aov-builds.com/khac-che/<slug>/ using 10 threads to extract lane-specific counters and their detailed reasons in Vietnamese.
 4. Falls back to RovMeta counters with default messages for any missing/404 counter pages.
@@ -16,7 +16,16 @@ import re
 import time
 import unicodedata
 import concurrent.futures
+import sys
+from pathlib import Path
+from datetime import datetime, timezone
 from bs4 import BeautifulSoup
+if __package__:
+    from .validate_data import validate_database
+else:
+    from validate_data import validate_database
+
+ROOT = Path(__file__).resolve().parents[1]
 
 # --- CONFIGURATION & ENDPOINTS ---
 AOV_BUILDS_URL = "https://aov-builds.com/tuong/"
@@ -42,7 +51,8 @@ AOV_TO_ROVMETA = {
     "helen": "helen",
     "payna": "payna",
     "the-joker": "thejoker",
-    "azzenka": "azzenka"
+    "azzenka": "azzenka",
+    "jinna": "jinnar"
 }
 
 # Map legacy/different English names found in counters to modern local IDs
@@ -66,6 +76,7 @@ ROVMETA_ROLE_TO_LANE = {
 
 # Overrides for meta roles where competitive lane differs from basic archetype
 ROLE_OVERRIED = {
+    "flowborn-phep": "Mid",
     "zuka": "Jungle",
     "yan": "Jungle",
     "zephys": "Jungle",
@@ -105,11 +116,13 @@ def resolve_nextjs_pointer(ptr, data_root):
             try:
                 idx = int(part)
                 current = current[idx]
-            except ValueError:
+            except (ValueError, IndexError):
                 return None
         else:
             return None
             
+    if isinstance(current, str) and current != ptr and "tiers" in current:
+        return resolve_nextjs_pointer(current, data_root)
     return current
 
 def estimate_attributes(role):
@@ -160,11 +173,6 @@ def crawl_hero_counters_from_aovbuilds(slug, meta_id_to_local_id):
                 c_meta_id = UNMATCHED_REPLACEMENTS.get(c_meta_id, c_meta_id)
                 
                 c_local_id = meta_id_to_local_id.get(c_meta_id)
-                if not c_local_id:
-                    for cid in meta_id_to_local_id:
-                        if cid in c_meta_id or c_meta_id in cid:
-                            c_local_id = meta_id_to_local_id[cid]
-                            break
                             
                 if c_local_id and c_local_id not in seen_counter_ids:
                     seen_counter_ids.add(c_local_id)
@@ -177,6 +185,8 @@ def crawl_hero_counters_from_aovbuilds(slug, meta_id_to_local_id):
         return slug, None
 
 def main():
+    previous = json.loads((ROOT / "data" / "crawled_heroes.json").read_text(encoding="utf-8"))
+    previous_by_id = {hero["id"]: hero for hero in previous}
     print("[+] KHỞI ĐỘNG TIẾN TRÌNH CÀO DỮ LIỆU ĐỒNG BỘ ĐỘC QUYỀN (AOV-BUILDS & ROVMETA)...")
     
     # ====================================================
@@ -210,10 +220,13 @@ def main():
             print(f"[+] Trích xuất thành công {len(aov_heroes)} tướng từ aov-builds.com.")
         else:
             print(f"[-] AOV-Builds trả về mã lỗi: {response.status_code}.")
-            return
+            raise RuntimeError("Không tải được danh sách tướng; giữ nguyên dữ liệu.")
     except Exception as e:
         print(f"[-] Lỗi kết nối AOV-Builds: {e}")
-        return
+        raise RuntimeError("Không tải được danh sách tướng; giữ nguyên dữ liệu.") from e
+
+    if len(aov_heroes) < max(20, len(previous) * 0.9):
+        raise RuntimeError("Danh sách tướng rỗng hoặc giảm bất thường; giữ nguyên dữ liệu.")
 
     # ====================================================
     # --- PHASE 2: CRAWL ROVMETA.COM FOR META STATS ---
@@ -225,30 +238,18 @@ def main():
         meta_response = requests.get(ROVMETA_URL, headers=HEADERS, timeout=15)
         if meta_response.status_code == 200:
             html = meta_response.text
-            chunks = re.findall(r'self\.__next_f\.push\(\[1,\s*"(.*?)"\]\)', html)
+            chunks = re.findall(r'self\.__next_f\.push\(\[1,\s*("(?:\\.|[^"\\])*")\]\)', html)
             
             # Reconstruct stream
             full_stream = ""
             for c in chunks:
-                decoded_chunk = c.replace('\\"', '"').replace('\\\\', '\\')
+                decoded_chunk = json.loads(c)
                 full_stream += decoded_chunk
                 
             # Locate tiers JSON
             match = re.search(r'"tiers":\s*(\{[\s\S]*?\})', full_stream)
             if match:
-                brace_count = 0
-                json_chars = []
-                for char in full_stream[match.start(1):]:
-                    if char == '{':
-                        brace_count += 1
-                    elif char == '}':
-                        brace_count -= 1
-                    json_chars.append(char)
-                    if brace_count == 0:
-                        break
-                
-                cleaned_json = "".join(json_chars).replace('\\"', '"').replace('\\\\', '\\')
-                tiers_data = json.loads(cleaned_json)
+                tiers_data, _ = json.JSONDecoder().raw_decode(full_stream[match.start(1):])
                 
                 # Flatten tiers
                 for tier, heroes_list in tiers_data.items():
@@ -279,9 +280,10 @@ def main():
                                 "name_en": name_en,
                                 "role": role,
                                 "tier": tier,
-                                "win_rate": stats.get("win_rate", 50.0),
-                                "pick_rate": stats.get("pick_rate", 5.0),
-                                "ban_rate": stats.get("ban_rate", 1.0),
+                                "win_rate": stats.get("win_rate"),
+                                "pick_rate": stats.get("pick_rate"),
+                                "ban_rate": stats.get("ban_rate"),
+                                "stats_source": stats.get("source", "unspecified"),
                                 "raw_item": item
                             }
                 print(f"[+] Trích xuất thành công {len(meta_heroes)} tướng từ RovMeta.")
@@ -292,6 +294,9 @@ def main():
     except Exception as e:
         print(f"[-] Lỗi kết nối tới RovMeta: {e}")
 
+    if len(meta_heroes) < max(20, len(previous) * 0.8):
+        raise RuntimeError("Dữ liệu meta thiếu hoặc không đọc được; giữ nguyên dữ liệu.")
+
     # ====================================================
     # --- PHASE 3: CONCURRENT COUNTERS CRAWL (AOVBUILDS) -
     # ====================================================
@@ -300,16 +305,14 @@ def main():
     for h in aov_heroes:
         slug = h["slug"]
         local_id = clean_id(slug)
-        mapped_meta_id = AOV_TO_ROVMETA.get(slug, clean_id(slug))
+        mapped_meta_id = clean_id(AOV_TO_ROVMETA.get(slug, slug))
+        if mapped_meta_id not in meta_heroes and clean_id(slug) in meta_heroes:
+            mapped_meta_id = clean_id(slug)
         
         meta_match_id = None
         if mapped_meta_id in meta_heroes:
             meta_match_id = mapped_meta_id
-        else:
-            for cid in meta_heroes:
-                if cid in mapped_meta_id or mapped_meta_id in cid:
-                    meta_match_id = cid
-                    break
+        meta_id_to_local_id[local_id] = local_id
         if meta_match_id:
             meta_id_to_local_id[meta_match_id] = local_id
 
@@ -343,6 +346,8 @@ def main():
     meta_matches = 0
     ad_count = 0
     total_counters_linked = 0
+    unmatched = []
+    provenance = {}
     
     for h in aov_heroes:
         slug = h["slug"]
@@ -353,27 +358,31 @@ def main():
         hero_id = clean_id(slug)
         
         # Translate local slug to RovMeta English ID
-        mapped_meta_id = AOV_TO_ROVMETA.get(slug, clean_id(slug))
+        mapped_meta_id = clean_id(AOV_TO_ROVMETA.get(slug, slug))
+        if mapped_meta_id not in meta_heroes and clean_id(slug) in meta_heroes:
+            mapped_meta_id = clean_id(slug)
         meta_match = meta_heroes.get(mapped_meta_id)
-        
-        # Fuzzy matching fallback
+        old = previous_by_id.get(hero_id, {})
+        provenance[hero_id] = {
+            "meta": "rovmeta" if meta_match else "previous_or_default",
+            "stats_source": meta_match["stats_source"] if meta_match else "unverified_previous_or_default",
+            "counters": "aov-builds" if aov_counters_db.get(slug) else "rovmeta",
+            "fallback_rate_fields": [key for key in ("win_rate", "pick_rate", "ban_rate") if not meta_match or meta_match[key] is None],
+        }
         if not meta_match:
-            for cid in meta_heroes:
-                if cid in mapped_meta_id or mapped_meta_id in cid:
-                    meta_match = meta_heroes[cid]
-                    break
+            unmatched.append(hero_id)
         
         # Default stats if missing
-        win_rate = 50.0
-        pick_rate = 5.0
-        ban_rate = 1.0
-        tier = "A"
+        win_rate = old.get("win_rate", 50.0)
+        pick_rate = old.get("pick_rate", 5.0)
+        ban_rate = old.get("ban_rate", 1.0)
+        tier = old.get("tier", "A")
         raw_role = "warrior"
         
         if meta_match:
-            win_rate = meta_match["win_rate"]
-            pick_rate = meta_match["pick_rate"]
-            ban_rate = meta_match["ban_rate"]
+            win_rate = meta_match["win_rate"] if meta_match["win_rate"] is not None else win_rate
+            pick_rate = meta_match["pick_rate"] if meta_match["pick_rate"] is not None else pick_rate
+            ban_rate = meta_match["ban_rate"] if meta_match["ban_rate"] is not None else ban_rate
             tier = meta_match["tier"]
             raw_role = meta_match["role"]
             meta_matches += 1
@@ -405,23 +414,27 @@ def main():
                             c_meta_id = clean_id(cname)
                             c_meta_id = UNMATCHED_REPLACEMENTS.get(c_meta_id, c_meta_id)
                             c_local_id = meta_id_to_local_id.get(c_meta_id)
-                            if not c_local_id:
-                                for cid in meta_id_to_local_id:
-                                    if cid in c_meta_id or c_meta_id in cid:
-                                        c_local_id = meta_id_to_local_id[cid]
-                                        break
                             if c_local_id:
                                 # Generate a generic explanation
                                 c_vn_name = next((h_vn["name"] for h_vn in aov_heroes if clean_id(h_vn["slug"]) == c_local_id), cname)
                                 merged_counters.append({
                                     "id": c_local_id,
-                                    "reason": f"{c_vn_name} có tỷ lệ thắng đối đầu cao và bộ chiêu thức khắc chế {name_vn} theo dữ liệu meta."
+                                    "reason": f"RovMeta liệt kê {c_vn_name} trong nhóm khắc chế {name_vn}; nguồn không cung cấp giải thích chi tiết."
                                 })
 
+        if not merged_counters and old.get("counters"):
+            merged_counters = old["counters"]
+            provenance[hero_id]["counters"] = "previous"
+        if not merged_counters:
+            provenance[hero_id]["counters"] = "none"
+        merged_counters = [c for c in merged_counters if c["id"] != hero_id and c["id"] in meta_id_to_local_id]
+        merged_counters = list({c["id"]: c for c in merged_counters}.values())
         total_counters_linked += len(merged_counters)
             
         # Map RovMeta archetype roles to lane roles
         main_role = ROVMETA_ROLE_TO_LANE.get(raw_role, "Top")
+        if not meta_match:
+            main_role = old.get("main_role", main_role)
         
         # Apply lane overrides
         if slug in ROLE_OVERRIED:
@@ -450,13 +463,10 @@ def main():
     print(f"[+] Tổng số mối liên kết khắc chế chi tiết đã nhập: {total_counters_linked}")
     print(f"[+] Số lượng tướng AD (Xạ Thủ): {ad_count}")
     
-    # Write json output
-    output_file = "crawled_heroes.json"
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(crawled_database, f, ensure_ascii=False, indent=4)
+    validate_database(crawled_database)
         
     # Update app.js HERO_DATABASE
-    app_js_path = "app.js"
+    app_js_path = ROOT / "public" / "assets" / "js" / "app.js"
     if os.path.exists(app_js_path):
         print("[+] Tìm thấy file app.js. Đang tự động cập nhật cơ sở dữ liệu...")
         try:
@@ -466,15 +476,35 @@ def main():
             pattern = r"const HERO_DATABASE = \[\s*[\s\S]*?\];"
             replacement = f"const HERO_DATABASE = {json.dumps(crawled_database, ensure_ascii=False, indent=4)};"
             
-            new_js_content, count = re.subn(pattern, replacement, js_content)
-            if count > 0:
+            new_js_content, count = re.subn(pattern, lambda _: replacement, js_content)
+            if count == 1:
+                output_file = ROOT / "data" / "crawled_heroes.json"
+                output_file.write_text(json.dumps(crawled_database, ensure_ascii=False, indent=4) + "\n", encoding="utf-8")
                 with open(app_js_path, "w", encoding="utf-8") as f:
                     f.write(new_js_content)
                 print(f"[🎉] Đã tự động cập nhật {len(crawled_database)} tướng vào file app.js!")
             else:
-                print("[-] Không tìm thấy khối HERO_DATABASE trong app.js để cập nhật tự động.")
+                raise RuntimeError("Cần đúng một khối HERO_DATABASE trong app.js.")
         except Exception as e:
-            print(f"[-] Không thể tự động ghi đè app.js: {e}")
+            raise RuntimeError("Không thể đồng bộ app.js.") from e
+    else:
+        raise RuntimeError("Không tìm thấy app.js.")
+
+    patch_match = re.search(r'"patch_number":"([^"]+)"', full_stream)
+    report = {
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "sources": {"roster": AOV_BUILDS_URL, "meta": ROVMETA_URL, "counters": "https://aov-builds.com/khac-che/"},
+        "source_patch": patch_match.group(1) if patch_match else None,
+        "hero_count": len(crawled_database),
+        "meta_matches": meta_matches,
+        "detailed_counter_pages": len(aov_counters_db),
+        "counter_links": total_counters_linked,
+        "unmatched_meta_ids": unmatched,
+        "removed_ids": sorted(set(previous_by_id) - {h["id"] for h in crawled_database}),
+        "attributes_source": "estimated_by_lane_not_measured",
+        "heroes": provenance,
+    }
+    (ROOT / "data" / "data_update_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             
     print("\n" + "="*60)
     print(f"[🎉] HỆ THỐNG CẬP NHẬT CƠ SỞ DỮ LIỆU ĐỒNG BỘ ĐÃ HOÀN TẤT THÀNH CÔNG!")
@@ -483,4 +513,6 @@ def main():
     print("="*60)
 
 if __name__ == "__main__":
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     main()
