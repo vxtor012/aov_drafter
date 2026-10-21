@@ -10,6 +10,7 @@
 - Hai chế độ gợi ý **Meta** và **Khắc chế**, hiển thị tối đa 6 lựa chọn cùng lý do cộng/trừ điểm.
 - Phân tích sát thương, chống chịu, cơ động, giao tranh và đẩy lẻ của đội hình; tổng kết khi chọn đủ tướng.
 - Hoàn tác, đặt lại và giao diện sáng/tối/theo hệ thống.
+- [Trang tốc đánh](public/attack-speed.html): chọn ảnh tướng để tra model C/E/F/G/H/H-1f và các mốc phần trăm theo frame. Có nguồn theo từng tướng, ghi chú ngoại lệ và phần đối chiếu; không tự gán model cho tướng chưa có dữ liệu.
 
 ## Chạy nhanh
 
@@ -22,6 +23,8 @@ python -m http.server 8000 --bind 127.0.0.1 --directory public
 ```
 
 Mở [http://localhost:8000](http://localhost:8000). Nhấn `Ctrl+C` để dừng. Python chỉ phục vụ tệp tĩnh, không chạy crawler khi người dùng mở trang.
+
+Trang tốc đánh ở [http://localhost:8000/attack-speed.html](http://localhost:8000/attack-speed.html). Chọn ảnh tướng và trạng thái để xem cột breakpoint tương ứng; trên mobile tự chuyển sang tab bảng frame. Xem [nguồn và giới hạn dữ liệu tốc đánh](docs/ATTACK_SPEED.md).
 
 Có thể mở `public/index.html` trực tiếp để xem nhanh, nhưng nên dùng HTTP để hành vi lưu tùy chọn và tải tài nguyên ổn định hơn. Ảnh tướng và Google Fonts cần kết nối mạng; biểu tượng giao diện được vẽ bằng SVG nội tuyến.
 

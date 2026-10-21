@@ -1,0 +1,615 @@
+{
+  "reviewed": "2026-10-21",
+  "source_date": "2026-10-10",
+  "source_name": "AoV Tactics & Guides · tổng hợp thực nghiệm cộng đồng AOVTW",
+  "source_url": "https://www.facebook.com/aovtacticsguides/posts/1083295804615977/",
+  "model_image_url": "https://www.facebook.com/photo/?fbid=1083295511282673&set=pcb.1083295804615977",
+  "mapping_image_url": "https://www.facebook.com/photo/?fbid=1083295621282662&set=pcb.1083295804615977",
+  "notes_image_url": "https://www.facebook.com/photo/?fbid=1083295687949322&set=pcb.1083295804615977",
+  "historical_url": "https://forum.gamer.com.tw/Co.php?bsn=30518&sn=279260",
+  "models": {
+    "C": {
+      "start_frame": 17,
+      "thresholds": [
+        0,
+        1,
+        8.2,
+        16.6,
+        26.2,
+        37.6,
+        51.4,
+        68.2,
+        89.2,
+        116,
+        152
+      ]
+    },
+    "E": {
+      "start_frame": 15,
+      "thresholds": [
+        0,
+        1,
+        10.2,
+        21.2,
+        34.6,
+        51.4,
+        72.8,
+        101.6,
+        141.8
+      ]
+    },
+    "F": {
+      "start_frame": 25,
+      "thresholds": [
+        0,
+        3.4,
+        8.2,
+        13.6,
+        19.6,
+        26.2,
+        33.6,
+        42,
+        51.4,
+        62.2,
+        74.8,
+        89.2,
+        106.4,
+        127,
+        152.2,
+        183.6
+      ]
+    },
+    "G": {
+      "start_frame": 16,
+      "thresholds": [
+        0,
+        1.6,
+        9.2,
+        16.8,
+        27.4,
+        38,
+        53.2,
+        69.8,
+        91,
+        116.8,
+        153.2
+      ]
+    },
+    "H": {
+      "start_frame": 14,
+      "thresholds": [
+        0,
+        1,
+        10.2,
+        21.2,
+        34.6,
+        51.4,
+        72.8,
+        101.6,
+        141.8
+      ]
+    },
+    "H-1f": {
+      "start_frame": 13,
+      "thresholds": [
+        0,
+        1,
+        10.2,
+        21.2,
+        34.6,
+        51.4,
+        72.8,
+        101.6
+      ]
+    }
+  },
+  "groups": {
+    "C": [
+      "airi",
+      "aleister",
+      "alice",
+      "amily",
+      "annette",
+      "aoi",
+      "arduin",
+      "arthur",
+      "arum",
+      "astrid",
+      "ata",
+      "aya",
+      "azzenka",
+      "baldum",
+      "bijan",
+      "bonnie",
+      "chaugnar",
+      "cresht",
+      "dextra",
+      "dirak",
+      "darcy",
+      "enzo",
+      "erin",
+      "errol",
+      "florentino",
+      "gildur",
+      "grakk",
+      "hayate",
+      "helen",
+      "iggy",
+      "ignis",
+      "ilumia",
+      "ishar",
+      "jinna",
+      "kahlii",
+      "kaine",
+      "keera",
+      "kilgroth",
+      "kriknak",
+      "krixi",
+      "krizzix",
+      "lauriel",
+      "laville",
+      "lindis",
+      "lorion",
+      "lumburr",
+      "lubo",
+      "maloch",
+      "max",
+      "mganga",
+      "mina",
+      "ming",
+      "natalya",
+      "ngokhong",
+      "omega",
+      "omen",
+      "ormarr",
+      "paine",
+      "qi",
+      "quillen",
+      "richter",
+      "rouie",
+      "rourke",
+      "roxie",
+      "ryoma",
+      "sephera",
+      "skud",
+      "slimz",
+      "stuart",
+      "superman",
+      "taara",
+      "tachi",
+      "teemee",
+      "thane",
+      "theflash",
+      "toro",
+      "trieuvan",
+      "tulen",
+      "veera",
+      "veres",
+      "wiro",
+      "wonderwoman",
+      "xeniel",
+      "yan",
+      "yue",
+      "ybneth",
+      "zata",
+      "zephys",
+      "zill",
+      "zip",
+      "zuka",
+      "dieuthuyen"
+    ],
+    "E": [
+      "elandorr",
+      "preyta"
+    ],
+    "F": [
+      "elsu"
+    ],
+    "G": [
+      "bright"
+    ],
+    "H": [
+      "boltbaron",
+      "teeri",
+      "sinestrea",
+      "thorne",
+      "wisp",
+      "moren",
+      "telannas",
+      "murad",
+      "nakroth",
+      "yorn",
+      "violet",
+      "valhein"
+    ],
+    "none": [
+      "raz",
+      "capheny",
+      "allain"
+    ],
+    "unknown": [
+      "tamyn",
+      "flowborn",
+      "dyadia",
+      "edras",
+      "goverra",
+      "billow",
+      "biron",
+      "dolia",
+      "charlotte"
+    ]
+  },
+  "overrides": {
+    "yena": {
+      "forms": [
+        {
+          "label": "Song đao",
+          "model": "C"
+        },
+        {
+          "label": "Trọng kiếm",
+          "model": "F"
+        }
+      ],
+      "note": "Song đao dùng C, trọng kiếm dùng F theo nguồn. Chọn đúng trạng thái để xem cột tương ứng."
+    },
+    "celica": {
+      "forms": [
+        {
+          "label": "Đánh thường",
+          "model": "C"
+        },
+        {
+          "label": "Dựng pháo",
+          "model": "F"
+        }
+      ],
+      "note": "Dựng pháo sử dụng F; không áp dụng mốc C của đòn đánh thường."
+    },
+    "liliana": {
+      "forms": [
+        {
+          "label": "Dạng người",
+          "model": "C"
+        },
+        {
+          "label": "Dạng cáo",
+          "model": "H-1f"
+        }
+      ],
+      "note": "Dạng cáo dùng H-1f. Bảng nguồn dừng ở 6 frame / 101,6%; không tự suy ra mốc 5 frame."
+    },
+    "volkath": {
+      "forms": [
+        {
+          "label": "Đi bộ",
+          "model": "C"
+        },
+        {
+          "label": "Cưỡi ngựa",
+          "model": null,
+          "status": "none"
+        }
+      ],
+      "note": "Trạng thái cưỡi ngựa không dùng bảng breakpoint tốc đánh thường."
+    },
+    "wisp": {
+      "forms": [
+        {
+          "label": "Đánh thường",
+          "model": "H"
+        },
+        {
+          "label": "Đòn cường hóa",
+          "model": "G"
+        }
+      ],
+      "note": "Nguồn ghi nhận đòn thường theo H, đòn cường hóa theo G; cần tách hai trạng thái khi kiểm tra."
+    },
+    "fennik": {
+      "forms": [
+        {
+          "label": "Đánh thường",
+          "model": null,
+          "status": "special",
+          "reference_model": "F"
+        }
+      ],
+      "note": "F mở rộng theo phép đo 2025 và tổng hợp 2026; chưa có toàn bộ bảng riêng. Không dùng nguyên cột F chuẩn cho Fennik."
+    },
+    "heino": {
+      "forms": [
+        {
+          "label": "Kết quả đo riêng",
+          "model": null,
+          "status": "special"
+        }
+      ],
+      "note": "Có kết quả đo riêng; nguồn khuyến cáo không ép Heino vào model chuẩn. Chưa có bảng đủ chi tiết để tính."
+    },
+    "butterfly": {
+      "forms": [
+        {
+          "label": "Đánh thường",
+          "model": null,
+          "status": "special",
+          "reference_model": "C"
+        }
+      ],
+      "note": "Các breakpoint gần C nhưng mốc cuối đo được lệch C chuẩn. Chưa tính tối ưu chính xác khi thiếu bảng riêng."
+    },
+    "marja": {
+      "forms": [
+        {
+          "label": "Đánh thường",
+          "model": null,
+          "status": "special",
+          "reference_model": "C"
+        }
+      ],
+      "note": "Các breakpoint gần C nhưng mốc cuối đo được lệch C chuẩn. Chưa tính tối ưu chính xác khi thiếu bảng riêng."
+    },
+    "preyta": {
+      "forms": [
+        {
+          "label": "Đánh thường",
+          "model": "E",
+          "status": "partial"
+        }
+      ],
+      "note": "Nguồn tổng hợp 2026 và báo cáo đo 21/07/2025 xếp E. Phản hồi 22/07/2025 còn báo một mốc ở khoảng 178–179%, ngoài bảng E hiện có. Cột E chỉ là phần tham khảo, chưa phải toàn bộ mốc riêng của Preyta."
+    },
+    "thorne": {
+      "forms": [
+        {
+          "label": "Đánh thường",
+          "model": "H"
+        }
+      ],
+      "note": "Bảng H có trong nghiên cứu 2024 và tổng hợp 2026. Một người thử riêng báo nhịp đánh khác khi đứng yên và khi di chuyển; bảng không mô tả mọi cách hủy động tác / vừa đi vừa đánh."
+    },
+    "capheny": {
+      "forms": [
+        {
+          "label": "Cơ chế riêng",
+          "model": null,
+          "status": "none"
+        }
+      ],
+      "note": "Garena RoV Thái mô tả nội tại đổi tốc đánh từ trang bị thành công vật lý. Không áp bảng breakpoint đánh thường chung; điều này không có nghĩa tốc đánh từ trang bị vô ích."
+    }
+  },
+  "verified_game_patch": null,
+  "verification_note": "Rà soát tài liệu ngày 21/10/2026; chưa đo lại trong client Việt Nam. Ngày bài viết không phải ngày đo hoặc patch áp dụng.",
+  "sources": [
+    {
+      "id": "fb2026",
+      "title": "AoV Tactics & Guides",
+      "date": "2026-10-10",
+      "url": "https://www.facebook.com/aovtacticsguides/posts/1083295804615977/",
+      "kind": "Tổng hợp cộng đồng",
+      "family": "aovtw-thresholds",
+      "scope": "Mapping và bảng mới; dẫn lại AOVTW, không phải phép đo độc lập hay dữ liệu chính thức."
+    },
+    {
+      "id": "bahamut2024",
+      "title": "Bahamut · hao940322",
+      "date": "2024-04-02",
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=30518&sn=279260",
+      "kind": "Nghiên cứu gốc",
+      "family": "aovtw-thresholds",
+      "scope": "Bảng C/E/F/G/H, các dạng tướng; F 25–20 frame lấy từ đây. Không biết patch đang áp dụng."
+    },
+    {
+      "id": "bahamut2025",
+      "title": "Bahamut · bigbirdno1",
+      "date": "2025-07-21",
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=30518&sn=333724",
+      "kind": "Bổ sung đo trực tiếp",
+      "family": "aovtw-thresholds",
+      "scope": "Preyta E, Bolt Baron H, Wisp cường hóa G; Fennik/Heino và mốc cuối Butterfly/Marja là ngoại lệ. Xác nhận Laville và Stuart C."
+    },
+    {
+      "id": "preyta2025",
+      "title": "Bahamut · Q.N. · phản hồi #12",
+      "date": "2025-07-22",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=30518&gothis=279260&page=1&snA=54503",
+      "kind": "Báo cáo chưa khép kín",
+      "family": "aovtw-thresholds",
+      "scope": "Báo một mốc Preyta giữa 178–179%, vượt phần bảng E đang có. Chưa có toàn bộ bảng hoặc phép đo tái lập để chốt mốc."
+    },
+    {
+      "id": "thorne2025",
+      "title": "Bahamut · Thorne: thử trong tập luyện",
+      "date": null,
+      "url": "https://forum.gamer.com.tw/C.php?bsn=30518&gothis=335381&page=1&snA=61173",
+      "kind": "Thử nghiệm từng tướng",
+      "family": "thorne-training",
+      "scope": "Người viết báo nhịp Thorne tăng quanh 141% và khác nhau khi di chuyển. Không xác nhận độc lập chính xác 141,8% hoặc toàn bộ bảng H."
+    },
+    {
+      "id": "bahamut2022",
+      "title": "Bahamut · Cokou32556",
+      "date": "2022-03-22",
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=30518&sn=245374",
+      "kind": "Đối chiếu lịch sử",
+      "family": "cokou-2022",
+      "scope": "Có nhiều ngưỡng trùng nhưng mapping và một số số liệu khác bảng mới. Không dùng thay cho mapping 2026; không cộng thành bằng chứng độc lập cho tất cả tướng."
+    },
+    {
+      "id": "ptt2019",
+      "title": "PTT · Nouis",
+      "date": "2019-05-15",
+      "url": "https://www.ptt.cc/bbs/ArenaOfValor/M.1557855415.A.108.html",
+      "kind": "Kết quả lịch sử trái chiều",
+      "family": "nouis-2019",
+      "scope": "Đo Mganga và Murad ở khoảng tốc đánh hẹp, kết luận khi đó chưa thấy breakpoint. Cũ hơn các nghiên cứu sau; không dùng để xác nhận cơ chế hiện tại."
+    },
+    {
+      "id": "garena-capheny",
+      "title": "Garena RoV Thailand · Capheny",
+      "date": null,
+      "url": "https://www.rov.in.th/hero/capheny",
+      "kind": "Chính thức · mô tả kỹ năng",
+      "family": "garena-th",
+      "scope": "Nội tại chuyển tốc đánh từ trang bị thành công vật lý. Xác nhận cần tách cơ chế riêng; không công bố bảng frame."
+    },
+    {
+      "id": "garena-stuart",
+      "title": "Garena Taiwan · tái thiết kế Stuart",
+      "date": "2023-11-03",
+      "url": "https://moba.garena.tw/news/show/4377",
+      "kind": "Chính thức · định danh",
+      "family": "garena-tw",
+      "scope": "Đối chiếu tên 森圖爾特 là Stuart và nội tại sau làm lại. Không dùng tên 蘇離 (Sinestrea) cho Stuart; không xác nhận breakpoint."
+    }
+  ],
+  "model_sources": {
+    "C": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "E": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "F": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "G": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "H": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "H-1f": [
+      "fb2026"
+    ]
+  },
+  "hero_evidence": {
+    "elandorr": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "elsu": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "bright": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "violet": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "moren": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "valhein": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "yorn": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "telannas": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "thorne": [
+      "fb2026",
+      "bahamut2024",
+      "thorne2025"
+    ],
+    "wisp": [
+      "fb2026",
+      "bahamut2024",
+      "bahamut2025"
+    ],
+    "sinestrea": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "murad": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "nakroth": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "teeri": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "raz": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "allain": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "yena": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "celica": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "liliana": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "volkath": [
+      "fb2026",
+      "bahamut2024"
+    ],
+    "preyta": [
+      "fb2026",
+      "bahamut2025",
+      "preyta2025"
+    ],
+    "boltbaron": [
+      "fb2026",
+      "bahamut2025"
+    ],
+    "fennik": [
+      "fb2026",
+      "bahamut2025"
+    ],
+    "heino": [
+      "fb2026",
+      "bahamut2025"
+    ],
+    "butterfly": [
+      "fb2026",
+      "bahamut2025"
+    ],
+    "marja": [
+      "fb2026",
+      "bahamut2025"
+    ],
+    "laville": [
+      "fb2026",
+      "bahamut2025"
+    ],
+    "stuart": [
+      "fb2026",
+      "bahamut2025",
+      "garena-stuart"
+    ],
+    "capheny": [
+      "fb2026",
+      "bahamut2024",
+      "garena-capheny"
+    ]
+  }
+}

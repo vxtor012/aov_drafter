@@ -31,6 +31,12 @@ Câu hỏi chính của màn hình: **Đến lượt đội nào, và nên chọ
 
 ## Kiểm tra
 
+### Trang tốc đánh
+
+Dùng hướng `achromatic-ledger`, seed `1028960868`, giữ font Be Vietnam Pro và token theme của draft. Bản sắc nằm ở lưới chân dung tướng và ma trận frame; màu xanh chỉ đánh dấu cột model của tướng đang chọn. Màn hình chỉ có hai bảng, không có form, hộp thoại tính hoặc khuyến nghị chỉ số. Header dùng cùng DOM/CSS với draft; chỉ thay các thao tác theo ngữ cảnh. Không dùng shell icon rail của bản deal vì hai trang chia sẻ header có sẵn. Ngày rà soát, nguồn của tướng và ngoại lệ được hiển thị cạnh bảng để không đánh đồng tra cứu tài liệu với kiểm chứng trong client hiện tại.
+
+### Trang draft
+
 Bản trước có 5 lỗi và 5 cảnh báo trong lần kiểm tra thiết kế tự động: chữ nhãn nhỏ/in hoa, gradient chữ, bóng/glow, tương phản và phân bố không gian. Sau refactor, kiểm tra desktop 1440px, tablet 768px và mobile 390px; xem cả trạng thái trống, đội hình có tướng, theme sáng và bảng tổng kết.
 
 Lần kiểm tra inspector cuối đạt **0 lỗi, 0 cảnh báo**, so với **5 lỗi, 5 cảnh báo** của bản trước. Không redraw hướng thiết kế; màu xanh/đỏ giữ vai trò nhận diện hai đội thay cho accent trang trí. Không có dữ liệu mẫu cần thay thế.

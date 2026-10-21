@@ -65,6 +65,8 @@ Có thể đặt `UI_BASE_URL` để dùng URL khác. Nếu muốn dùng Edge/Ch
 
 Không cần lệnh build. Dữ liệu tướng đã được nhúng trong `public/assets/js/app.js`; các thư mục `data/`, `scripts/`, `tests/`, `docs/`, `.agents/`, `.venv/` và `.git/` không được đưa lên website. Không dùng `http.server` làm máy chủ production.
 
+Trang `attack-speed.html` chạy độc lập với draft. Khi cập nhật nguồn hoặc roster, chạy `python scripts/build_attack_speed_data.py` để sinh dữ liệu tra cứu; workflow cũng chạy bước này trước khi upload. Workflow gắn hash nội dung vào URL JS/CSS của tất cả trang HTML để tránh cache bản cũ. Xem [tài liệu tốc đánh](ATTACK_SPEED.md) về schema, đối chiếu nguồn và kiểm thử riêng.
+
 ## Xử lý lỗi
 
 | Triệu chứng | Cách xử lý |

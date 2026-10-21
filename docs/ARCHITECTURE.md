@@ -1,5 +1,7 @@
 # Kiến trúc và thuật toán
 
+Trang tra cứu tốc đánh `public/attack-speed.html` hoạt động độc lập, không nạp `app.js` hoặc khởi tạo draft. Mapping, bảng frame và nguồn sinh trong `attack-speed-data.js`; `attack-speed.js` xử lý chọn tướng, đổi dạng và tô cột model. Trang không có bộ tính hoặc form nhập tốc đánh. Xem [nguồn và các ngoại lệ](ATTACK_SPEED.md).
+
 ## Thành phần và luồng dữ liệu
 
 ```text

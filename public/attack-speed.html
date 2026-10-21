@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tra cứu model tốc đánh Liên Quân, bảng breakpoint theo frame theo từng tướng và trạng thái.">
+    <title>Tốc đánh & breakpoint — AoV Drafter</title>
+    <link rel="icon" type="image/png" href="assets/img/aov_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/attack-speed.css">
+    <script>
+        try {
+            const theme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.dataset.theme = theme === 'light' || (theme === 'system' && !matchMedia('(prefers-color-scheme: dark)').matches) ? 'light' : 'dark';
+        } catch (_) { /* Keep the default theme if storage is unavailable. */ }
+    </script>
+    <script defer src="assets/js/attack-speed-data.js"></script>
+    <script defer src="assets/js/attack-speed.js"></script>
+</head>
+<body class="speed-page">
+    <a class="skip-link" href="#directory-search">Đến bảng chọn tướng</a>
+    <div class="app-shell speed-shell">
+        <header class="app-header">
+            <div class="brand">
+                <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3H3v18h6M15 3h6v18h-6M8 8l8 8M16 8l-8 8" stroke="currentColor" stroke-width="1.7"/></svg>
+                <h1><a class="brand-home" href="index.html">AoV Drafter</a></h1>
+                <a class="tool-link" href="attack-speed.html" aria-current="page">Tốc đánh</a>
+            </div>
+            <div class="header-actions">
+                <a href="index.html" class="control-btn back-draft">Về draft</a>
+                <details class="settings-menu" id="settings-menu">
+                    <summary class="control-btn">Tùy chọn <svg class="settings-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg></summary>
+                    <div class="settings-popover">
+                        <span class="settings-label">Giao diện</span>
+                        <div class="theme-toggle-group" id="theme-toggle-group" aria-label="Giao diện">
+                            <button class="theme-btn" data-theme-val="light" aria-pressed="false">Sáng</button>
+                            <button class="theme-btn" data-theme-val="dark" aria-pressed="true">Tối</button>
+                            <button class="theme-btn" data-theme-val="system" aria-pressed="false">Hệ thống</button>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </header>
+        <main>
+            <div class="speed-mobile-tabs" role="group" aria-label="Bảng đang xem"><button type="button" data-pane="heroes" aria-pressed="true">Tướng</button><button type="button" data-pane="frames" aria-pressed="false">Model / frame</button></div>
+            <div class="speed-workspace" data-pane="heroes">
+                <section class="speed-panel hero-picker" id="hero-directory" aria-labelledby="directory-title">
+                    <div class="speed-panel-head"><h2 id="directory-title">Chọn tướng</h2><span id="directory-count"></span></div>
+                    <div class="directory-filters">
+                        <label><span class="sr-only">Tìm tướng</span><input type="search" id="directory-search" placeholder="Tìm tướng…" aria-label="Tìm tướng"></label>
+                        <label><span class="sr-only">Lọc model</span><select id="directory-filter" aria-label="Lọc model"><option value="all">Mọi model</option><option>C</option><option>E</option><option>F</option><option>G</option><option>H</option><option>H-1f</option><option value="special">Ngoại lệ</option><option value="none">Cơ chế riêng</option><option value="unknown">Chưa xác minh</option></select></label>
+                    </div>
+                    <div class="hero-picker-scroll"><div id="directory-body" class="speed-hero-grid" aria-label="Tướng và model tốc đánh"></div><p id="directory-empty" hidden>Không tìm thấy tướng.</p></div>
+                    <p class="picker-hint">? Chưa có dữ liệu · * Có ngoại lệ, xem ghi chú khi chọn.</p>
+                </section>
+                <section class="speed-panel model-panel" aria-labelledby="matrix-title">
+                    <div class="speed-panel-head"><h2 id="matrix-title">Model / frame</h2><span class="matrix-unit">Ngưỡng tốc đánh (%)</span></div>
+                    <div class="matrix-hero"><img id="matrix-avatar" alt="" width="36" height="36"><div><strong id="matrix-hero-name"></strong><span id="matrix-hero-model"></span></div><label><span class="sr-only">Trạng thái tướng đang xem</span><select id="board-form-select" aria-label="Trạng thái tướng đang xem"></select></label></div>
+                    <p id="hero-note" class="hero-note" hidden></p>
+                    <p id="hero-evidence" class="hero-evidence"></p>
+                    <div class="matrix-scroll" tabindex="0" role="region" aria-label="Bảng breakpoint, cuộn để xem đủ model và frame">
+                        <table class="breakpoint-matrix"><caption class="sr-only">Tốc đánh tối thiểu (%) để đạt mỗi số frame.</caption><thead><tr><th scope="col">Frame</th><th scope="col" data-model="C">C</th><th scope="col" data-model="E">E</th><th scope="col" data-model="F">F</th><th scope="col" data-model="G">G</th><th scope="col" data-model="H">H</th><th scope="col" data-model="H-1f">H−1f</th></tr></thead><tbody id="matrix-body"></tbody></table>
+                    </div>
+                    <p class="matrix-foot">Ngưỡng tối thiểu (%). Frame theo bảng nghiên cứu, không phải FPS màn hình.</p>
+                </section>
+            </div>
+            <noscript><p>Bật JavaScript để xem bảng chọn tướng và các mốc frame.</p></noscript>
+        </main>
+        <footer class="speed-footer">
+            <details><summary>Nguồn & đối chiếu</summary><div class="source-notes">
+                <p id="review-note"></p><div id="source-list"></div>
+                <p>Các bài tổng hợp và thảo luận cùng chuỗi AOVTW không phải nhiều phép đo độc lập. Nguồn chính thức chỉ đối chiếu cơ chế/định danh, không xác nhận bảng frame. Không dùng bảng Vương Giả Vinh Diệu để tự điền tướng Liên Quân.</p>
+            </div></details>
+            <span>Dữ liệu cộng đồng · Chỉ mang tính tham khảo</span>
+        </footer>
+    </div>
+</body>
+</html>
